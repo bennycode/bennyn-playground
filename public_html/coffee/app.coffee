@@ -11,7 +11,6 @@ class UserProperty
     }
 
   isValid: ->
-    # TODO: Implement guidance message on validation
     @value.length > 0
 
 class UserPassword extends UserProperty
