@@ -1,4 +1,4 @@
-Registration = (->
+Zeta.Registration.Registration = (->
 
   host = 'https://armada-test.z-infra.com'
 
@@ -7,7 +7,7 @@ Registration = (->
     login: host + '/login'
     register: host + '/register'
 
-  user = new User("", "", "")
+  user = new Zeta.Registration.User("", "", "")
 
   init: ->
     $('#registration-form-name').on 'blur', ->
@@ -20,7 +20,7 @@ Registration = (->
 
   register: (user) ->
     if user.hasValidRegistrationData
-      RequestHandler.postData(
+      Zeta.Registration.RequestHandler.postData(
         url.register,
         user.getRegistrationPayload(),
       (data, textStatus, jqXHR) ->

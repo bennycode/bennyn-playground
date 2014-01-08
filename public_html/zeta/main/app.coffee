@@ -1,6 +1,4 @@
-pw = new UserPassword("abc123")
-
-benny = new User('Benny', 'benny@wearezeta.com', 'abc123')
+benny = new Zeta.Registration.User('Benny', 'benny@wearezeta.com', 'abc123')
 # alert benny.name.value
 # alert benny.name.isValid()
 # alert benny.hasValidRegistrationData()
@@ -8,4 +6,4 @@ benny = new User('Benny', 'benny@wearezeta.com', 'abc123')
 # alert benny.name.guidance.title
 
 # Registration.register(benny)
-Registration.init()
+Zeta.Registration.Registration.init()
