@@ -8,43 +8,47 @@
   var User,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  User = (function() {
-    function User(name, email, password) {
-      this.getRegistrationPayload = __bind(this.getRegistrationPayload, this);
-      this.name = new UserProperty(name);
-      this.email = new UserEmailAddress(email);
-      this.password = new UserPassword(password);
-    }
-
-    User.prototype.optional = {
-      accent: [],
-      picture: [],
-      phone: "",
-      phone_code: ""
-    };
-
-    User.prototype.getRegistrationPayload = function() {
-      var key, payload;
-      payload = {};
-      for (key in this) {
-        if (this[key] instanceof UserProperty && this[key].isValid()) {
-          payload[key] = this[key].value;
+  namespace({
+    Zeta: {
+      Registration: User = (function() {
+        function User(name, email, password) {
+          this.getRegistrationPayload = __bind(this.getRegistrationPayload, this);
+          this.name = new Zeta.Registration.UserProperty(name);
+          this.email = new Zeta.Registration.UserEmailAddress(email);
+          this.password = new Zeta.Registration.UserPassword(password);
         }
-      }
-      return JSON.stringify(payload);
-    };
 
-    User.prototype.hasValidRegistrationData = function() {
-      if (this.name.isValid() && this.email.isValid() && this.password.isValid()) {
-        return true;
-      } else {
-        return false;
-      }
-    };
+        User.prototype.optional = {
+          accent: [],
+          picture: [],
+          phone: "",
+          phone_code: ""
+        };
 
-    return User;
+        User.prototype.getRegistrationPayload = function() {
+          var key, payload;
+          payload = {};
+          for (key in this) {
+            if (this[key] instanceof Zeta.Registration.UserProperty && this[key].isValid()) {
+              payload[key] = this[key].value;
+            }
+          }
+          return JSON.stringify(payload);
+        };
 
-  })();
+        User.prototype.hasValidRegistrationData = function() {
+          if (this.name.isValid() && this.email.isValid() && this.password.isValid()) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+
+        return User;
+
+      })()
+    }
+  });
 
 }).call(this);
 
