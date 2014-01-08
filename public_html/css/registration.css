@@ -1,0 +1,24 @@
+body {
+  background-color: gray;
+}
+#registration-form {
+  width: 700px;
+  margin: 0 auto;
+}
+#registration-form * {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+#registration-form *:focus {
+  outline: 0;
+}
+#registration-form input {
+  background-color: transparent;
+  color: white;
+}
+#registration-form #registration-form-name {
+  font-weight: bold;
+  font-size: 50px;
+  width: 100%;
+}

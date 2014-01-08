@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/registration.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  </head>
+  <body>
+    <div id="registration-form">
+      <form>
+        <p>
+          <input
+            id="registration-form-name"
+            type="text"
+            placeholder="Your name"
+            />
+        </p>
+      </form>
+    </div>
+    <script src="coffee/app.js"></script>
+    <script type="text/javascript">
+
+      var data = {
+        'name': 'Sarah Dandu',
+        'email': 'sarah@dandu.com',
+        'password': '6chars'
+      };
+
+      /*
+       var json = JSON.stringify(data);
+       
+       jQuery(document).ready(function($) {
+       $.ajax({
+       type: 'POST',
+       url: 'https://armada-test.z-infra.com/register',
+       data: json,
+       dataType: 'json',
+       contentType: 'application/json; charset=utf-8',
+       crossDomain: true,
+       success: function(data, textStatus, jqXHR) {
+       console.log('OK:' + data);
+       },
+       error: function(data, textStatus, jqXHR) {
+       console.log('ERROR:' + data);
+       }
+       });
+       });
+       */
+    </script>
+  </body>
+</html>
