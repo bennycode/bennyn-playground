@@ -1,5 +1,7 @@
-RequestHandler = (->
+Zeta.Registration.RequestHandler = (->
+
   postData: (url, data, onSuccess, onError) ->
+
     payload = data
 
     $.ajax url,
