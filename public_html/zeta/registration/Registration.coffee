@@ -7,21 +7,49 @@ Zeta.Registration.Registration = (->
     register: "#{host}/register"
 
   user = new Zeta.Registration.User()
+  
+  hide_other_guides = ->
+    $('.guidance').css('display', 'none')
 
   init: ->
     # Username
     $('#registration-form-name').on("focus keyup paste", ->
-      user.name.value = $(this).val()
+      # Input
+      user.name.value = $(this).val()      
       user.name.validate()
-      $('#registration-form-name + .guidance').html "<p>#{user.name.guidance.title}<br/>#{user.name.guidance.explanation}</p>"
+      
+      # Guidance
+      hide_other_guides();      
+      $('#registration-form-name + .guidance')
+      .css('display', 'block')
+      .html "<p>#{user.name.guidance.title}<br/>#{user.name.guidance.explanation}</p>"
     )
     
     # Email
     $('#registration-form-email').on("focus keyup paste", ->
+      # Input
       user.email.value = $(this).val()
       user.email.validate()
-      $('#registration-form-email + .guidance').html "<p>#{user.email.guidance.title}<br/>#{user.email.guidance.explanation}</p>"
+      
+      # Guidance
+      hide_other_guides();
+      $('#registration-form-email + .guidance')
+      .css('display', 'block')
+      .html "<p>#{user.email.guidance.title}<br/>#{user.email.guidance.explanation}</p>"
     )
+    
+    # Password
+    $('#registration-form-password').on("focus keyup paste", ->
+      # Input
+      user.password.value = $(this).val()
+      user.password.validate()
+      
+      # Guidance
+      hide_other_guides();
+      $('#registration-form-password + .guidance')
+      .css('display', 'block')
+      .html "<p>#{user.password.guidance.title}<br/>#{user.password.guidance.explanation}</p>"
+    )    
 
   register: (user) ->
     if user.has_valid_registration_data

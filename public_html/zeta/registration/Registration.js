@@ -1,5 +1,5 @@
 Zeta.Registration.Registration = (function() {
-  var host, url, user;
+  var hide_other_guides, host, url, user;
   host = 'https://armada-test.z-infra.com';
   url = {
     access: "" + host + "/access",
@@ -7,17 +7,28 @@ Zeta.Registration.Registration = (function() {
     register: "" + host + "/register"
   };
   user = new Zeta.Registration.User();
+  hide_other_guides = function() {
+    return $('.guidance').css('display', 'none');
+  };
   return {
     init: function() {
       $('#registration-form-name').on("focus keyup paste", function() {
         user.name.value = $(this).val();
         user.name.validate();
-        return $('#registration-form-name + .guidance').html("<p>" + user.name.guidance.title + "<br/>" + user.name.guidance.explanation + "</p>");
+        hide_other_guides();
+        return $('#registration-form-name + .guidance').css('display', 'block').html("<p>" + user.name.guidance.title + "<br/>" + user.name.guidance.explanation + "</p>");
       });
-      return $('#registration-form-email').on("focus keyup paste", function() {
+      $('#registration-form-email').on("focus keyup paste", function() {
         user.email.value = $(this).val();
         user.email.validate();
-        return $('#registration-form-email + .guidance').html("<p>" + user.email.guidance.title + "<br/>" + user.email.guidance.explanation + "</p>");
+        hide_other_guides();
+        return $('#registration-form-email + .guidance').css('display', 'block').html("<p>" + user.email.guidance.title + "<br/>" + user.email.guidance.explanation + "</p>");
+      });
+      return $('#registration-form-password').on("focus keyup paste", function() {
+        user.password.value = $(this).val();
+        user.password.validate();
+        hide_other_guides();
+        return $('#registration-form-password + .guidance').css('display', 'block').html("<p>" + user.password.guidance.title + "<br/>" + user.password.guidance.explanation + "</p>");
       });
     },
     register: function(user) {
