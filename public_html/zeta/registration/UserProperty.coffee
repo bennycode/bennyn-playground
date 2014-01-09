@@ -21,7 +21,6 @@ namespace Zeta:Registration:
   class UserPassword extends UserProperty
     constructor: (value) ->
       super(value)
-      @value = value
       
     is_valid: =>
       @value.length > 5

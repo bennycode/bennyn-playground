@@ -15,6 +15,10 @@ Zeta.Registration.Registration = (function() {
         if (!user.name.is_valid()) {
           return console.log("username invalid");
         }
+      }).focus(function() {
+        if (!user.name.is_valid()) {
+          return $('#registration-form-name + .guidance').html("<p>" + user.name.guidance.title + "<br/>" + user.name.guidance.explanation + "</p>");
+        }
       });
     },
     register: function(user) {

@@ -8,16 +8,17 @@
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <!--<script src="http://code.jquery.com/jquery-2.0.3.min.map"></script>-->
   </head>
-  <body>
+  <body onload="document.getElementById('registration-form-name').focus();">
     <div id="registration-form">
       <form>
-        <p>
-          <input
-            id="registration-form-name"
-            type="text"
-            placeholder="Your name"
-            />
-        </p>
+        <input
+          id="registration-form-name"
+          type="text"
+          placeholder="Your name"
+          />
+        <div class="guidance">
+          Text
+        </div>
       </form>
     </div>
     <script src="zeta/namespace.js"></script>

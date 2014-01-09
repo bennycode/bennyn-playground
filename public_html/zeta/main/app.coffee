@@ -6,4 +6,4 @@ benny = new Zeta.Registration.User('Benny', 'benny@wearezeta.com', 'abc123')
 # alert benny.name.guidance.title
 
 Zeta.Registration.Registration.init()
-Zeta.Registration.Registration.register(benny)
+#Zeta.Registration.Registration.register(benny)

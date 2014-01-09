@@ -18,6 +18,9 @@ Zeta.Registration.Registration = (->
         console.log "username invalid"
 
       # TODO: Set focus into username field
+    ).focus(->
+      if not user.name.is_valid()
+        $('#registration-form-name + .guidance').html "<p>#{user.name.guidance.title}<br/>#{user.name.guidance.explanation}</p>"
     )
 
   register: (user) ->
