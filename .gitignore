@@ -1,4 +1,5 @@
 /.idea/
 /nbproject/
 *.map
+/public_html/zeta/*.js
 /public_html/zeta/*/*.js
