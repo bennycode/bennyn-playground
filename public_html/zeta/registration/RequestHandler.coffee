@@ -1,12 +1,13 @@
 Zeta.Registration.RequestHandler = (->
   postData: (url, data, onSuccess, onError) ->
-    payload = data
-
-    $.ajax url,
+    $.ajax
+      url: url
       type: 'POST'
-      crossDomain: true,
+      crossDomain: true
       contentType: 'application/json; charset=utf-8'
       dataType: 'json'
-      data: payload
+      data: data
       error: onError
-      success: onSuccess)()
+      success: onSuccess
+#
+)()

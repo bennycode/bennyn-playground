@@ -1,3 +1,6 @@
+################################################################################
+# General
+################################################################################
 namespace Zeta:
   Registration:
   class UserProperty
@@ -8,16 +11,22 @@ namespace Zeta:
         explanation: 'guide.explanation'
       }
 
-    isValid: ->
+    is_valid: ->
       @value.length > 0
 
+################################################################################
+# Password
+################################################################################
 namespace Zeta:
   Registration:
   class UserPassword extends UserProperty
     constructor: (@value) ->
-      isValid: =>
+      is_valid: =>
         @value.length > 5
 
+################################################################################
+# Email
+################################################################################
 namespace Zeta:
   Registration:
   class UserEmailAddress extends UserProperty
@@ -29,7 +38,7 @@ namespace Zeta:
        ([a-zA-Z.]{2,6})  #followed by 2 to 6 letters or periods
        $ ///i #end of line and ignore case
     constructor: (@value) ->
-      isValid: ->
+      is_valid: ->
         if @value.match emailPattern
           true
         else

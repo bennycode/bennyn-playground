@@ -16,7 +16,7 @@
           };
         }
 
-        UserProperty.prototype.isValid = function() {
+        UserProperty.prototype.is_valid = function() {
           return this.value.length > 0;
         };
 
@@ -58,15 +58,16 @@
 
         function UserEmailAddress(value) {
           this.value = value;
+          ({
+            isValid: function() {
+              if (this.value.match(emailPattern)) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          });
         }
-
-        UserEmailAddress.prototype.isValid = function() {
-          if (this.value.match(emailPattern)) {
-            return true;
-          } else {
-            return false;
-          }
-        };
 
         return UserEmailAddress;
 
