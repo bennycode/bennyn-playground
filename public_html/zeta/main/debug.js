@@ -12,8 +12,6 @@
 
   alert(user.name.value);
 
-  Zeta.Registration.Registration.test();
-
 }).call(this);
 
 /*

@@ -2,7 +2,8 @@
   https://docs.z-infra.com/dev-device-api/latest/reference/users.html
 ###
 
-namespace Zeta:Registration:
+namespace Zeta:
+  Registration:
   class User
     constructor: (name, email, password) ->
       @name = new Zeta.Registration.UserProperty(name)

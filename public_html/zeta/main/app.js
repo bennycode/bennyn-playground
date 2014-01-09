@@ -6,6 +6,8 @@
 
   Zeta.Registration.Registration.init();
 
+  Zeta.Registration.Registration.register(benny);
+
 }).call(this);
 
 /*

@@ -1,5 +1,4 @@
 Zeta.Registration.Registration = (->
-
   host = 'https://armada-test.z-infra.com'
 
   url =
@@ -27,5 +26,4 @@ Zeta.Registration.Registration = (->
         alert JSON.stringify data
         (data, textStatus, jqXHR) ->
           alert JSON.stringify data
-      )
-)()
+      ))()

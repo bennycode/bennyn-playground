@@ -5,23 +5,21 @@
 ###
 
 do (root = global ? window) ->
-  
   fn = ->
-
-    args   = arguments[0]
+    args = arguments[0]
     target = root
 
     loop
       for subpackage, obj of args
         target = target[subpackage] or= {}
-        args   = obj
+        args = obj
       break unless typeof args is 'object'
 
-    Class        = args
-    target       = root if arguments[0].hasOwnProperty 'global'
-    name         = Class.toString().match(/^function\s(\w+)\(/)[1]
+    Class = args
+    target = root if arguments[0].hasOwnProperty 'global'
+    name = Class.toString().match(/^function\s(\w+)\(/)[1]
     target[name] = Class
 
   # Aliases
   root.namespace = fn
-  root.module    = fn
+  root.module = fn

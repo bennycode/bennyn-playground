@@ -1,7 +1,5 @@
 Zeta.Registration.RequestHandler = (->
-
   postData: (url, data, onSuccess, onError) ->
-
     payload = data
 
     $.ajax url,
@@ -11,5 +9,4 @@ Zeta.Registration.RequestHandler = (->
       dataType: 'json'
       data: payload
       error: onError
-      success: onSuccess
-)()
+      success: onSuccess)()
