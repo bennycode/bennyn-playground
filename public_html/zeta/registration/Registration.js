@@ -11,30 +11,18 @@ Zeta.Registration.Registration = (function() {
     return $('.guidance').css('display', 'none');
   };
   initProperty = function(selector, property) {
-    console.log(selector);
-    return console.log(property);
+    return $(selector).on('focus keyup paste', function() {
+      property.value = $(this).val();
+      property.validate();
+      hide_other_guides();
+      return $("" + selector + " + .guidance").css('display', 'block').html("<p>" + property.guidance.title + "<br/>" + property.guidance.explanation + "</p>");
+    });
   };
   return {
     init: function() {
       initProperty('#registration-form-name', user.name);
-      $('#registration-form-name').on("focus keyup paste", function() {
-        user.name.value = $(this).val();
-        user.name.validate();
-        hide_other_guides();
-        return $('#registration-form-name + .guidance').css('display', 'block').html("<p>" + user.name.guidance.title + "<br/>" + user.name.guidance.explanation + "</p>");
-      });
-      $('#registration-form-email').on("focus keyup paste", function() {
-        user.email.value = $(this).val();
-        user.email.validate();
-        hide_other_guides();
-        return $('#registration-form-email + .guidance').css('display', 'block').html("<p>" + user.email.guidance.title + "<br/>" + user.email.guidance.explanation + "</p>");
-      });
-      return $('#registration-form-password').on("focus keyup paste", function() {
-        user.password.value = $(this).val();
-        user.password.validate();
-        hide_other_guides();
-        return $('#registration-form-password + .guidance').css('display', 'block').html("<p>" + user.password.guidance.title + "<br/>" + user.password.guidance.explanation + "</p>");
-      });
+      initProperty('#registration-form-email', user.email);
+      return initProperty('#registration-form-password', user.password);
     },
     register: function(user) {
       if (user.has_valid_registration_data) {
