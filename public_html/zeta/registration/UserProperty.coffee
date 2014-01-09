@@ -83,13 +83,15 @@ namespace Zeta:Registration:
       else if @value.length > 1
         
         # Is there an @?
-        if @value.indexOf "@" == -1
+        if @value.indexOf("@") == -1
           @guidance.title = "Don't forget the @"
           @guidance.explanation = ""
           @valid = false
+          console.log @value, @value.indexOf "@"
+          
 
         # Do we have a dot (.) ?
-        else if @value.indexOf "." == -1
+        else if @value.indexOf(".") == -1
           @guidance.title = "Dot required in domain name"
           @guidance.explanation = ""
           @valid = false
