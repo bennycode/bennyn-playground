@@ -9,10 +9,15 @@ Zeta.Registration.Registration = (function() {
   user = new Zeta.Registration.User();
   return {
     init: function() {
-      return $('#registration-form-name').on("keyup paste mousemove", function() {
+      $('#registration-form-name').on("focus keyup paste", function() {
         user.name.value = $(this).val();
         user.name.validate();
         return $('#registration-form-name + .guidance').html("<p>" + user.name.guidance.title + "<br/>" + user.name.guidance.explanation + "</p>");
+      });
+      return $('#registration-form-email').on("focus keyup paste", function() {
+        user.email.value = $(this).val();
+        user.email.validate();
+        return $('#registration-form-email + .guidance').html("<p>" + user.email.guidance.title + "<br/>" + user.email.guidance.explanation + "</p>");
       });
     },
     register: function(user) {

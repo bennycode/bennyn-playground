@@ -10,10 +10,17 @@ Zeta.Registration.Registration = (->
 
   init: ->
     # Username
-    $('#registration-form-name').on("keyup paste mousemove", ->
+    $('#registration-form-name').on("focus keyup paste", ->
       user.name.value = $(this).val()
       user.name.validate()
       $('#registration-form-name + .guidance').html "<p>#{user.name.guidance.title}<br/>#{user.name.guidance.explanation}</p>"
+    )
+    
+    # Email
+    $('#registration-form-email').on("focus keyup paste", ->
+      user.email.value = $(this).val()
+      user.email.validate()
+      $('#registration-form-email + .guidance').html "<p>#{user.email.guidance.title}<br/>#{user.email.guidance.explanation}</p>"
     )
 
   register: (user) ->
