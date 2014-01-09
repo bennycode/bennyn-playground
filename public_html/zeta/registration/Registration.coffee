@@ -20,9 +20,15 @@ Zeta.Registration.Registration = (->
       
       # Guidance
       hide_other_guides();
-      $("#{selector} + .guidance")
+      
+      guide_element = $("#{selector} + .guidance")
+      
+      guide_element
       .css('display', 'block')
       .html "<p>#{property.guidance.title}<br/>#{property.guidance.explanation}</p>"
+      
+      if property.guidance.is_critical
+        guide_element.css('color', 'red')
     )
 
   init: ->

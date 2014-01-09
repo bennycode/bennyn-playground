@@ -12,10 +12,15 @@ Zeta.Registration.Registration = (function() {
   };
   initProperty = function(selector, property) {
     return $(selector).on('focus keyup paste', function() {
+      var guide_element;
       property.value = $(this).val();
       property.validate();
       hide_other_guides();
-      return $("" + selector + " + .guidance").css('display', 'block').html("<p>" + property.guidance.title + "<br/>" + property.guidance.explanation + "</p>");
+      guide_element = $("" + selector + " + .guidance");
+      guide_element.css('display', 'block').html("<p>" + property.guidance.title + "<br/>" + property.guidance.explanation + "</p>");
+      if (property.guidance.is_critical) {
+        return guide_element.css('color', 'red');
+      }
     });
   };
   return {

@@ -5,12 +5,14 @@
 namespace Zeta:Registration:
   class UserProperty
     constructor: (@value = '') ->
+      @valid = false
       @guidance = {
-        level: 'error'
+        is_critical: false
         title: 'guide.title'
         explanation: 'guide.explanation'
       }
 
+    # TODO: Remove is_valid because there now is @valid
     is_valid: ->
       @value.length > 0
       
