@@ -1,5 +1,4 @@
-# TODO: Rename to UserBuilder
-Zeta.Registration.Registration = (->
+Zeta.Registration.UserBuilder = (->
   host = 'https://armada-test.z-infra.com'
 
   url =

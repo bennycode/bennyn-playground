@@ -15,4 +15,4 @@ email = new Zeta.Registration.UserEmailAddress("email")
 user = new Zeta.Registration.User("Benny", "benny@wearezeta.com", "abc123")
 #console.log user.name.value
 
-#Zeta.Registration.Registration.test()
+#Zeta.Registration.UserBuilder.test()
