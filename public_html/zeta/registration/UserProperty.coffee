@@ -13,6 +13,36 @@ namespace Zeta:Registration:
 
     is_valid: ->
       @value.length > 0
+      
+################################################################################
+# Username
+################################################################################
+namespace Zeta:Registration:
+  class Username extends UserProperty
+    constructor: (value) ->
+      super(value)
+      @validate()
+      
+    validate: =>
+      console.log "Username length: #{@value.length}"
+    
+      if @value.length == 0
+        @guidance.title = "Please fill in your name first"
+        @guidance.explanation = ""
+        @valid = false
+        
+      else if @value.length == 1
+        @guidance.title = "2 characters or more"
+        @guidance.explanation = ""
+        @valid = false
+        
+      else if @value.length > 1
+        @guidance.title = ""
+        @guidance.explanation = ""
+        @valid = true
+      
+    is_valid: =>
+      @valid
 
 ################################################################################
 # Password

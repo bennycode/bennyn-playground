@@ -9,16 +9,10 @@ Zeta.Registration.Registration = (function() {
   user = new Zeta.Registration.User();
   return {
     init: function() {
-      return $('#registration-form-name').on('blur', function() {
+      return $('#registration-form-name').on("keyup paste mousemove", function() {
         user.name.value = $(this).val();
-        console.log("Username: " + user.name.value + " | valid: " + (user.name.is_valid()));
-        if (!user.name.is_valid()) {
-          return console.log("username invalid");
-        }
-      }).focus(function() {
-        if (!user.name.is_valid()) {
-          return $('#registration-form-name + .guidance').html("<p>" + user.name.guidance.title + "<br/>" + user.name.guidance.explanation + "</p>");
-        }
+        user.name.validate();
+        return $('#registration-form-name + .guidance').html("<p>" + user.name.guidance.title + "<br/>" + user.name.guidance.explanation + "</p>");
       });
     },
     register: function(user) {

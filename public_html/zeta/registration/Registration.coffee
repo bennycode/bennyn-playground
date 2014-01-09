@@ -10,17 +10,10 @@ Zeta.Registration.Registration = (->
 
   init: ->
     # Username
-    $('#registration-form-name').on('blur', ->
+    $('#registration-form-name').on("keyup paste mousemove", ->
       user.name.value = $(this).val()
-      console.log "Username: #{user.name.value} | valid: #{user.name.is_valid()}"
-
-      if not user.name.is_valid()
-        console.log "username invalid"
-
-      # TODO: Set focus into username field
-    ).focus(->
-      if not user.name.is_valid()
-        $('#registration-form-name + .guidance').html "<p>#{user.name.guidance.title}<br/>#{user.name.guidance.explanation}</p>"
+      user.name.validate()
+      $('#registration-form-name + .guidance').html "<p>#{user.name.guidance.title}<br/>#{user.name.guidance.explanation}</p>"
     )
 
   register: (user) ->

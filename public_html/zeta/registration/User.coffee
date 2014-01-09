@@ -6,7 +6,7 @@
 namespace Zeta:Registration:
   class User
     constructor: (name, email, password) ->
-      @name = new Zeta.Registration.UserProperty(name)
+      @name = new Zeta.Registration.Username(name)
       @email = new Zeta.Registration.UserEmailAddress(email)
       @password = new Zeta.Registration.UserPassword(password)
 
