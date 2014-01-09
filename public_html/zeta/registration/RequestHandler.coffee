@@ -9,5 +9,4 @@ Zeta.Registration.RequestHandler = (->
       data: data
       error: onError
       success: onSuccess
-#
 )()

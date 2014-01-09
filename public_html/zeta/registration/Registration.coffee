@@ -2,9 +2,9 @@ Zeta.Registration.Registration = (->
   host = 'https://armada-test.z-infra.com'
 
   url =
-    access: '#{host}/access'
-    login: '#{host}/login'
-    register: '#{host}/register'
+    access: "#{host}/access"
+    login: "#{host}/login"
+    register: "#{host}/register"
 
   user = new Zeta.Registration.User()
 

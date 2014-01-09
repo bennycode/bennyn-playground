@@ -18,9 +18,11 @@ namespace Zeta:Registration:
 
     get_registration_payload: =>
       payload = {}
+
       for key of @
         if @[key] instanceof Zeta.Registration.UserProperty && @[key].is_valid()
           payload[key] = @[key].value
+
       JSON.stringify payload
 
     has_valid_registration_data: ->
