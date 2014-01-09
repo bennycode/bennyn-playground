@@ -1,3 +1,4 @@
+# TODO: Rename to UserBuilder
 Zeta.Registration.Registration = (->
   host = 'https://armada-test.z-infra.com'
 
@@ -10,8 +11,14 @@ Zeta.Registration.Registration = (->
   
   hide_other_guides = ->
     $('.guidance').css('display', 'none')
+    
+  initProperty = (selector, property) ->
+    console.log selector
+    console.log property
 
   init: ->
+    initProperty('#registration-form-name', user.name)
+  
     # Username
     $('#registration-form-name').on("focus keyup paste", ->
       # Input

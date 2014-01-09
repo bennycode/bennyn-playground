@@ -1,5 +1,5 @@
 Zeta.Registration.Registration = (function() {
-  var hide_other_guides, host, url, user;
+  var hide_other_guides, host, initProperty, url, user;
   host = 'https://armada-test.z-infra.com';
   url = {
     access: "" + host + "/access",
@@ -10,8 +10,13 @@ Zeta.Registration.Registration = (function() {
   hide_other_guides = function() {
     return $('.guidance').css('display', 'none');
   };
+  initProperty = function(selector, property) {
+    console.log(selector);
+    return console.log(property);
+  };
   return {
     init: function() {
+      initProperty('#registration-form-name', user.name);
       $('#registration-form-name').on("focus keyup paste", function() {
         user.name.value = $(this).val();
         user.name.validate();
