@@ -33,19 +33,22 @@ namespace Zeta:Registration:
       console.log "Username length: #{@value.length}"
     
       if @value.length is 0
+        @valid = false
+        @guidance.is_critical = true
         @guidance.title = "Please fill in your name first"
         @guidance.explanation = ""
-        @valid = false
         
       else if @value.length is 1
+        @valid = false
+        @guidance.is_critical = true
         @guidance.title = "2 characters or more"
         @guidance.explanation = ""
-        @valid = false
         
       else if @value.length > 1
+        @valid = true
+        @guidance.is_critical = false
         @guidance.title = ""
         @guidance.explanation = ""
-        @valid = true
       
     is_valid: =>
       @valid
@@ -69,19 +72,19 @@ namespace Zeta:Registration:
       console.log "Password length: #{@value.length}"  
       
       if @value.length is 0
+        @valid = false     
         @guidance.title = "Enter password"
         @guidance.explanation = ""
-        @valid = false     
         
       else if @value.length < 6
+        @valid = false    
         @guidance.title = "Please provide a valid password"
         @guidance.explanation = "6 characters or more"
-        @valid = false    
         
       else 
+        @valid = true    
         @guidance.title = ""
         @guidance.explanation = ""
-        @valid = true    
         
     is_valid: =>
       @value.length > 5

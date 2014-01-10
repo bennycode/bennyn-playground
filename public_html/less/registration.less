@@ -1,3 +1,6 @@
+@guidance-red: #FB0807;
+@guidance-yellow: #FFD200;
+
 // Mixins 
 .placeholder-color(@color) {
   ::-webkit-input-placeholder {
@@ -37,12 +40,52 @@ body {
     }
   }
 
-  input {
-    background-color: transparent;
-    color: white;
-    /* registration-form-name */
+  .registration-form-property {
+    
+    .input-container {
+      border: 2px solid transparent;
+      
+      &.error {
+        border-bottom-color: @guidance-red;
+      }
+      
+      &.warning {
+        border-bottom-color: @guidance-yellow;
+      }  
+    }
+    
+    .guidance-dot {
+      visibility: hidden;
+      
+      &.error {
+        visibility: visible;
+        color: @guidance-red;
+      }
+      
+      &.warning {
+        visibility: visible;
+        color: @guidance-yellow;
+      }
+    }
+    
+  }
+
+  .input-container {
     font-weight: bold;
     font-size: 50px;
-    width: 100%;
+    border-bottom: 2px solid @guidance-yellow;
+  }
+
+  .guidance-dot {
+    /*color: @guidance-yellow;*/
+    float: right;
+  }
+
+  input {
+    font-weight: bold;
+    font-size: 50px;
+
+    background-color: transparent;
+    color: white;
   }
 }

@@ -11,39 +11,57 @@ Zeta.Registration.UserBuilder = (->
   hide_other_guides = ->
     $('.guidance').css('display', 'none')      
     
-  disable_other_input_fields = (selector) ->
-    $('#registration-form input').not(selector).prop 'disabled', true;
+  disable_other_input_fields = (input_field) ->
+    $('#registration-form input').not(input_field).prop 'disabled', true;
     
   enable_other_input_fields = ->
-    $('#registration-form input').prop 'disabled', false;
+    $('#registration-form input').prop 'disabled', false;      
     
-  initProperty = (selector, property) ->
-    $(selector).on('focus keyup paste', ->
-      # Input
+  show_guidance = (element, property) ->
+    guidance_dot = $('.guidance-dot', element)
+    guidance_message = $('.guidance-message', element)
+    input_container = $('.input-container', element)
+    
+    guidance_message.css 'display', 'block'    
+    guidance_message.html "<p>#{property.guidance.title}<br/>#{property.guidance.explanation}</p>"
+    
+    if property.guidance.is_critical
+      guidance_dot.addClass 'error'
+      input_container.addClass 'error'
+    else
+      guidance_dot.addClass 'warning'
+      input_container.addClass 'warning'
+    
+  hide_guidance = (element) ->
+    guidance_dot = $('.guidance-dot', element)
+    guidance_message = $('.guidance-message', element)
+    input_container = $('.input-container', element)
+    
+    guidance_dot.removeClass 'warning error'
+    guidance_message.css 'display', 'none'
+    input_container.removeClass 'error warning'
+    
+  init_property = (element, property) ->
+    input_field = $('.input-field', element)
+    input_field
+    .on 'focus keyup paste', ->
       property.value = $(this).val()      
       property.validate()
-      
-      # Guidance
-      hide_other_guides();
-      
-      guide_element = $("#{selector} + .guidance")
-      
-      guide_element
-      .css('display', 'block')
-      .html "<p>#{property.guidance.title}<br/>#{property.guidance.explanation}</p>"
-      
-      if property.guidance.is_critical and property.valid is false
-        disable_other_input_fields(selector)
-        guide_element.css('color', 'red')
+    .on 'blur', ->
+      if property.valid is false
+        show_guidance(element, property)
+        disable_other_input_fields input_field
       else
+        hide_guidance(element)
         enable_other_input_fields()
-        
-    )
 
   init: ->
-    initProperty('#registration-form-name', user.name)
-    initProperty('#registration-form-email', user.email)
-    initProperty('#registration-form-password', user.password)
+    init_property($('#property-user-name'), user.name)
+    init_property($('#property-user-email'), user.email)
+    init_property($('#property-user-password'), user.password)
+    # TODO: Guidance message for password
+    
+    $('#registration-form-user-name').focus()
 
   register: (user) ->
     if user.has_valid_registration_data

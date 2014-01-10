@@ -8,38 +8,52 @@
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <!--<script src="http://code.jquery.com/jquery-2.0.3.min.map"></script>-->
   </head>
-  <body onload="document.getElementById('registration-form-name').focus();">
-    <div id="registration-form">
-      <form>
+  <body>
+    <div id="registration-form-container">
+      <form id="registration-form">
+
         <!-- Username -->
-        <div class="registration-form-property">
-          <input
-            id="registration-form-name"
-            type="text"
-            placeholder="Your name"
-            />
-          <div class="guidance"></div>
+        <div id="property-user-name" class="registration-form-property">
+          <div class="input-container">
+            <input
+              id="registration-form-user-name"
+              class="input-field"
+              type="text"
+              placeholder="Your name"
+              />
+            <div class="guidance-dot">•</div>
+          </div>
+          <div class="guidance-message"></div>
         </div>
 
         <!-- Email -->
-        <div class="registration-form-property">
-          <input
-            id="registration-form-email"
-            type="text"
-            placeholder="Email"
-            />
-          <div class="guidance"></div>
+        <div id="property-user-email" class="registration-form-property">
+          <div class="input-container">
+            <input
+              id="registration-form-user-email"
+              class="input-field"
+              type="text"
+              placeholder="Email"
+              />
+            <div class="guidance-dot">•</div>
+          </div>
+          <div class="guidance-message"></div>
         </div>
 
         <!-- Password -->
-        <div class="registration-form-property">
-          <input
-            id="registration-form-password"
-            type="password"
-            placeholder="Password"
-            />
-          <div class="guidance"></div>
+        <div id="property-user-email" class="registration-form-property">
+          <div class="input-container">
+            <input
+              id="registration-form-password"
+              class="input-field"
+              type="password"
+              placeholder="Password"
+              />
+            <div class="guidance-dot">•</div>
+          </div>
+          <div class="guidance-message"></div>
         </div>
+
       </form>
     </div>
     <script src="zeta/namespace.js"></script>

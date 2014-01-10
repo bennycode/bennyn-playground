@@ -13,11 +13,38 @@ body {
 #registration-form *:focus {
   outline: 0;
 }
-#registration-form input {
-  background-color: transparent;
-  color: white;
-  /* registration-form-name */
+#registration-form .registration-form-property .input-container {
+  border: 2px solid transparent;
+}
+#registration-form .registration-form-property .input-container.error {
+  border-bottom-color: #fb0807;
+}
+#registration-form .registration-form-property .input-container.warning {
+  border-bottom-color: #ffd200;
+}
+#registration-form .registration-form-property .guidance-dot {
+  visibility: hidden;
+}
+#registration-form .registration-form-property .guidance-dot.error {
+  visibility: visible;
+  color: #fb0807;
+}
+#registration-form .registration-form-property .guidance-dot.warning {
+  visibility: visible;
+  color: #ffd200;
+}
+#registration-form .input-container {
   font-weight: bold;
   font-size: 50px;
-  width: 100%;
+  border-bottom: 2px solid #ffd200;
+}
+#registration-form .guidance-dot {
+  /*color: @guidance-yellow;*/
+  float: right;
+}
+#registration-form input {
+  font-weight: bold;
+  font-size: 50px;
+  background-color: transparent;
+  color: white;
 }
