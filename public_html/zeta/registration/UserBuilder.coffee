@@ -11,6 +11,9 @@ Zeta.Registration.UserBuilder = (->
   hide_other_guides = ->
     $('.guidance').css('display', 'none')
     
+  disable_other_input_fields = ->
+    console.log 'disable_other_input_fields'
+    
   initProperty = (selector, property) ->
     $(selector).on('focus keyup paste', ->
       # Input
@@ -26,8 +29,10 @@ Zeta.Registration.UserBuilder = (->
       .css('display', 'block')
       .html "<p>#{property.guidance.title}<br/>#{property.guidance.explanation}</p>"
       
-      if property.guidance.is_critical
+      if property.guidance.is_critical and property.valid is false
+        disable_other_input_fields()
         guide_element.css('color', 'red')
+        
     )
 
   init: ->
