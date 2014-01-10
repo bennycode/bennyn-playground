@@ -122,37 +122,40 @@ namespace Zeta:Registration:
       console.log "Email length: #{@value.length}"
     
       if @value.length == 0
+        @valid = false
+        @guidance.is_critical = false
         @guidance.title = "Enter email"
         @guidance.explanation = ""
-        @valid = false
         
       else if @value.length == 1
+        @valid = false
+        @guidance.is_critical = false
         @guidance.title = "2 characters or more"
         @guidance.explanation = ""
-        @valid = false
         
       # Enough chars available
       else if @value.length > 1
         
         # Is there an @?
         if @value.indexOf("@") == -1
+          @valid = false
+          @guidance.is_critical = true
           @guidance.title = "Don't forget the @"
           @guidance.explanation = ""
-          @valid = false
-          console.log @value, @value.indexOf "@"
-          
 
         # Do we have a dot (.) ?
         else if @value.indexOf(".") == -1
+          @valid = false
+          @guidance.is_critical = true
           @guidance.title = "Dot required in domain name"
           @guidance.explanation = ""
-          @valid = false
 
         # Yes, everything is right in place :)
         else
+          @valid = true
+          @guidance.is_critical = false
           @guidance.title = ""
           @guidance.explanation = ""
-          @valid = true
       
     is_valid: ->
       emailPattern = /// ^ #begin of line
