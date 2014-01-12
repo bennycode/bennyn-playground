@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/pure-0.3.0-min.css" />
+    <style>
+      .zeta-wrapper {
+        display: none;
+      }
+
+      .welcome-picture {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-transition: -webkit-transform 10s, -webkit-opacity 10s;
+        -webkit-transition-delay: 1s;
+        position: absolute;
+      }
+
+      .welcome-picture.animation {
+        /* TODO: Split scale & opacity transition */
+        -webkit-transform: scale(1.2, 1.2);
+        -webkit-opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="zeta-wrapper">
+      <div class="welcome-picture background"></div>
+      <div class="welcome-picture foreground"></div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+      $(window).load(function() {
+        $('.background').css({
+          backgroundImage: "url('images/MariaBW.jpg')",
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+
+        $('.foreground').css({
+          backgroundImage: "url('images/RyanBW.jpg')",
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+
+        setTimeout(function() {
+          $('.foreground').addClass('animation').one('webkitTransitionEnd', function(event) {
+            console.log(event.originalEvent.propertyName);
+            // 1. Remove foreground
+            // 2. Set background to foreground
+            // 3. Create new background
+          });
+        }, 1);
+
+        $('.zeta-wrapper').css({
+          display: 'block'
+        });
+
+      });
+    </script>
+  </body>
+</html>
