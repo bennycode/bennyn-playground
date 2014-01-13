@@ -1,0 +1,116 @@
+===
+Email is not white-listed:
+
+{"email":"bn@bennyn.de","name":"Benny","password":"123456"}
+
+HTTP 403:
+
+{
+  "code": 403,
+  "message": "Bad e-mail address",
+  "label": "bad-email"
+}
+
+
+===
+Email syntax is wrong:
+
+{"email":"bnbennyn.de","name":"Benny","password":"123456"}
+
+HTTP 403:
+
+{
+  "code": 403,
+  "message": "Bad e-mail address",
+  "label": "bad-email"
+}
+
+===
+Registration already exists:
+
+{"email":"bennyn+test@wearezeta.com","name":"Benny","password":"123456"}
+
+HTTP 201:
+
+{
+  "email": "bennyn+test@wearezeta.com",
+  "phone": null,
+  "accent": [
+    0.13729999959468842,
+    0.5685999989509583,
+    0.8274499773979187,
+    1
+  ],
+  "picture": [],
+  "name": "Benny",
+  "id": "e40516c8-1692-486d-ab97-5decf2d38d4c"
+}
+
+===
+Request message is wrong:
+
+{"email"}
+
+HTTP 400:
+
+{
+  "code": 400,
+  "message": "Failed reading: satisfyWith",
+  "label": "bad-request"
+}
+
+===
+Password missing:
+
+{"email":"benny+something@wearezeta.com","name":"Benny"}
+
+HTTP 400:
+
+{
+  "code": 400,
+  "message": "key \"password\" not present",
+  "label": "bad-request"
+}
+
+===
+Email missing:
+
+{"name":"Benny","password":"123456"}
+
+HTTP 400:
+
+{
+  "code": 400,
+  "message": "key \"email\" not present",
+  "label": "bad-request"
+}
+
+===
+Name missing:
+
+{"email":"benny+something@wearezeta.com","password":"123456"}
+
+HTTP 400: 
+
+{"email":"benny+something@wearezeta.com","password":"123456"}
+
+===
+Everything is cool:
+
+{"email":"benny+something@wearezeta.com","name":"Benny","password":"123456"}
+
+HTTP 201:
+
+{
+  "email": "benny+something@wearezeta.com",
+  "phone": null,
+  "accent": [
+    0.13729999959468842,
+    0.5685999989509583,
+    0.8274499773979187,
+    1
+  ],
+  "picture": [],
+  "name": "Benny",
+  "id": "adb98d5b-d33a-4760-a837-8af78c04fcb1"
+}

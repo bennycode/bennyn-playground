@@ -7,8 +7,8 @@ Zeta.Registration.UserBuilder = (->
     register: "#{host}/register"
     
   user = new Zeta.Registration.User()
-  isPreChecked = false
-  isReleased = true
+  isPreChecked = false # Client-side validation has taken place
+  isReleased = true # Submit button is blocked (to avoid spamming)
     
   # INPUT CHECK
   init_property = (element, property) ->
@@ -35,10 +35,10 @@ Zeta.Registration.UserBuilder = (->
   enable_submit_button = (enable) ->
     if enable is true
       isReleased = true
-      $('#registration-form button').attr('class', 'pure-button pure-button-primary');
+      $('#registration-form button').attr 'class', 'pure-button pure-button-primary'
     else
       isReleased = false
-      $('#registration-form button').attr('class', 'pure-button pure-button-disabled');
+      $('#registration-form button').attr 'class', 'pure-button pure-button-disabled'
       
   # GUIDANCE
   show_guidance = (element, property) ->
@@ -78,9 +78,9 @@ Zeta.Registration.UserBuilder = (->
   # INIT
   init: ->
     # Input fields
-    init_property($('#property-user-name'), user.name)
-    init_property($('#property-user-email'), user.email)
-    init_property($('#property-user-password'), user.password)
+    init_property $('#property-user-name'), user.name
+    init_property $('#property-user-email'), user.email
+    init_property $('#property-user-password'), user.password
     # Submit button
     $('#registration-form button').on 'click', (event) ->
       event.preventDefault();
@@ -95,13 +95,13 @@ Zeta.Registration.UserBuilder = (->
 
           # Registration successful OR (!) response code 200
           onResponse = (data, textStatus, jqXHR) ->
-            console.log "Reiceved response from Server:"
-            console.log JSON.stringify data
-            console.log data.status
-            console.log data.responseText.label
+            newUser = data
+            console.log "Registration successful:"
+            console.log newUser.email
             onComplete()
 
           # Registration unsuccessful
+          # TODO: Check status code 500 and display "Retry later"
           onError = (data, textStatus, jqXHR) ->
             console.log "Error: " + JSON.stringify data
             message = data.responseJSON.message
