@@ -1,3 +1,10 @@
+###
+  Test API (you might need an access token!):
+  https://api-docs.z-infra.com/swagger/
+  
+  User API documentation:
+  https://docs.z-infra.com/dev-device-api/latest/reference/users.html
+###
 Zeta.Registration.UserBuilder = (->
   host = 'https://armada-test.z-infra.com'
 
@@ -67,7 +74,7 @@ Zeta.Registration.UserBuilder = (->
   hide_other_guides = ->
     $('.guidance').css('display', 'none')    
 
-  # LOCKING
+  # INPUT LOCKING
   enable_other_input_fields = ->
     $('#registration-form input').prop 'disabled', false;      
     
@@ -111,7 +118,7 @@ Zeta.Registration.UserBuilder = (->
             on_complete()
 
           # Send registration request to the server
-          Zeta.Registration.RequestHandler.postData(
+          Zeta.Registration.RequestHandler.post_json(
             url.register
             user.get_registration_payload()
             on_response

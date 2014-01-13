@@ -1,0 +1,48 @@
+===
+Request syntax is wrong (example: sending a non-JSON format):
+
+password=abc123&login=bennyn%2Btest%40wearezeta.com
+
+HTTP 400:
+
+{
+    "readyState": 4,
+    "responseText": "{\"code\":400,\"message\":\"Failed reading: satisfy\",\"label\":\"bad-request\"}",
+    "responseJSON": {
+        "code": 400,
+        "message": "Failed reading: satisfy",
+        "label": "bad-request"
+    },
+    "status": 400,
+    "statusText": "Bad Request"
+}
+
+===
+Wrong password or username OR the user has not clicked the verification email link:
+
+{"password":"this-is-wrong", "email":"benny+something@wearezeta.com"}
+
+HTTP 403:
+
+{
+    "readyState": 4,
+    "responseText": "",
+    "status": 403,
+    "statusText": "Forbidden"
+}
+
+===
+Everything is fine:
+
+{"password":"my-secret", "email":"benny+something@wearezeta.com"}
+
+HTTP 200:
+
+{
+    "expires_in": 3600,
+    "access_token": "59c93d6578043b02d228ebca4488be1111e9b5d3eded09c177ba7cb2f95b1fa0.1.1389630968.a.21719f32-62ba-46f5-83c8-92f9bcab65a3.4174068398620083202",
+    "token_type": "Bearer"
+}
+
+===
+
