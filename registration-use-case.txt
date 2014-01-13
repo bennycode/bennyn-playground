@@ -1,0 +1,5 @@
+1. Add a user to the whitelist: http://earlybird.wearezeta.com/invite/
+2. Register the whitelisted user on the web app
+3. After registration, click on the VERIFY link in the email that has been sent
+4. Now it is possible to login with that user to receive an access token
+   -> if the VERIFY button has not been clicked, a 403 will be sent when trying to log-in

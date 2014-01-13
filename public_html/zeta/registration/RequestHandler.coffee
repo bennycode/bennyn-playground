@@ -10,6 +10,6 @@ Zeta.Registration.RequestHandler = (->
       contentType: 'application/json; charset=utf-8'
       dataType: 'json'
       data: data
-      error: on_error
-      success: on_success
+    .done(on_success)
+    .fail(on_error)
 )()
