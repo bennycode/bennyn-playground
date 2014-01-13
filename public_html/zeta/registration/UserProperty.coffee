@@ -11,10 +11,12 @@ namespace Zeta:Registration:
         title: 'guide.title'
         explanation: 'guide.explanation'
       }
-
-    # TODO: Remove is_valid because there now is @valid
-    is_valid: ->
-      @value.length > 0
+    set_guidance: (is_critical, title, explanation) ->
+      @guidance.is_critical = is_critical
+      @guidance.title = title
+      @guidance.explanation = explanation
+      if @guidance.is_critical is true
+        @valid = false
       
 ################################################################################
 # Username
@@ -49,9 +51,6 @@ namespace Zeta:Registration:
         @guidance.is_critical = false
         @guidance.title = ""
         @guidance.explanation = ""
-      
-    is_valid: =>
-      @valid
 
 ################################################################################
 # Password
@@ -85,9 +84,6 @@ namespace Zeta:Registration:
         @valid = true    
         @guidance.title = ""
         @guidance.explanation = ""
-        
-    is_valid: =>
-      @value.length > 5
  
 ################################################################################
 # Email
@@ -159,16 +155,3 @@ namespace Zeta:Registration:
           @guidance.is_critical = false
           @guidance.title = ""
           @guidance.explanation = ""
-      
-    is_valid: ->
-      emailPattern = /// ^ #begin of line
-         ([\w.-]+)         #one or more letters, numbers, _ . or -
-         @                 #followed by an @ sign
-         ([\w.-]+)         #then one or more letters, numbers, _ . or -
-         \.                #followed by a period
-         ([a-zA-Z.]{2,6})  #followed by 2 to 6 letters or periods
-        $ ///i #end of line and ignore case        
-      if @value.match emailPattern
-        true
-      else
-        false

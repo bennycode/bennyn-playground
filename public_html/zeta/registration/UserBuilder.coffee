@@ -8,6 +8,7 @@ Zeta.Registration.UserBuilder = (->
     
   user = new Zeta.Registration.User()
   isPreChecked = false
+  isReleased = true
     
   # INPUT CHECK
   init_property = (element, property) ->
@@ -33,8 +34,10 @@ Zeta.Registration.UserBuilder = (->
       
   enable_submit_button = (enable) ->
     if enable is true
+      isReleased = true
       $('#registration-form button').attr('class', 'pure-button pure-button-primary');
     else
+      isReleased = false
       $('#registration-form button').attr('class', 'pure-button pure-button-disabled');
       
   # GUIDANCE
@@ -81,18 +84,40 @@ Zeta.Registration.UserBuilder = (->
     # Submit button
     $('#registration-form button').on 'click', (event) ->
       event.preventDefault();
-      # TODO: Block submit button
       # Release submit button on response!
-      Zeta.Registration.RequestHandler.postData(
-        url.register
-        user.get_registration_payload()
-        (data, textStatus, jqXHR) ->
-          console.log "Registration successful"
-          console.log JSON.stringify data
-        (data, textStatus, jqXHR) ->
-          console.log "Registration failed"
-          console.log JSON.stringify data
-        )      
+      if user.has_valid_registration_data() is true
+        if isReleased is true
+          enable_submit_button false
+          
+          # Called after "onResponse" OR "onError"
+          onComplete = ->
+            enable_submit_button true
+
+          # Registration successful OR (!) response code 200
+          onResponse = (data, textStatus, jqXHR) ->
+            console.log "Reiceved response from Server:"
+            console.log JSON.stringify data
+            console.log data.status
+            console.log data.responseText.label
+            onComplete()
+
+          # Registration unsuccessful
+          onError = (data, textStatus, jqXHR) ->
+            console.log "Error: " + JSON.stringify data
+            message = data.responseJSON.message
+            switch data.responseJSON.label
+              when "bad-email"
+                user.email.set_guidance true, message, ""
+                show_guidance $('#property-user-email'), user.email
+            onComplete()
+
+          # Send registration request to the server
+          Zeta.Registration.RequestHandler.postData(
+            url.register
+            user.get_registration_payload()
+            onResponse
+            onError
+          )      
     # Focus
     $('#registration-form-user-name').focus()
 #

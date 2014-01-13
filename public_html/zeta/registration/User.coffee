@@ -20,13 +20,13 @@ namespace Zeta:Registration:
       payload = {}
 
       for key of @
-        if @[key] instanceof Zeta.Registration.UserProperty && @[key].is_valid()
+        if @[key] instanceof Zeta.Registration.UserProperty && @[key].valid
           payload[key] = @[key].value
 
       JSON.stringify payload
 
     has_valid_registration_data: ->
-      if @name.is_valid() && @email.is_valid() && @password.is_valid()
+      if @name.valid && @email.valid && @password.valid
         true
       else
         false
