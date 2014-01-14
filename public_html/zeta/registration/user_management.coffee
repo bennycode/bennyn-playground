@@ -1,6 +1,6 @@
 ###
-  Execution:
-  Zeta.Registration.UserManagement.login("bennyn+test2@wearezeta.com", "123456")
+  User Management API:
+  https://docs.z-infra.com/dev-device-api/latest/reference/users.html
 ###
 Zeta.Registration.UserManagement = (->
   # TODO: Put URLs in a central place
@@ -17,7 +17,10 @@ Zeta.Registration.UserManagement = (->
     }
   }
     
-  # API
+  ###
+    Execution:
+    Zeta.Registration.UserManagement.login("bennyn+test2@wearezeta.com", "123456")
+  ###
   login: (login, password) ->
     payload = {
       password: password
@@ -51,15 +54,18 @@ Zeta.Registration.UserManagement = (->
     
     Responses:
     - {"readyState":4,"responseText":"","status":202,"statusText":"Accepted"} 
+    
+    Execution:
+    Zeta.Registration.UserManagement.change_own_phone_number("01722290229", "DE")
   ###
-  self_phone: ->
+  change_own_phone_number: (phone_number, country_code) ->
     on_response = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
       if data.status is 202
         console.info "Phone number changed!"
    
     data = {
-      phone: "+4915771898972"
+      phone: Zeta.Registration.Utils.convert_phone_number_to_e164 phone_number, country_code
     }
     payload = JSON.stringify data
       
