@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" />
+    <link rel="stylesheet" href="css/registration.css"/>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/libs/uuid.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-2.0.3.min.map"></script>-->
+  </head>
+  <body>
+    <div id="registration-form-container">
+      <form id="registration-form" autocomplete="off">
+
+        <!-- Username -->
+        <div id="property-user-name" class="registration-form-property">
+          <div class="input-container">
+            <input
+              id="registration-form-user-name"
+              class="input-field"
+              type="text"
+              placeholder="Your name"
+              />
+            <div class="guidance-dot">•</div>
+          </div>
+          <div class="guidance-message"></div>
+        </div>
+
+        <!-- Email -->
+        <div id="property-user-email" class="registration-form-property">
+          <div class="input-container">
+            <input
+              id="registration-form-user-email"
+              class="input-field"
+              type="text"
+              placeholder="Email"
+              />
+            <div class="guidance-dot">•</div>
+          </div>
+          <div class="guidance-message"></div>
+        </div>
+
+        <!-- Password -->
+        <div id="property-user-password" class="registration-form-property">
+          <div class="input-container">
+            <input
+              id="registration-form-password"
+              class="input-field"
+              type="password"
+              placeholder="Password"
+              />
+            <div class="guidance-dot">•</div>
+          </div>
+          <div class="guidance-message"></div>
+        </div>
+
+        <button class="pure-button pure-button-disabled">Create User</button>
+
+      </form>
+    </div>
+    <script src="js/libs/PhoneFormat.js"></script>
+    <script src="zeta/namespace.js"></script>
+    <script src="zeta/conversations/conversation.js"></script>
+    <script src="zeta/registration/utils.js"></script>
+    <script src="zeta/registration/user_properties.js"></script>
+    <script src="zeta/registration/user.js"></script>
+    <script src="zeta/registration/request_handler.js"></script>
+    <script src="zeta/registration/user_management.js"></script>
+    <script src="zeta/registration/user_builder.js"></script>
+    <script src="zeta/main/app.js"></script>
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+    <!--<script src="zeta/main/debug.js"></script>-->
+  </body>
+</html>
