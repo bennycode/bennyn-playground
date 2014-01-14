@@ -15,6 +15,8 @@ Zeta.Registration.UserManagement = (->
     login: {
       access_token: null
     }
+    conversations: {
+    }
   }
     
   ###
@@ -59,6 +61,7 @@ Zeta.Registration.UserManagement = (->
     Zeta.Registration.UserManagement.change_own_phone_number("01722290229", "DE")
   ###
   change_own_phone_number: (phone_number, country_code) ->
+  
     on_response = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
       if data.status is 202
@@ -67,20 +70,48 @@ Zeta.Registration.UserManagement = (->
     data = {
       phone: Zeta.Registration.Utils.convert_phone_number_to_e164 phone_number, country_code
     }
-    payload = JSON.stringify data
       
     $.ajax
-      url: "#{host}/self/phone?access_token=" + expose.login.access_token
+      url: "#{host}/self/phone?access_token=#{expose.login.access_token}"
       type: 'PUT'
       crossDomain: true
       contentType: 'application/json; charset=utf-8'
       dataType: 'json'
-      data: payload
+      data: JSON.stringify data
     .done(on_response)
     .fail(on_response)
   
   # GETTERS
-  getLogin: ->
-    expose.login    
+  get_login: ->
+    expose.login        
+    
+  get_conversations: ->
+  
+    on_response = (data, textStatus, jqXHR) ->    
+      conversations = {}
+      # TODO:
+      # Map the conversation, the creator and all members into objects      
+      for key, conversation of data.conversations
+        expose.conversations[conversation.id] = 
+        new Zeta.Conversations.Conversation conversation.id, conversation.name
+        
+      console.info "Fetched #{Object.keys(expose.conversations).length} conversations!"
+  
+    $.ajax
+      url: "#{host}/conversations/?access_token=#{expose.login.access_token}"
+      success: on_response
+
+  ###
+    @param {string} cnv "496d0d21-0b05-49b5-8087-de94f3465b7b"
+    @returns {object}
+  ###
+  get_conversation: (cnv) ->
+    
+    on_response = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data  
+  
+    $.ajax
+      url: "#{host}/conversations/#{cnv}/?access_token=#{expose.login.access_token}"
+      success: on_response    
 #
 )()

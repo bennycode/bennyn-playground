@@ -1,0 +1,21 @@
+{
+    "creator": "496d0d21-0b05-49b5-8087-de94f3465b7b",
+    "members": {
+        "self": {
+            "status": 0,
+            "last_read": null,
+            "muted_time": null,
+            "muted": null,
+            "status_time": "2014-01-13T15:49:18.263Z",
+            "status_ref": "0.0",
+            "id": "496d0d21-0b05-49b5-8087-de94f3465b7b",
+            "archived": null
+        },
+        "others": []
+    },
+    "name": null,
+    "id": "496d0d21-0b05-49b5-8087-de94f3465b7b",
+    "type": 1,
+    "last_event_time": "2014-01-13T15:49:18.263Z",
+    "last_event": "1.800122000a2524cd"
+}
