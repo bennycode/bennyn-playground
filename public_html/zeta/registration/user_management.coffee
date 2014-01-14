@@ -18,6 +18,9 @@ Zeta.Registration.UserManagement = (->
     conversations: {
     }
   }
+  
+  get_count_of_conversations = ->
+    Object.keys(expose.conversations).length  
     
   ###
     Execution:
@@ -84,8 +87,12 @@ Zeta.Registration.UserManagement = (->
   
   # GETTERS
   get_login: ->
-    expose.login        
+    expose.login   
     
+  list_conversations: ->
+    for key, conversation of expose.conversations
+      console.log "#{key}: #{conversation.name}"
+
   get_conversations: ->
   
     on_response = (data, textStatus, jqXHR) ->    

@@ -1,5 +1,9 @@
 body {
   background-color: gray;
+  font-family: 'ARS Maquette Pro Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
 }
 #registration-form {
   width: 700px;
@@ -10,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#registration-form *:focus {
+#registration-form input:focus {
   outline: 0;
 }
 #registration-form .registration-form-property .input-container {

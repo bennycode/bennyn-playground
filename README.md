@@ -1,5 +1,5 @@
 Zeta.App
-	- Session
+-  Session
 	  holds User
 	  holds Conversation
 
