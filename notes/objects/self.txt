@@ -1,0 +1,13 @@
+{
+    "email": "bennyn+test2@wearezeta.com",
+    "phone": null,
+    "accent": [
+        0.13729999959468842,
+        0.5685999989509583,
+        0.8274499773979187,
+        1
+    ],
+    "picture": [],
+    "name": "Benny Test 2",
+    "id": "496d0d21-0b05-49b5-8087-de94f3465b7b"
+}

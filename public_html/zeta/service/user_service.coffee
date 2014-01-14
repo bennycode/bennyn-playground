@@ -5,6 +5,16 @@
 Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
+
+  get_own_user: (callback) ->
+    config = 
+      url: Zeta.Service.URLs.self()
+      type: 'GET'
+      on_done:
+        callback
+      
+    Zeta.Utils.RequestHandler.send_request config
+
   ###
     @param {string} phone_number Phone number in E.164 format: "+491722290229" 
     @param {function} callback
@@ -13,7 +23,7 @@ Zeta.Service.UserService = (->
     console.log "= Zeta.Service.UserService.change_own_phone_number"
 
     config =
-      url: Zeta.Service.URLs.change_own_phone_number Zeta.Storage.Session.get_access_token()
+      url: Zeta.Service.URLs.change_own_phone_number
       type: 'PUT'
       data: 
         phone: phone_number

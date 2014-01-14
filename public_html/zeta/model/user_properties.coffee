@@ -2,7 +2,7 @@
 # General
 # - https://github.com/wearezeta/zclient-ios-mac/blob/master/Shared/Registration/Assets/Registration.strings
 ################################################################################
-namespace Zeta:Registration:
+namespace Zeta:Model:
   class UserProperty
     constructor: (@value = '') ->
       @valid = false
@@ -25,14 +25,14 @@ namespace Zeta:Registration:
 # "profile.username.guidance.invalidcharacters" = "Just letters and numbers, please";
 # "profile.username.guidance.tooshort" = "Your username must be 3 characters or more";
 ################################################################################
-namespace Zeta:Registration:
+namespace Zeta:Model:
   class Username extends UserProperty
     constructor: (value) ->
       super(value)
       @validate()
       
     validate: =>
-      console.log "Username length: #{@value.length}"
+      # console.log "Username length: #{@value.length}"
     
       if @value.length is 0
         @valid = false
@@ -61,14 +61,14 @@ namespace Zeta:Registration:
 # "profile.password.guidance.spacenotallowed" = "Please delete any spaces and try again";
 # "profile.password.verify.hint" = "Re-enter password";
 ################################################################################
-namespace Zeta:Registration:
+namespace Zeta:Model:
   class UserPassword extends UserProperty
     constructor: (value) ->
       super(value)
       @validate()
       
     validate: =>
-      console.log "Password length: #{@value.length}"  
+      # console.log "Password length: #{@value.length}"  
       
       if @value.length is 0
         @valid = false     
@@ -111,14 +111,14 @@ namespace Zeta:Registration:
 # "profile.email.guidance.alreadyentered-inactive.title.link1" = "Re-send";
 # "profile.email.guidance.alreadyentered-inactive.explanation" = "";
 ################################################################################
-namespace Zeta:Registration:
+namespace Zeta:Model:
   class UserEmailAddress extends UserProperty
     constructor: (value) ->
       super(value)  
       @validate()
       
     validate: =>
-      console.log "Email length: #{@value.length}"
+      # console.log "Email length: #{@value.length}"
     
       if @value.length == 0
         @valid = false

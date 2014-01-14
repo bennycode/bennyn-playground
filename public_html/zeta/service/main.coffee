@@ -2,6 +2,19 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.Main = (->
 
+  update_user: (callback) ->
+    console.log "= Zeta.Service.Main.update_user"
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      user = new Zeta.Model.User()
+      user.init(data)
+      Zeta.Storage.Session.set_user(user)
+      callback?()
+      
+    # Service
+    Zeta.Service.UserService.get_own_user on_done
+    
   ###
     @param {string} phone_number "01722290229"
     @param {string} country_code "DE"
@@ -35,9 +48,9 @@ Zeta.Service.Main = (->
         
         login = new Zeta.Model.Login(data.access_token)
         Zeta.Storage.Session.set_login(login)
+        Zeta.Service.Main.update_user(callback)
       else
-        console.log "Authentication FAILED"
-      callback?()
+        console.log "Authentication FAILED"        
     
     # Service
     Zeta.Service.UserService.login login, password, on_done
