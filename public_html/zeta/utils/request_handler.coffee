@@ -1,15 +1,21 @@
-Zeta.Registration.RequestHandler = (->
-  post_json: (url, data, on_success, on_error) ->
-    if typeof data isnt 'string'
-      data = JSON.stringify data
+Zeta = {} unless Zeta?
+Zeta.Utils = {} unless Zeta.Utils?
+Zeta.Utils.RequestHandler = (->  
+  # Public
+  send_json: (config) ->
+    if typeof config.data isnt 'string'
+      config.data = JSON.stringify config.data
   
     $.ajax
-      url: url
-      type: 'POST'
+      url: config.url
+      type: config.type
       crossDomain: true
       contentType: 'application/json; charset=utf-8'
       dataType: 'json'
-      data: data
-    .done(on_success)
-    .fail(on_error)
+      data: config.data
+    .done(config.on_success)
+    .fail(config.on_error)
+    .always(config.on_done)    
+
+#
 )()

@@ -1,12 +1,12 @@
 Zeta = {} unless Zeta?
-Zeta.App = {} unless Zeta.App?
-Zeta.App.Session = (->
+Zeta.Storage = {} unless Zeta.Storage?
+Zeta.Storage.Session = (->
   # Private
   user = null
   login = null
   conversations = null
   
-  # Public
+  # Setters
   set_user: (value) ->
     user = value
     
@@ -15,6 +15,10 @@ Zeta.App.Session = (->
     
   set_conversations: (value) ->
     conversations = value    
+  
+  # Getters
+  get_access_token: ->
+    login.access_token
   
   get_user: ->
     user

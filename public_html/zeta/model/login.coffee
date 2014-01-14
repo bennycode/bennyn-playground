@@ -1,4 +1,4 @@
-namespace Zeta:Conversations:
-  class Conversation
-    constructor: (@id, @name) ->
+namespace Zeta:Model:
+  class Login
+    constructor: (@access_token) ->
     
