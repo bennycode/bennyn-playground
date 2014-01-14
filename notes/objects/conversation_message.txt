@@ -1,0 +1,11 @@
+{
+    "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+    "time": "2014-01-14T11:36:25.896Z",
+    "data": {
+        "contents": "Hello World from web-app!",
+        "entities": []
+    },
+    "from": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
+    "id": "6ea.800122000a252d89",
+    "type": "conversation.message-add"
+}

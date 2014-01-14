@@ -34,8 +34,9 @@ Zeta.Registration.UserManagement = (->
       payload.email = login
       
     on_success = (data, textStatus, jqXHR) ->
-      console.log "Login successful"
       expose.login.access_token = data.access_token
+      console.info "Login successful. Access Token:"
+      console.info expose.login.access_token
       
     on_error = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data    
@@ -95,6 +96,7 @@ Zeta.Registration.UserManagement = (->
         expose.conversations[conversation.id] = 
         new Zeta.Conversations.Conversation conversation.id, conversation.name
         
+      console.log JSON.stringify data.conversations
       console.info "Fetched #{Object.keys(expose.conversations).length} conversations!"
   
     $.ajax
@@ -102,16 +104,46 @@ Zeta.Registration.UserManagement = (->
       success: on_response
 
   ###
-    @param {string} cnv "496d0d21-0b05-49b5-8087-de94f3465b7b"
+    @param {string} cid Conversation ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b"
     @returns {object}
   ###
-  get_conversation: (cnv) ->
+  get_conversation: (cid) ->
     
     on_response = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data  
   
     $.ajax
-      url: "#{host}/conversations/#{cnv}/?access_token=#{expose.login.access_token}"
+      url: "#{host}/conversations/#{cid}/?access_token=#{expose.login.access_token}"
       success: on_response    
+
+  ###
+    @param {string} cid Conversation ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b"
+    @param {string} plain_message "Hello World!"
+    @returns {object}
+    @see https://github.com/wearezeta/webrtc/blob/master/ZCore/Messaging/ZBackend.cpp
+    @see https://docs.google.com/a/wearezeta.com/document/d/1OufUGikctztsB4ZHBWDAfsQ_f-oCNR89Pcc8sm8un5U
+    @see http://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_.28random.29
+    @see https://github.com/LiosK/UUID.js
+  ###
+  post_message_to_conversation: (cid, plain_message) ->
+  
+    on_response = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data  
+  
+    data = {
+      nonce: UUID.genV4().hexString
+      entities: []
+      content: plain_message
+    }
+  
+    $.ajax
+      url: "#{host}/conversations/#{cid}/messages/?access_token=#{expose.login.access_token}"
+      type: 'POST'
+      crossDomain: true
+      contentType: 'application/json; charset=utf-8'
+      dataType: 'json'
+      data: JSON.stringify data
+    .done(on_response)
+    .fail(on_response)    
 #
 )()
