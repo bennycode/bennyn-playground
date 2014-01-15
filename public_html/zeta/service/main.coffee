@@ -17,7 +17,7 @@ Zeta.Service.Main = (->
     handle_conversations = (conversations) ->
       for key, value of conversations
         conversation = new Zeta.Model.Conversation value
-        conversation.log_name()
+        Zeta.Storage.Session.add_conversation key, conversation
     
     on_done = (data, textStatus, jqXHR) ->
       handle_conversations data.conversations if data.conversations

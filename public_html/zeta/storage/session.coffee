@@ -4,9 +4,9 @@ Zeta.Storage.Session = (->
   # Private
   user = null
   login = null
-  conversations = null
+  conversations = {}
   
-  # Setters
+  # Plain setters
   set_user: (value) ->
     user = value
     
@@ -16,7 +16,7 @@ Zeta.Storage.Session = (->
   set_conversations: (value) ->
     conversations = value    
   
-  # Getters
+  # Plain getters
   get_access_token: ->
     login.access_token
   
@@ -28,5 +28,14 @@ Zeta.Storage.Session = (->
     
   get_conversations: ->
     conversations
+    
+  # Extra methods
+  add_conversation: (key, value) ->
+    conversations[key] = value  
+    
+  list_conversations: ->
+    for key, value of conversations
+      value.log_name()
+   
 #
 )()
