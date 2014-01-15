@@ -10,6 +10,19 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.Main = (->
 
+  ###
+    Retrieves data of all conversations from the backend.
+    If there is a UID (for a participant, a creator of a chat or sth. else)
+    then this method tries to get also this information and to map it into
+    objects.
+  ###
+  get_all_conversations_with_details: (callback) ->
+    Zeta.Service.Main.get_conversations(->
+      Zeta.Service.Main.get_names_for_all_conversations(-> 
+        Zeta.Storage.Session.list_conversations()
+      )
+    )
+
   get_names_for_all_conversations: (callback) ->
     console.log "= Zeta.Service.Main.get_names_for_all_conversations"
     console.log "Conversations: " + Zeta.Storage.Session.get_number_of_conversations()
@@ -33,6 +46,8 @@ Zeta.Service.Main = (->
           creator_id = conversation.members.others[0].id
         # Request the conversation partner's name
         Zeta.Service.Main.get_user_by_id creator_id, process_creator 
+    
+    callback?()
           
   get_conversations: (callback) ->
     console.log "= Zeta.Service.Main.get_conversations"
@@ -51,14 +66,13 @@ Zeta.Service.Main = (->
     Zeta.Service.ConversationService.get_conversations on_done
 
   get_user_by_id: (id, callback) ->
-    console.log "= Zeta.Service.Main.get_user_by_id"
+    # console.log "= Zeta.Service.Main.get_user_by_id"
     # Data
     data =
       id: id
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-#      console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service
