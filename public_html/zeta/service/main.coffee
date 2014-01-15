@@ -15,14 +15,16 @@ Zeta.Service.Main = (->
     If there is a UID (for a participant, a creator of a chat or sth. else)
     then this method tries to get also this information and to map it into
     objects.
+    @param {function} callback
   ###
   get_all_conversations_with_details: (callback) ->
-    Zeta.Service.Main.get_conversations(->
-      Zeta.Service.Main.get_names_for_all_conversations(-> 
+    Zeta.Service.Main.get_conversations ->
+      Zeta.Service.Main.get_names_for_all_conversations -> 
         Zeta.Storage.Session.list_conversations()
-      )
-    )
 
+  ###
+    @param {function} callback
+  ### 
   get_names_for_all_conversations: (callback) ->
     console.log "= Zeta.Service.Main.get_names_for_all_conversations"
     console.log "Conversations: " + Zeta.Storage.Session.get_number_of_conversations()
@@ -49,6 +51,9 @@ Zeta.Service.Main = (->
     
     callback?()
           
+  ###
+    @param {function} callback
+  ###          
   get_conversations: (callback) ->
     console.log "= Zeta.Service.Main.get_conversations"
     # Data
@@ -65,6 +70,11 @@ Zeta.Service.Main = (->
     # Service
     Zeta.Service.ConversationService.get_conversations on_done
 
+  ###
+    @param {string} id User ID, Example: "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5"
+    @param {string} password Password of the user (plaintext!)
+    @param {function} callback
+  ###
   get_user_by_id: (id, callback) ->
     # console.log "= Zeta.Service.Main.get_user_by_id"
     # Data
@@ -78,7 +88,11 @@ Zeta.Service.Main = (->
     # Service
     Zeta.Service.UserService.get_user_by_id data, on_done
 
-  update_user: (callback) ->
+  ###
+    Updates the locally stored own user with the latest information from the backend.
+    @param {function} callback
+  ###
+  update_own_user: (callback) ->
     console.log "= Zeta.Service.Main.update_user"
     # Data
     # Callback
@@ -119,6 +133,11 @@ Zeta.Service.Main = (->
     # Service
     Zeta.Service.UserService.change_own_phone_number data, on_done
 
+  ###
+    @param {string} login Email address of the user
+    @param {string} password Password of the user (plaintext!)
+    @param {function} callback
+  ###
   login: (login, password, callback) ->
     console.log "= Zeta.Service.Main.login"
     # Data
@@ -134,7 +153,7 @@ Zeta.Service.Main = (->
         
         login_session = new Zeta.Model.Login data.access_token
         Zeta.Storage.Session.set_login login_session
-        Zeta.Service.Main.update_user callback
+        Zeta.Service.Main.update_own_user callback
       else
         console.log "Authentication FAILED"        
     

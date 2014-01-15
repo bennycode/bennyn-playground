@@ -43,7 +43,6 @@ Zeta.Storage.Session = (->
     conversations[key].creator = creator
   
   add_conversation: (key, value) ->
-    console.log "Added conversation with key: #{key}"
     conversations[key] = value  
     
   list_conversations: ->
