@@ -1,9 +1,34 @@
+###
+  Public method structure:
+  1. Logging*
+  2. Data preparation*
+  3. Config setup
+  4. Service call
+  *  optional
+###
 Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.Main = (->
 
+  get_user_by_id: (id, callback) ->
+    console.log "= Zeta.Service.Main.get_user_by_id"
+    # Data
+    data =
+      id: id
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?()
+      
+    # Service
+    Zeta.Service.UserService.get_user_by_id data, on_done
+
   update_user: (callback) ->
     console.log "= Zeta.Service.Main.update_user"
+    # Data
+    
+    
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
@@ -22,6 +47,14 @@ Zeta.Service.Main = (->
   ###
   change_own_phone_number: (phone_number, country_code, callback) ->
     console.log "= Zeta.Service.Main.change_own_phone_number"
+    # Data
+    phone_number_e164 = Zeta.Utils.Misc.convert_phone_number_to_e164(
+      phone_number
+      country_code
+    )
+    data =
+      phone_number: phone_number_e164
+    
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
@@ -32,11 +65,7 @@ Zeta.Service.Main = (->
       callback?()
       
     # Service
-    phone_number_e164 = Zeta.Utils.Misc.convert_phone_number_to_e164(
-      phone_number
-      country_code
-    )
-    Zeta.Service.UserService.change_own_phone_number phone_number_e164, on_done
+    Zeta.Service.UserService.change_own_phone_number data, on_done
 
   login: (login, password, callback) ->
     console.log "= Zeta.Service.Main.login"

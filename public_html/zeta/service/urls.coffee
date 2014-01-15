@@ -20,12 +20,13 @@ Zeta.Service.URLs = (->
   # Public
   login: urls.login
   
+  get_user_by_id: (id) -> 
+    create_access_token_url "#{host}/users/#{id}"
+  
   change_own_phone_number: -> 
-    console.log "= Zeta.Service.URLs.change_own_phone_number"
-    create_access_token_url("#{host}/self/phone")
+    create_access_token_url "#{host}/self/phone"
     
   self: -> 
-    console.log "= Zeta.Service.URLs.self"
-    create_access_token_url("#{host}/self")    
+    create_access_token_url "#{host}/self"
 #
 )()
