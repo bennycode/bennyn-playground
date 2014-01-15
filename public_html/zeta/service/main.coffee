@@ -10,6 +10,22 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.Main = (->
 
+  get_conversations: (callback) ->
+    console.log "= Zeta.Service.Main.get_conversations"
+    # Data
+    # Callback
+    handle_conversations = (conversations) ->
+      for key, value of conversations
+        conversation = new Zeta.Model.Conversation value
+        conversation.log_name()
+    
+    on_done = (data, textStatus, jqXHR) ->
+      handle_conversations data.conversations if data.conversations
+      callback?()
+      
+    # Service
+    Zeta.Service.ConversationService.get_conversations on_done
+
   get_user_by_id: (id, callback) ->
     console.log "= Zeta.Service.Main.get_user_by_id"
     # Data
@@ -27,7 +43,6 @@ Zeta.Service.Main = (->
   update_user: (callback) ->
     console.log "= Zeta.Service.Main.update_user"
     # Data
-    
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
@@ -79,8 +94,8 @@ Zeta.Service.Main = (->
         console.log "Login successful. Access Token:"
         console.log data.access_token
         
-        login = new Zeta.Model.Login(data.access_token)
-        Zeta.Storage.Session.set_login(login)
+        login_session = new Zeta.Model.Login(data.access_token)
+        Zeta.Storage.Session.set_login(login_session)
         Zeta.Service.Main.update_user(callback)
       else
         console.log "Authentication FAILED"        

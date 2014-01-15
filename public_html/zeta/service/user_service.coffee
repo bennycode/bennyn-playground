@@ -52,7 +52,7 @@ Zeta.Service.UserService = (->
 
   ###
     @param {object} data Data is an object that contains:
-    {string} login Example: "bennyn+tester@wearezeta.com"
+    {string} login Example: "bennyn+test2@wearezeta.com"
     {string} password Example: "123456"
     @param {function} callback
   ###

@@ -1,21 +1,149 @@
+# Direct chat
+
 {
-    "creator": "496d0d21-0b05-49b5-8087-de94f3465b7b",
+    "creator": "c8caefc5-c6f1-421f-b971-143c707b48b8",
     "members": {
         "self": {
             "status": 0,
-            "last_read": null,
+            "last_read": "a.800122000a253283",
             "muted_time": null,
             "muted": null,
-            "status_time": "2014-01-13T15:49:18.263Z",
+            "status_time": "2014-01-06T10:55:54.154Z",
             "status_ref": "0.0",
-            "id": "496d0d21-0b05-49b5-8087-de94f3465b7b",
+            "id": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
             "archived": null
         },
-        "others": []
+        "others": [
+            {
+                "status": 0,
+                "id": "c8caefc5-c6f1-421f-b971-143c707b48b8"
+            }
+        ]
     },
     "name": null,
-    "id": "496d0d21-0b05-49b5-8087-de94f3465b7b",
-    "type": 1,
-    "last_event_time": "2014-01-13T15:49:18.263Z",
-    "last_event": "1.800122000a2524cd"
+    "id": "ea3c8ef7-29ab-4914-bd39-a7352d26ae5b",
+    "type": 2,
+    "last_event_time": "2014-01-14T15:03:44.812Z",
+    "last_event": "a.800122000a253283"
+}
+
+# Group conversation
+
+{
+    "creator": "22db1aeb-08df-4331-9bc4-8116e1c67219",
+    "members": {
+        "self": {
+            "status": 0,
+            "last_read": "1e6.800122000a253036",
+            "muted_time": null,
+            "muted": null,
+            "status_time": "2014-01-03T10:54:37.426Z",
+            "status_ref": "0.0",
+            "id": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
+            "archived": null
+        },
+        "others": [
+            {
+                "status": 0,
+                "id": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5"
+            },
+            {
+                "status": 0,
+                "id": "0e2313ca-67bf-4385-bfce-3b30942f686c"
+            },
+            {
+                "status": 0,
+                "id": "15ede065-72b3-433a-9917-252f076ed031"
+            },
+            {
+                "status": 0,
+                "id": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f"
+            },
+            {
+                "status": 0,
+                "id": "204b4536-71a3-4463-a8aa-87c03f05baeb"
+            },
+            {
+                "status": 0,
+                "id": "22db1aeb-08df-4331-9bc4-8116e1c67219"
+            },
+            {
+                "status": 0,
+                "id": "2d88e797-75d1-4b66-97a5-6adc8bf5667d"
+            },
+            {
+                "status": 0,
+                "id": "58a4d3e8-8f58-4b13-87f3-d02c53a57361"
+            },
+            {
+                "status": 0,
+                "id": "594ca1d9-e667-4bd6-aea9-65ed61787001"
+            },
+            {
+                "status": 0,
+                "id": "6e9451e1-9774-4905-82b8-ab95788c9763"
+            },
+            {
+                "status": 0,
+                "id": "7ffabd7d-c32d-4a87-b1b6-9ac229ddd37d"
+            },
+            {
+                "status": 0,
+                "id": "8bf434e5-084a-453e-884d-a34dbccc1b13"
+            },
+            {
+                "status": 0,
+                "id": "8d5be6f5-8847-4776-b813-b1526a8ad458"
+            },
+            {
+                "status": 0,
+                "id": "96fd5b00-0480-47ee-853a-8f356edc566d"
+            },
+            {
+                "status": 0,
+                "id": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb"
+            },
+            {
+                "status": 0,
+                "id": "a46ffc68-cb0e-45c1-bff8-13c4db065aa7"
+            },
+            {
+                "status": 0,
+                "id": "c7727c43-510e-4301-94ec-2b72af9e96e6"
+            },
+            {
+                "status": 0,
+                "id": "c8caefc5-c6f1-421f-b971-143c707b48b8"
+            },
+            {
+                "status": 0,
+                "id": "da8423fd-7e45-478b-998a-85b810114c17"
+            },
+            {
+                "status": 0,
+                "id": "dee561f7-c2c6-4eca-8d07-2d79a8f09703"
+            },
+            {
+                "status": 0,
+                "id": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c"
+            },
+            {
+                "status": 0,
+                "id": "f022b2b6-7174-4eb3-a644-8a058331954c"
+            },
+            {
+                "status": 0,
+                "id": "fce58a4d-0502-4e52-a057-9df85536a703"
+            },
+            {
+                "status": 0,
+                "id": "ff1c93cf-7795-4b90-9a8e-262e982baa71"
+            }
+        ]
+    },
+    "name": "Android",
+    "id": "f97f489e-6e74-42ae-866b-25a2012ce6e5",
+    "type": 0,
+    "last_event_time": "2014-01-15T10:45:57.219Z",
+    "last_event": "1fb.800122000a253dcb"
 }

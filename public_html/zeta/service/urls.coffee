@@ -5,9 +5,7 @@ Zeta.Service.URLs = (->
   host = 'https://armada-test.z-infra.com'
   urls =
     access: "#{host}/access"
-    login: "#{host}/login"
     register: "#{host}/register"
-    self: "#{host}/self"
     
   create_access_token_url = (url) ->
     access_token = Zeta.Storage.Session.get_access_token()
@@ -18,7 +16,10 @@ Zeta.Service.URLs = (->
       url
   
   # Public
-  login: urls.login
+  login: "#{host}/login"
+  
+  get_conversations: ->
+    create_access_token_url "#{host}/conversations"
   
   get_user_by_id: (id) -> 
     create_access_token_url "#{host}/users/#{id}"
