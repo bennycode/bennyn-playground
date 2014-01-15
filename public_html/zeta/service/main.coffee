@@ -19,8 +19,7 @@ Zeta.Service.Main = (->
   ###
   get_all_conversations_with_details: (callback) ->
     Zeta.Service.Main.get_conversations ->
-      Zeta.Service.Main.get_names_for_all_conversations -> 
-        Zeta.Storage.Session.list_conversations()
+      Zeta.Service.Main.get_names_for_all_conversations callback
 
   ###
     @param {function} callback
@@ -39,6 +38,8 @@ Zeta.Service.Main = (->
         conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
         conversation_to_update.creator = creator
         conversation_to_update.name = "Unnamed conversation with #{creator.name}"
+        # console.log conversation_to_update.id
+        # console.log conversation_to_update.name
     
       # If the conversation has no name, then take the creator's name
       if not conversation.name
@@ -49,6 +50,7 @@ Zeta.Service.Main = (->
         # Request the conversation partner's name
         Zeta.Service.Main.get_user_by_id creator_id, process_creator 
     
+    # TODO: Callback is triggered before $.each finishes
     callback?()
           
   ###
