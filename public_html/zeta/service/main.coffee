@@ -15,13 +15,14 @@ Zeta.Service.Main = (->
     console.log "Conversations: " + Zeta.Storage.Session.get_number_of_conversations()
     conversations = Zeta.Storage.Session.get_conversations()
     # Traverse all conversations...
-    for k, conversation of conversations
+    for index, conversation of conversations
       # If a conversation has no name...
       if not conversation.name
         creator_id = conversation.creator
             
         # ... then take the creator's name as conversation name because it
         # seems to be a 1:1 chat
+        console.log "Get name for: #{conversation.id}"
         Zeta.Service.Main.get_user_by_id creator_id, process_creator
         
         process_creator = (data, textStatus, jqXHR) ->
