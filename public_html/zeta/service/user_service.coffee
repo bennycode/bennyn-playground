@@ -6,6 +6,11 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
 
+  ###
+    @param {object} data Data is an object that contains:
+    {id} id User ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b" 
+    @param {function} callback
+  ###
   get_user_by_id: (data, callback) ->
     config = 
       url: Zeta.Service.URLs.get_user_by_id data.id
@@ -15,6 +20,9 @@ Zeta.Service.UserService = (->
 
     Zeta.Utils.RequestHandler.send_request config
 
+  ###
+    @param {function} callback
+  ###
   get_own_user: (callback) ->
     config = 
       url: Zeta.Service.URLs.self()
@@ -25,7 +33,8 @@ Zeta.Service.UserService = (->
     Zeta.Utils.RequestHandler.send_request config
 
   ###
-    @param {string} phone_number Phone number in E.164 format: "+491722290229" 
+    @param {object} data Data is an object that contains:
+    {string} phone_number Phone number in E.164 format: "+491722290229" 
     @param {function} callback
   ###
   change_own_phone_number: (data, callback) ->
@@ -42,20 +51,21 @@ Zeta.Service.UserService = (->
     Zeta.Utils.RequestHandler.send_json config
 
   ###
-    @param {string} login Example: "bennyn+tester@wearezeta.com"
-    @param {string} password Example: "123456"
+    @param {object} data Data is an object that contains:
+    {string} login Example: "bennyn+tester@wearezeta.com"
+    {string} password Example: "123456"
     @param {function} callback
   ###
-  login: (login, password, callback) ->
+  login: (data, callback) ->
     console.log "= Zeta.Service.UserService.login"
   
     payload = 
-      password: password
+      password: data.password
     
-    if login.indexOf("@") is -1
-      payload.login = login
+    if data.login.indexOf("@") is -1
+      payload.login = data.login
     else
-      payload.email = login
+      payload.email = data.login
       
     config =
       url: Zeta.Service.URLs.login

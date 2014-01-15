@@ -28,7 +28,6 @@ Zeta.Service.Main = (->
     console.log "= Zeta.Service.Main.update_user"
     # Data
     
-    
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
@@ -69,6 +68,11 @@ Zeta.Service.Main = (->
 
   login: (login, password, callback) ->
     console.log "= Zeta.Service.Main.login"
+    # Data
+    data =
+      login: login
+      password: password
+    
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       if jqXHR.status is 200 and data.access_token?
@@ -82,6 +86,6 @@ Zeta.Service.Main = (->
         console.log "Authentication FAILED"        
     
     # Service
-    Zeta.Service.UserService.login login, password, on_done
+    Zeta.Service.UserService.login data, on_done
 #
 )()
