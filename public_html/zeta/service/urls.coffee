@@ -16,6 +16,9 @@ Zeta.Service.URLs = (->
       url
   
   # Public
+  users: ->
+    create_access_token_url "#{host}/users"
+  
   login: "#{host}/login"
   
   get_conversations: ->

@@ -14,30 +14,26 @@ Zeta.Service.Main = (->
     console.log "= Zeta.Service.Main.get_names_for_all_conversations"
     console.log "Conversations: " + Zeta.Storage.Session.get_number_of_conversations()
     conversations = Zeta.Storage.Session.get_conversations()
-    # Traverse all conversations...
-    for index, conversation of conversations
-      # If a conversation has no name...
-      if not conversation.name
-        creator_id = conversation.creator
-            
-        # ... then take the creator's name as conversation name because it
-        # seems to be a 1:1 chat
-        console.log "Get name for: #{conversation.id}"
-        Zeta.Service.Main.get_user_by_id creator_id, process_creator
+    
+    $.each conversations, (index, conversation) ->
+      # Set the conversation name and conversation creator for unnamed chats
+      process_creator = (data, textStatus, jqXHR) ->
+        creator = new Zeta.Model.User()
+        creator.init data
         
-        process_creator = (data, textStatus, jqXHR) ->
-          # If the creator is not us
-          if data.id isnt Zeta.Storage.Session.get_user().id
-            creator = new Zeta.Model.User()
-            creator.init data
-            console.log "#{conversation.id}: #{creator.name}" 
-          # ...otherwise take the name of our chat partner for the conversation's name
-          else
-            creator_id = conversation.members.others[0].id
-            Zeta.Service.Main.get_user_by_id creator_id, process_creator        
-      else
-        console.log conversation.name
-
+        conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
+        conversation_to_update.creator = creator
+        conversation_to_update.name = "Unnamed conversation with #{creator.name}"
+    
+      # If the conversation has no name, then take the creator's name
+      if not conversation.name
+        # Always take our conversation partner's name, even if we instantiated the chat
+        creator_id = conversation.creator
+        if creator_id is Zeta.Storage.Session.get_user().id and conversation.has_participants
+          creator_id = conversation.members.others[0].id
+        # Request the conversation partner's name
+        Zeta.Service.Main.get_user_by_id creator_id, process_creator 
+          
   get_conversations: (callback) ->
     console.log "= Zeta.Service.Main.get_conversations"
     # Data
@@ -45,7 +41,7 @@ Zeta.Service.Main = (->
     handle_conversations = (conversations) ->
       for key, value of conversations
         conversation = new Zeta.Model.Conversation value
-        Zeta.Storage.Session.add_conversation key, conversation
+        Zeta.Storage.Session.add_conversation conversation.id, conversation
     
     on_done = (data, textStatus, jqXHR) ->
       handle_conversations data.conversations if data.conversations

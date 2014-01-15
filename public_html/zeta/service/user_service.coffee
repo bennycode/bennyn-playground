@@ -7,6 +7,25 @@ Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
 
   ###
+    TODO: Needs to be done.
+  ###
+  get_users: (data, callback) ->
+  
+    config =
+      url: Zeta.Service.URLs.users()
+      type: 'GET'
+      data: 
+        ids: [
+          '0bb84213-8cc2-4bb1-9e0b-b8dd522396d5',
+          '15ede065-72b3-433a-9917-252f076ed031',
+          '204b4536-71a3-4463-a8aa-87c03f05baeb'
+        ]
+      on_done:
+        callback
+        
+    Zeta.Utils.RequestHandler.send_request config
+
+  ###
     @param {object} data Data is an object that contains:
     {id} id User ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b" 
     @param {function} callback
