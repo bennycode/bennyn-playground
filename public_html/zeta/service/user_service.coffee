@@ -6,20 +6,14 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
 
-  ###
-    TODO: Needs to be done.
-  ###
-  get_users: (data, callback) ->
-  
+  get_users: (values, callback) ->
+    values.data = {} unless values.data  
+    values.data.access_token = Zeta.Storage.Session.get_access_token()
+    
     config =
-      url: Zeta.Service.URLs.create_access_token_url "/users"
+      url: Zeta.Service.URLs.create_url "/users"
       type: 'GET'
-      data: 
-        ids: [
-          '0bb84213-8cc2-4bb1-9e0b-b8dd522396d5',
-          '15ede065-72b3-433a-9917-252f076ed031',
-          '204b4536-71a3-4463-a8aa-87c03f05baeb'
-        ]
+      data: values.data
       on_done:
         callback
         

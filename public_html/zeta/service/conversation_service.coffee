@@ -27,9 +27,13 @@ Zeta.Service.ConversationService = (->
 
     Zeta.Utils.RequestHandler.send_request config
     
-  get_conversation_messages: (data, callback) ->
+  get_conversation_messages: (values, callback) ->
+    values.data = {} unless values.data
+    values.data.access_token = Zeta.Storage.Session.get_access_token()
+  
     config = 
-      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}/messages/"
+      url: Zeta.Service.URLs.create_url "/conversations/#{values.id}/messages"
+      data: values.data
       type: 'GET'
       on_done:
         callback    
@@ -38,7 +42,7 @@ Zeta.Service.ConversationService = (->
 
   post_message_to_conversation: (data, callback) ->
     config = 
-      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}/messages/"
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}/messages"
       type: 'POST'
       data:
         content: data.plain_message

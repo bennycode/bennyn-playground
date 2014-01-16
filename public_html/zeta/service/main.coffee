@@ -98,12 +98,39 @@ Zeta.Service.Main = (->
     Zeta.Service.ConversationService.post_message_to_conversation data, on_done  
     
   ###
+    Gets a set of conversation messages.
+    
+    @param {string} id Conversation ID
+    @param {number} amount Amount of messages that you want to get.
+    @param {function} callback
+  ###          
+  get_latest_conversation_messages: (id, amount, callback) ->
+    console.log "= Zeta.Service.Main.get_latest_conversation_messages"
+    
+    # Data
+    last_event_id = Zeta.Storage.Session.get_conversation(id).last_event
+    values =
+      id: id
+      data:
+        start: last_event_id
+        end: '0.0'
+        size: -10
+      
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.ConversationService.get_conversation_messages values, on_done
+    
+  ###
     @param {function} callback
   ###          
   get_conversation_messages: (id, callback) ->
     console.log "= Zeta.Service.Main.get_conversation_messages"
     # Data
-    data =
+    values =
       id: id
     # Callback
     on_done = (data, textStatus, jqXHR) ->
@@ -113,8 +140,32 @@ Zeta.Service.Main = (->
       callback?(data, textStatus, jqXHR)
       
     # Service
-    Zeta.Service.ConversationService.get_conversation_messages data, on_done
+    Zeta.Service.ConversationService.get_conversation_messages values, on_done
 
+  ###
+    @param {array} user_ids Array with User IDs, Example: ["0bb84213-8cc2-4bb1-9e0b-b8dd522396d5","15ede065-72b3-433a-9917-252f076ed031"]
+    @param {function} callback
+  ###
+  get_users: (user_ids, callback) ->
+    console.log "= Zeta.Service.Main.get_users"
+    
+    # Data
+    user_id_collection = ""
+    for user_id in user_ids
+      user_id_collection += "#{user_id},"
+    user_id_string = user_id_collection.substr 0, user_id_collection.length - 1
+    
+    values =
+      data:
+        ids: user_id_string
+      
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log data
+
+    # Service
+    Zeta.Service.UserService.get_users values, on_done
+  
   ###
     @param {function} callback
   ###          
