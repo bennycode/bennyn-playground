@@ -46,6 +46,16 @@ Zeta.Service.ConversationService = (->
         callback  
   
     Zeta.Utils.RequestHandler.send_json config 
+    
+  create_one_to_one_conversation: (values, callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/one2one"
+      type: 'POST'
+      data: values.data
+      on_done:
+        callback  
+  
+    Zeta.Utils.RequestHandler.send_json config    
 
   create_conversation: (values, callback) ->
     config = 

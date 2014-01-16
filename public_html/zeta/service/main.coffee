@@ -194,6 +194,27 @@ Zeta.Service.Main = (->
     Zeta.Service.ConversationService.create_conversation values, on_done
 
   ###
+    @param {array} user_ids Array with User IDs, Example: ["0bb84213-8cc2-4bb1-9e0b-b8dd522396d5","15ede065-72b3-433a-9917-252f076ed031"]
+    @param {string} name Name of the conversation
+    @param {function} callback
+  ###
+  create_one_to_one_conversation: (user_ids, name, callback) ->
+    console.log "= Zeta.Service.Main.create_one_to_one_conversation"
+    
+    # Data
+    values =
+      data:
+        users: user_ids
+        name: name
+        
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      
+    # Service
+    Zeta.Service.ConversationService.create_one_to_one_conversation values, on_done      
+
+  ###
     @param {string} id Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
     @param {array} user_ids Array with User IDs, Example: ["0bb84213-8cc2-4bb1-9e0b-b8dd522396d5","15ede065-72b3-433a-9917-252f076ed031"]    
     @param {function} callback    
