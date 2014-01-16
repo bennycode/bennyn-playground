@@ -215,6 +215,20 @@ Zeta.Service.Main = (->
     Zeta.Service.ConversationService.add_users_to_conversation values, on_done    
 
   ###
+    Get the IDs of the last events for every active conversation that you have.
+    This is useful to display if there have been any new messages.
+  ###
+  get_last_events: ->
+    console.log "= Zeta.Service.Main.get_last_events"
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      
+    # Service
+    Zeta.Service.ConversationService.get_last_events on_done
+  
+  ###
     @param {string} cid Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
     @param {string} uid User ID "b5ac5b2c-23ab-408a-b652-70317686c58b"
     @param {function} callback    
