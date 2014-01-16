@@ -3,6 +3,7 @@ Zeta.Utils = {} unless Zeta.Utils?
 Zeta.Utils.RequestHandler = (->  
   
   send_request: (config) ->
+  
     $.ajax
       url: config.url
       type: config.type
@@ -13,6 +14,7 @@ Zeta.Utils.RequestHandler = (->
     .always(config.on_done)   
 
   send_json: (config) ->
+  
     if typeof config.data isnt 'string'
       config.data = JSON.stringify config.data
   

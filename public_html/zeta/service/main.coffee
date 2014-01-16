@@ -9,6 +9,13 @@
 Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.Main = (->
+  # Private
+  self =
+    create_user_id_string: (user_ids) ->
+      user_id_collection = ""
+      for user_id in user_ids
+        user_id_collection += "#{user_id},"
+      user_id_string = user_id_collection.substr 0, user_id_collection.length - 1    
 
   ###
     Retrieves data of all conversations from the backend.
@@ -143,6 +150,8 @@ Zeta.Service.Main = (->
     Zeta.Service.ConversationService.get_conversation_messages values, on_done
 
   ###
+    Zeta.Service.Main.get_users(["0bb84213-8cc2-4bb1-9e0b-b8dd522396d5","15ede065-72b3-433a-9917-252f076ed031"])
+    
     @param {array} user_ids Array with User IDs, Example: ["0bb84213-8cc2-4bb1-9e0b-b8dd522396d5","15ede065-72b3-433a-9917-252f076ed031"]
     @param {function} callback
   ###
@@ -150,21 +159,38 @@ Zeta.Service.Main = (->
     console.log "= Zeta.Service.Main.get_users"
     
     # Data
-    user_id_collection = ""
-    for user_id in user_ids
-      user_id_collection += "#{user_id},"
-    user_id_string = user_id_collection.substr 0, user_id_collection.length - 1
-    
     values =
       data:
-        ids: user_id_string
+        ids: self.create_user_id_string user_ids
       
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log data
+      for user in data
+        console.log user.name
 
     # Service
     Zeta.Service.UserService.get_users values, on_done
+  
+  ###
+    @param {array} user_ids Array with User IDs, Example: ["0bb84213-8cc2-4bb1-9e0b-b8dd522396d5","15ede065-72b3-433a-9917-252f076ed031"]
+    @param {string} name Name of the conversation
+    @param {function} callback
+  ###
+  create_conversation: (user_ids, name, callback) ->
+    console.log "= Zeta.Service.Main.create_conversation"
+    
+    # Data
+    values =
+      data:
+        users: user_ids
+        name: name
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      
+    # Service
+    Zeta.Service.ConversationService.create_conversation values, on_done
   
   ###
     @param {function} callback
