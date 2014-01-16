@@ -108,7 +108,7 @@ Zeta.Service.Main = (->
   ###
     Gets a set of conversation messages.
     
-    @param {string} id Conversation ID
+    @param {string} id Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
     @param {number} amount Amount of messages that you want to get.
     @param {function} callback
   ###          
@@ -192,6 +192,27 @@ Zeta.Service.Main = (->
       
     # Service
     Zeta.Service.ConversationService.create_conversation values, on_done
+
+  ###
+    @param {string} id Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
+    @param {array} user_ids Array with User IDs, Example: ["0bb84213-8cc2-4bb1-9e0b-b8dd522396d5","15ede065-72b3-433a-9917-252f076ed031"]    
+    @param {function} callback    
+  ###
+  add_users_to_conversation: (id, user_ids, callback) ->
+    console.log "= Zeta.Service.Main.add_users_to_conversation"
+    
+    # Data
+    values =
+      id: id
+      data:
+        users: user_ids
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+        
+    # Service
+    Zeta.Service.ConversationService.add_users_to_conversation values, on_done        
     
   update_conversation_properties: (id, name, callback) ->
     console.log "= Zeta.Service.Main.update_conversation_properties"
@@ -241,6 +262,7 @@ Zeta.Service.Main = (->
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service

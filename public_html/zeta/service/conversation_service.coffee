@@ -9,6 +9,16 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.ConversationService = (->
 
+  add_users_to_conversation: (values, callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{values.id}/members"
+      type: 'POST'
+      data: values.data
+      on_done:
+        callback  
+  
+    Zeta.Utils.RequestHandler.send_json config   
+
   update_conversation_properties: (values, callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/conversations/#{values.id}"
