@@ -12,7 +12,7 @@ Zeta.Service.UserService = (->
   get_users: (data, callback) ->
   
     config =
-      url: Zeta.Service.URLs.users()
+      url: Zeta.Service.URLs.create_access_token_url "/users"
       type: 'GET'
       data: 
         ids: [
@@ -32,7 +32,7 @@ Zeta.Service.UserService = (->
   ###
   get_user_by_id: (data, callback) ->
     config = 
-      url: Zeta.Service.URLs.get_user_by_id data.id
+      url: Zeta.Service.URLs.create_access_token_url "/users/#{data.id}"
       type: 'GET'
       on_done:
         callback  
@@ -44,7 +44,7 @@ Zeta.Service.UserService = (->
   ###
   get_own_user: (callback) ->
     config = 
-      url: Zeta.Service.URLs.self()
+      url: Zeta.Service.URLs.create_access_token_url "/self"
       type: 'GET'
       on_done:
         callback
@@ -60,7 +60,7 @@ Zeta.Service.UserService = (->
     console.log "= Zeta.Service.UserService.change_own_phone_number"
 
     config =
-      url: Zeta.Service.URLs.change_own_phone_number
+      url: Zeta.Service.URLs.create_access_token_url "/self/phone"
       type: 'PUT'
       data: 
         phone: data.phone_number
@@ -87,7 +87,7 @@ Zeta.Service.UserService = (->
       payload.email = data.login
       
     config =
-      url: Zeta.Service.URLs.login
+      url: Zeta.Service.URLs.create_url "/login"
       type: 'POST'
       data: payload
       on_done:

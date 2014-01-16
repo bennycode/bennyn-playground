@@ -21,7 +21,10 @@ Zeta.Storage.Session = (->
   
   # Plain getters
   get_access_token: ->
-    login.access_token
+    if not login or not login.access_token
+      console.log "WARNING: Your access token is expired or is not set"
+    else
+      login.access_token
   
   get_user: ->
     user

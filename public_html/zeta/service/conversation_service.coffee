@@ -16,7 +16,7 @@ Zeta.Service.ConversationService = (->
   ###
   get_conversation_by_id: (data, callback) ->
     config = 
-      url: Zeta.Service.URLs.get_conversation_by_id(data.id)
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}"
       type: 'GET'
       on_done:
         callback  
@@ -28,7 +28,7 @@ Zeta.Service.ConversationService = (->
   ###
   get_conversations: (callback) ->
     config = 
-      url: Zeta.Service.URLs.get_conversations()
+      url: Zeta.Service.URLs.create_access_token_url "/conversations"
       type: 'GET'
       on_done:
         callback  
