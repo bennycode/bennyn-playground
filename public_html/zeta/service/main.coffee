@@ -76,6 +76,26 @@ Zeta.Service.Main = (->
       
     # Service
     Zeta.Service.ConversationService.get_conversation_by_id data, on_done
+    
+  ###
+    @param {string} id "d9440db8-752f-4c29-b173-af413fba9afa"
+    @param {string} message "Hello World!"
+    @param {function} callback
+  ###          
+  post_message_to_conversation: (id, message, callback) ->
+    console.log "= Zeta.Service.Main.post_message_to_conversation"
+    # Data
+    data =
+      id: id
+      plain_message: message
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.ConversationService.post_message_to_conversation data, on_done    
 
   ###
     @param {function} callback

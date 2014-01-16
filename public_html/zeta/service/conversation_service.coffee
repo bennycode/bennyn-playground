@@ -35,5 +35,23 @@ Zeta.Service.ConversationService = (->
 
     Zeta.Utils.RequestHandler.send_request config
 
+  ###
+    @param {object} data Data is an object that contains:
+    {string} id Conversation ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b" 
+    {string} plain_message Example: "Hello World!"
+    @param {function} callback
+  ###
+  post_message_to_conversation: (data, callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}/messages/"
+      type: 'POST'
+      data:
+        content: data.plain_message
+        entities: []
+        nonce: Zeta.Utils.Misc.create_random_uuid()
+      on_done:
+        callback  
+  
+    Zeta.Utils.RequestHandler.send_json config
 #
 )()
