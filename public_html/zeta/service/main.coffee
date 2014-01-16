@@ -26,33 +26,40 @@ Zeta.Service.Main = (->
   ### 
   get_names_for_all_conversations: (callback) ->
     console.log "= Zeta.Service.Main.get_names_for_all_conversations"
-    console.log "Conversations: " + Zeta.Storage.Session.get_number_of_conversations()
     conversations = Zeta.Storage.Session.get_conversations()
     
-    $.each conversations, (index, conversation) ->
+    # Detect unnamed conversations
+    ajax_call = 0
+    ajax_call_total = 0
+    
+    unnamed_conversations = {}
+    for key, conversation of conversations
+      if not conversation.name
+        unnamed_conversations[key] = conversation
+        ++ajax_call_total
+    
+    $.each unnamed_conversations, (index, conversation) ->
       # Set the conversation name and conversation creator for unnamed chats
       process_creator = (data, textStatus, jqXHR) ->
+        ++ajax_call
         creator = new Zeta.Model.User()
         creator.init data
         
         conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
         conversation_to_update.creator = creator
         conversation_to_update.name = "Unnamed conversation with #{creator.name}"
-        # console.log conversation_to_update.id
-        # console.log conversation_to_update.name
-    
+        
+        if ajax_call is ajax_call_total
+          callback?()
+        
       # If the conversation has no name, then take the creator's name
-      if not conversation.name
-        # Always take our conversation partner's name, even if we instantiated the chat
-        creator_id = conversation.creator
-        if creator_id is Zeta.Storage.Session.get_user().id and conversation.has_participants
-          creator_id = conversation.members.others[0].id
+      # Always take our conversation partner's name, even if we instantiated the chat
+      creator_id = conversation.creator
+      if creator_id is Zeta.Storage.Session.get_user().id and conversation.has_participants
+        creator_id = conversation.members.others[0].id
         # Request the conversation partner's name
-        Zeta.Service.Main.get_user_by_id creator_id, process_creator 
+      Zeta.Service.Main.get_user_by_id creator_id, process_creator 
     
-    # TODO: Callback is triggered before $.each finishes
-    callback?()
-          
   ###
     @param {function} callback
   ###          
