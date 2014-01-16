@@ -95,7 +95,25 @@ Zeta.Service.Main = (->
       callback?(data, textStatus, jqXHR)
       
     # Service
-    Zeta.Service.ConversationService.post_message_to_conversation data, on_done    
+    Zeta.Service.ConversationService.post_message_to_conversation data, on_done  
+    
+  ###
+    @param {function} callback
+  ###          
+  get_conversation_messages: (id, callback) ->
+    console.log "= Zeta.Service.Main.get_conversation_messages"
+    # Data
+    data =
+      id: id
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      for k, message of data.messages
+        console.log JSON.stringify message.data.content
+        # TODO: Also read message.data.contents if "content" does not exist
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.ConversationService.get_conversation_messages data, on_done
 
   ###
     @param {function} callback

@@ -9,11 +9,6 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.ConversationService = (->
 
-  ###
-    @param {object} data Data is an object that contains:
-    {string} id Conversation ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b"
-    @param {function} callback
-  ###
   get_conversation_by_id: (data, callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}"
@@ -23,9 +18,6 @@ Zeta.Service.ConversationService = (->
 
     Zeta.Utils.RequestHandler.send_request config
 
-  ###
-    @param {function} callback
-  ###
   get_conversations: (callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/conversations"
@@ -34,13 +26,16 @@ Zeta.Service.ConversationService = (->
         callback  
 
     Zeta.Utils.RequestHandler.send_request config
+    
+  get_conversation_messages: (data, callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}/messages/"
+      type: 'GET'
+      on_done:
+        callback    
+        
+    Zeta.Utils.RequestHandler.send_request config
 
-  ###
-    @param {object} data Data is an object that contains:
-    {string} id Conversation ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b" 
-    {string} plain_message Example: "Hello World!"
-    @param {function} callback
-  ###
   post_message_to_conversation: (data, callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/conversations/#{data.id}/messages/"

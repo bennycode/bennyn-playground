@@ -1,3 +1,5 @@
+===
+
 {
     "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
     "time": "2014-01-14T11:36:25.896Z",
@@ -7,5 +9,24 @@
     },
     "from": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
     "id": "6ea.800122000a252d89",
+    "type": "conversation.message-add"
+}
+
+===
+
+{
+    "conversation": "d9440db8-752f-4c29-b173-af413fba9afa",
+    "time": "2013-12-16T16:32:34.832Z",
+    "data": {
+        "debug": {
+            "00.BUILD": "AND,mod:Nexus 4,4.4.2,git:Androidv0.4.22-486-ge363f93a-dirty,72dc7db1,v0.5.16(124)",
+            "01.requestQueued": "2013-12-16 16:32:34.621",
+            "02.requestSent": "2013-12-16 16:32:34.628"
+        },
+        "content": "Test",
+        "nonce": "6667e9509-5294-12ea-27b2d1d7-33d9d36"
+    },
+    "from": "22db1aeb-08df-4331-9bc4-8116e1c67219",
+    "id": "6c.800122000a2498e3",
     "type": "conversation.message-add"
 }
