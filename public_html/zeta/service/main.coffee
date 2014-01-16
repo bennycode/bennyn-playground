@@ -59,7 +59,24 @@ Zeta.Service.Main = (->
         creator_id = conversation.members.others[0].id
         # Request the conversation partner's name
       Zeta.Service.Main.get_user_by_id creator_id, process_creator 
+
+  ###
+    @param {function} callback
+  ###          
+  get_conversation_by_id: (id, callback) ->
+    console.log "= Zeta.Service.Main.get_conversation_by_id"
+    # Data
+    data =
+      id: id
     
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log "Received conversation: #{data.id}"
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.ConversationService.get_conversation_by_id data, on_done
+
   ###
     @param {function} callback
   ###          

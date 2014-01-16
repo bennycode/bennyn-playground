@@ -10,6 +10,20 @@ Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.ConversationService = (->
 
   ###
+    @param {object} data Data is an object that contains:
+    {string} id Conversation ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b"
+    @param {function} callback
+  ###
+  get_conversation_by_id: (data, callback) ->
+    config = 
+      url: Zeta.Service.URLs.get_conversation_by_id(data.id)
+      type: 'GET'
+      on_done:
+        callback  
+
+    Zeta.Utils.RequestHandler.send_request config
+
+  ###
     @param {function} callback
   ###
   get_conversations: (callback) ->
