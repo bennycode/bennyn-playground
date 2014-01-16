@@ -79,6 +79,7 @@ Zeta.Service.Main = (->
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log "Received conversation: #{data.id}"
+      console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service
@@ -191,6 +192,22 @@ Zeta.Service.Main = (->
       
     # Service
     Zeta.Service.ConversationService.create_conversation values, on_done
+    
+  update_conversation_properties: (id, name, callback) ->
+    console.log "= Zeta.Service.Main.update_conversation_properties"
+      
+    # Data
+    values =
+      id: id
+      data:
+        name: name
+          
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      
+    # Service
+    Zeta.Service.ConversationService.update_conversation_properties values, on_done      
   
   ###
     @param {function} callback
