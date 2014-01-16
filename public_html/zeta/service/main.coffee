@@ -212,7 +212,27 @@ Zeta.Service.Main = (->
       console.log JSON.stringify data
         
     # Service
-    Zeta.Service.ConversationService.add_users_to_conversation values, on_done        
+    Zeta.Service.ConversationService.add_users_to_conversation values, on_done    
+
+  ###
+    @param {string} cid Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
+    @param {string} uid User ID "b5ac5b2c-23ab-408a-b652-70317686c58b"
+    @param {function} callback    
+  ###
+  remove_user_from_conversation: (cid, uid, callback) ->
+    console.log "= Zeta.Service.Main.remove_user_from_conversation"
+    
+    # Data
+    values =
+      cid: cid
+      uid: uid   
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+        
+    # Service
+    Zeta.Service.ConversationService.remove_user_from_conversation values, on_done      
     
   update_conversation_properties: (id, name, callback) ->
     console.log "= Zeta.Service.Main.update_conversation_properties"
