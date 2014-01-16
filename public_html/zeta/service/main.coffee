@@ -212,7 +212,17 @@ Zeta.Service.Main = (->
       console.log JSON.stringify data
       
     # Service
-    Zeta.Service.ConversationService.create_one_to_one_conversation values, on_done      
+    Zeta.Service.ConversationService.create_one_to_one_conversation values, on_done  
+
+  create_self_conversation: (callback) ->
+    console.log "= Zeta.Service.Main.create_self_conversation"
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      
+    # Service
+    Zeta.Service.ConversationService.create_self_conversation on_done
 
   ###
     @param {string} id Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"

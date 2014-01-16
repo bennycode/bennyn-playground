@@ -9,6 +9,15 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.ConversationService = (->
 
+  create_self_conversation: (callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/self"
+      type: 'POST'
+      on_done:
+        callback  
+
+    Zeta.Utils.RequestHandler.send_request config  
+
   get_last_events: (callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/conversations/last-events"

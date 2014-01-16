@@ -10,6 +10,9 @@ Björn Herbig:
 Andreas Kompanez:
 15ede065-72b3-433a-9917-252f076ed031
 
-tiago.loureiro@wearezeta.com:
+Tiago Loureiro:
 b5ac5b2c-23ab-408a-b652-70317686c58b
+
+Benny Neugebauer:
+21719f32-62ba-46f5-83c8-92f9bcab65a3
 
