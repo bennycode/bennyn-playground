@@ -17,7 +17,7 @@ Zeta.Utils.Misc = (->
     UUID.genV4().hexString
     
   encode_sha256: (text) ->
-    sha_object = new jsSHA(text, "TEXT");
+    sha_object = new jsSHA text, "TEXT"
     sha_object.getHash "SHA-256", "HEX"
     
   encode_base64: (text) ->

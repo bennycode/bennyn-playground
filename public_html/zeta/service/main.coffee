@@ -262,6 +262,31 @@ Zeta.Service.Main = (->
     Zeta.Service.ConversationService.get_last_events on_done
   
   ###
+    TODO: Check if the key is encoded correctly!!
+    
+    @param {string} key The activation key is a URL-safe-base64-encoded SHA256 of the key being activated (an e-mail address or a phone number).
+    @param {string} code The random, generated code associated with the key that is only communicated out-of-band, i.e. via e-mail or SMS.
+  ###
+  validate_activation_code: (key, code) ->
+    console.log "= Zeta.Service.Main.validate_activation_code"
+    
+    # Data
+    values =
+      key: encodeURIComponent(Zeta.Utils.Misc.encode_base64 Zeta.Utils.Misc.encode_sha256 key)
+      code: code
+      
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->      
+      console.log JSON.stringify data     
+      if jqXHR.status is 200
+        console.log "Activation was successful."
+      else
+        console.log "The key/code combination does not exist."
+      
+    # Service
+    Zeta.Service.UserService.validate_activation_code values, on_done      
+  
+  ###
     @param {string} cid Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
     @param {string} uid User ID "b5ac5b2c-23ab-408a-b652-70317686c58b"
     @param {function} callback    

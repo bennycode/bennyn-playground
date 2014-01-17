@@ -6,6 +6,16 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
 
+  validate_activation_code: (values, callback) ->
+    config =
+      url: Zeta.Service.URLs.create_url "/activate?key=#{values.key}&code=#{values.code}"
+      type: 'HEAD'
+      data: values.data
+      on_done:
+        callback
+        
+    Zeta.Utils.RequestHandler.send_request config  
+
   get_users: (values, callback) ->
     values.data = {} unless values.data  
     values.data.access_token = Zeta.Storage.Session.get_access_token()
