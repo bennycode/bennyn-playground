@@ -279,12 +279,32 @@ Zeta.Service.Main = (->
     on_done = (data, textStatus, jqXHR) ->      
       console.log JSON.stringify data     
       if jqXHR.status is 200
+        console.log "The key/code combination exists / is valid."
+      else
+        console.log "The key/code combination does not exist."
+      
+    # Service
+    Zeta.Service.UserService.validate_activation_code values, on_done   
+    
+  use_activation_code: (key, code) ->
+    console.log "= Zeta.Service.Main.use_activation_code"
+    
+    # Data
+    values =
+      data:
+        key: Zeta.Utils.Misc.encode_base64(Zeta.Utils.Misc.encode_sha256 key)
+        code: code
+      
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->      
+      console.log JSON.stringify data     
+      if jqXHR.status is 200
         console.log "Activation was successful."
       else
         console.log "The key/code combination does not exist."
       
     # Service
-    Zeta.Service.UserService.validate_activation_code values, on_done      
+    Zeta.Service.UserService.use_activation_code values, on_done      
   
   ###
     @param {string} cid Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"

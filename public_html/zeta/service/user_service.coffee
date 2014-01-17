@@ -15,6 +15,16 @@ Zeta.Service.UserService = (->
         callback
         
     Zeta.Utils.RequestHandler.send_request config  
+    
+  use_activation_code: (values, callback) ->
+    config =
+      url: Zeta.Service.URLs.create_url "/activate"
+      type: 'GET'
+      data: values.data
+      on_done:
+        callback
+        
+    Zeta.Utils.RequestHandler.send_request config    
 
   get_users: (values, callback) ->
     values.data = {} unless values.data  
