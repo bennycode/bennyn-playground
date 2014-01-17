@@ -78,8 +78,10 @@ Zeta.Service.Main = (->
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log "Received conversation: #{data.id}"
+      console.log "Received conversation: #{data.id}"      
       console.log JSON.stringify data
+      conversation = new Zeta.Model.Conversation data
+      conversation.log_name()
       callback?(data, textStatus, jqXHR)
       
     # Service
