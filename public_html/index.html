@@ -29,9 +29,24 @@
     <script src="zeta/service/main.js"></script>
     <!-- Main -->
     <script src="zeta/test/main.js"></script>
+    <!-- View -->
+    <script src="zeta/view/registration/background_switcher.js"></script>
   </head>
   <body>
-    <ul id="my-conversations">
-    </ul>
+    <div class="wrapper">
+      <div class="box back"></div>
+      <div class="box front"></div>
+    </div>
+    <script>
+      $(window).load(function() {
+        var config = {
+          selector_wrapper: '.wrapper',
+          selector_animated: '.front',
+          selector_not_animated: '.back'
+        };
+
+        var background_switcher = new Zeta.View.Registration.BackgroundSwitcher(config);
+      });
+    </script>
   </body>
 </html>

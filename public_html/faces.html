@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/test.css" />
+    <style>
+      * { 
+        margin: 0; 
+        padding: 0; 
+        border: 0; 
+      }
+
+      html, 
+      body { 
+        width: 100%; 
+        height: 100%; 
+      }
+
+      .wrapper {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        border: 1px solid red;
+      }
+
+      .box {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .box.back {
+        /*background-color: red;*/ 
+        /*z-index: 2;*/
+        top: 0px;
+      }
+
+      .box.front {
+        /*background-color: green;*/ 
+        /*z-index: 1;*/
+        /*top: -1920px;*/
+      }
+
+      .scale {
+        -webkit-transition: -webkit-transform 8.5s;
+        -webkit-transform: scale(1.4);
+      }
+
+      @-webkit-keyframes fade-out {
+        from { 
+          -webkit-opacity: 1;
+        }
+        to { 
+          -webkit-opacity: 0;
+        }
+      }
+
+      .fade-out {
+        -webkit-animation-name: fade-out;
+        -webkit-animation-duration: 2.5s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-delay: 6s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-play-state: running;
+        -webkit-animation-fill-mode: forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box back"></div>
+      <div class="box front"></div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+      $(window).load(function() {
+
+        var $wrapper = $('.wrapper');
+        var height = $wrapper.css('height');
+
+        var array_1 = [
+          'images/welcome_screen_photos/test_bg_01.jpg',
+          'images/welcome_screen_photos/test_bg_02.jpg',
+          'images/welcome_screen_photos/test_bg_03.jpg',
+          'images/welcome_screen_photos/test_bg_04.jpg',
+          'images/welcome_screen_photos/test_bg_05.jpg',
+          'images/welcome_screen_photos/test_bg_06.jpg',
+          'images/welcome_screen_photos/test_bg_07.jpg',
+          'images/welcome_screen_photos/test_bg_08.jpg',
+          'images/welcome_screen_photos/test_bg_09.jpg',
+          'images/welcome_screen_photos/test_bg_10.jpg'
+        ];
+
+        var array_2 = [];
+
+        function getBackgroundImage() {
+          if (array_1.length === 0 && array_2.length > 0) {
+            array_1.push.apply(array_1, array_2);
+            array_2 = [];
+            return getBackgroundImage();
+          } else {
+            var image = array_1.shift();
+            array_2.push(image);
+            return image;
+          }
+        }
+
+        function changeBackgroundImage(element) {
+          var image_path = getBackgroundImage();
+          element.css('background-image', 'url("' + image_path + '")');
+          console.log("Path: " + image_path);
+        }
+
+        function startScaling(element) {
+          element.addClass('scale');
+        }
+
+        function startFadeOut(element, not_animated) {
+          element.addClass('fade-out').one('webkitAnimationEnd', function(event) {
+            not_animated.css('z-index', '2');
+            $(this).css('z-index', '1');
+            $(this).removeClass('scale');
+            $(this).removeClass('fade-out');
+            // Switch objects and start again
+            startAnimation(not_animated, element);
+          });
+        }
+
+        function startAnimation(animated, not_animated) {
+          changeBackgroundImage(not_animated);
+          startScaling(animated);
+          startFadeOut(animated, not_animated);
+        }
+
+
+        // Init
+        $('.front', $wrapper).css('top', '-' + height);
+        changeBackgroundImage($('.front', $wrapper));
+
+        var animated_name = '.front';
+        var not_animated_name = '.back';
+
+        var animated = $(animated_name, $wrapper);
+        var not_animated = $(not_animated_name, $wrapper);
+
+        startAnimation(animated, not_animated);
+
+
+
+        /*
+         $('.back', $wrapper).css('background-image', 'url("images/welcome_screen_photos/test_bg_02.jpg")');
+         
+         $('.front', $wrapper).css({
+         backgroundImage: 'url("images/welcome_screen_photos/test_bg_01.jpg")'
+         }).addClass('scale')
+         .addClass('fade-out');
+         */
+      });
+    </script>
+  </body>
+</html>
