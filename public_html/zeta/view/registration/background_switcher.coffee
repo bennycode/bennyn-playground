@@ -39,6 +39,10 @@ namespace Zeta:View:Registration:
       @animated.css 'top', "-#{height}"
       @change_background_image @animated
       @start_animation @animated, @not_animated
+    
+    on_resize: =>
+      height = @wrapper.css 'height'
+      @animated.css 'top', "-#{height}"
       
     start_animation: (animated, not_animated) =>
       @change_background_image not_animated

@@ -45,12 +45,26 @@
         width: 100%; 
         height: 100%; 
       }
+
+      #website-content {
+        /* Begins in the upper left corner */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* Takes the full dimension of the viewport */ 
+        width: 100%;
+        height: 100%;
+        /* General style */
+        color: white;
+      }
     </style>
   </head>
   <body>
     <div id="first-time-background">
       <div class="faces underneath"></div>
       <div class="faces on-top"></div>
+    </div>
+    <div id="website-content">
     </div>
     <script>
       $(window).load(function() {
@@ -73,6 +87,10 @@
         };
 
         var background_switcher = new Zeta.View.Registration.BackgroundSwitcher(config);
+        
+        $(window).resize(function(event) {
+          background_switcher.on_resize();
+        });
       });
     </script>
   </body>
