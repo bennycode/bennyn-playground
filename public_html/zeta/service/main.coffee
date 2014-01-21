@@ -44,7 +44,7 @@ Zeta.Service.Main = (->
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log data
+      console.log JSON.stringify data
       # TODO: Status code 409 if reset has been already requested
       callback?(data, textStatus, jqXHR)
       

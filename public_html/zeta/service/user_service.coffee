@@ -8,7 +8,7 @@ Zeta.Service.UserService = (->
 
   initiate_password_reset: (values, callback) ->
     config =
-      url: Zeta.Service.URLs.create_access_token_url "/password-reset"
+      url: Zeta.Service.URLs.create_url "/password-reset"
       type: 'POST'
       data: values.data
       on_done:
