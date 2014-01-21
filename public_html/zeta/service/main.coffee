@@ -75,7 +75,7 @@ Zeta.Service.Main = (->
     @param {function} callback    
   ###
   update_accent_color: (accent_color, callback) ->
-    console.log "= Zeta.Service.Main.update_user_profile"
+    console.log "= Zeta.Service.Main.update_accent_color"
     # Data
     values =
       data:
@@ -87,7 +87,26 @@ Zeta.Service.Main = (->
       callback?(data, textStatus, jqXHR)
       
     # Service
-    Zeta.Service.UserService.update_user_profile values, on_done     
+    Zeta.Service.UserService.update_user_profile values, on_done  
+    
+  ###
+    @param {Asset} picture
+    @param {function} callback    
+  ###
+  update_picture: (picture, callback) ->
+    console.log "= Zeta.Service.Main.update_picture"
+    # Data
+    values =
+      data:
+        picture: picture
+        
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.UserService.update_user_profile values, on_done    
   
   ###
     @param {function} callback
