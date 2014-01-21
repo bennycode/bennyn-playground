@@ -63,6 +63,56 @@ Zeta.Service.Main = (->
     # Service
     Zeta.Service.UserService.get_own_connections on_done   
   
+  ###
+    Sends a knock ("Hello").
+    
+    @param {string} cid Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
+    @param {function} callback
+  ###
+  send_knock: (cid, callback) ->
+    console.log "= Zeta.Service.Main.send_knock"
+    # Data
+    values =
+      cid: cid
+      data:
+        content: ""
+        nonce: UUID.genV4().hexString
+        
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.ConversationService.send_knock values, on_done  
+    
+  ###
+    Sends a hot knock ("Hey").
+  
+    @param {string} cid Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
+    @param {function} callback
+  ###
+  send_hot_knock: (cid, callback) ->
+    console.log "= Zeta.Service.Main.send_hot_knock"
+    # Data
+    values =
+      cid: cid
+      data:
+        content: ""
+        nonce: UUID.genV4().hexString
+        
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.ConversationService.send_hot_knock values, on_done      
+  
+  ###
+    Date time format: ISO 8601
+    "2014-01-21T16:31:13.090Z"
+  ###
   create_connection: (to_uuid, callback) ->
     console.log "= Zeta.Service.Main.create_connection"
     # Data
@@ -71,7 +121,7 @@ Zeta.Service.Main = (->
         # TODO: Some parameters are missing...
         from: Zeta.Storage.Session.get_user().id
         to: to_uuid        
-        last_update: Date.now()
+        last_update: new Date().toJSON()
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->

@@ -9,6 +9,26 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.ConversationService = (->
 
+  send_hot_knock: (values, callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{values.cid}/hot-knock"
+      type: 'POST'
+      data: values.data
+      on_done:
+        callback  
+  
+    Zeta.Utils.RequestHandler.send_json config
+
+  send_knock: (values, callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/conversations/#{values.cid}/knock"
+      type: 'POST'
+      data: values.data
+      on_done:
+        callback  
+  
+    Zeta.Utils.RequestHandler.send_json config
+
   create_self_conversation: (callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/conversations/self"
