@@ -30,7 +30,7 @@ Zeta.Service.Main = (->
 
   ###
     @param {string} email
-    @param {function} callback
+    @param {function} callback    
   ###
   initiate_password_reset: (email, callback) ->
     console.log "= Zeta.Service.Main.initiate_password_reset"
@@ -45,11 +45,23 @@ Zeta.Service.Main = (->
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
+      # {"readyState":4,"responseText":"","status":201,"statusText":"Created"}
       # TODO: Status code 409 if reset has been already requested
       callback?(data, textStatus, jqXHR)
       
     # Service
     Zeta.Service.UserService.initiate_password_reset values, on_done     
+  
+  get_own_connections: (callback) ->
+    console.log "= Zeta.Service.Main.get_own_connections"
+   
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.UserService.get_own_connections on_done   
   
   ###
     @param {string} name

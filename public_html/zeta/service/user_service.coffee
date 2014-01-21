@@ -6,6 +6,15 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
 
+  get_own_connections: (callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/self/connections"
+      type: 'GET'
+      on_done:
+        callback
+      
+    Zeta.Utils.RequestHandler.send_request config
+
   update_user_profile: (values, callback) ->
     config =
       url: Zeta.Service.URLs.create_access_token_url "/self"
