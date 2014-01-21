@@ -29,10 +29,10 @@
     <script src="zeta/service/user_service.js"></script>
     <script src="zeta/service/conversation_service.js"></script>
     <script src="zeta/service/main.js"></script>
-    <!-- Main -->
-    <!--<script src="zeta/test/main.js"></script>-->
     <!-- View -->
     <script src="zeta/view/registration/background_switcher.js"></script>
+    <!-- Main -->
+    <script src="zeta/test/main.js"></script>
     <style>
       * { 
         margin: 0; 
@@ -86,11 +86,11 @@
           selector_not_animated: '.underneath'
         };
 
-        var background_switcher = new Zeta.View.Registration.BackgroundSwitcher(config);
-        
-        $(window).resize(function(event) {
-          background_switcher.on_resize();
-        });
+//        var background_switcher = new Zeta.View.Registration.BackgroundSwitcher(config);
+//        
+//        $(window).resize(function(event) {
+//          background_switcher.on_resize();
+//        });
       });
     </script>
   </body>

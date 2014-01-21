@@ -6,6 +6,16 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
 
+  initiate_password_reset: (values, callback) ->
+    config =
+      url: Zeta.Service.URLs.create_access_token_url "/password-reset"
+      type: 'POST'
+      data: values.data
+      on_done:
+        callback      
+      
+    Zeta.Utils.RequestHandler.send_json config  
+
   validate_activation_code: (values, callback) ->
     config =
       url: Zeta.Service.URLs.create_url "/activate?key=#{values.key}&code=#{values.code}"

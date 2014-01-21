@@ -29,6 +29,29 @@ Zeta.Service.Main = (->
       Zeta.Service.Main.get_names_for_all_conversations callback
 
   ###
+    @param {string} email
+    @param {function} callback
+  ###
+  initiate_password_reset: (email, callback) ->
+    console.log "= Zeta.Service.Main.initiate_password_reset"
+    # Data
+    if not email
+      email = Zeta.Storage.Session.get_user().email
+    
+    values =
+      data:
+        email: email
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log data
+      # TODO: Status code 409 if reset has been already requested
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.UserService.initiate_password_reset values, on_done     
+  
+  ###
     @param {function} callback
   ### 
   get_names_for_all_conversations: (callback) ->
