@@ -32,18 +32,43 @@
     <!--<script src="zeta/test/main.js"></script>-->
     <!-- View -->
     <script src="zeta/view/registration/background_switcher.js"></script>
+    <style>
+      * { 
+        margin: 0; 
+        padding: 0; 
+        border: 0; 
+      }
+
+      html, 
+      body { 
+        width: 100%; 
+        height: 100%; 
+      }
+    </style>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="box back"></div>
-      <div class="box front"></div>
+    <div id="first-time-background">
+      <div class="faces underneath"></div>
+      <div class="faces on-top"></div>
     </div>
     <script>
       $(window).load(function() {
         var config = {
-          selector_wrapper: '.wrapper',
-          selector_animated: '.front',
-          selector_not_animated: '.back'
+          images: [
+            'images/welcome_screen_photos/test_bg_01.jpg',
+            'images/welcome_screen_photos/test_bg_02.jpg',
+            'images/welcome_screen_photos/test_bg_03.jpg',
+            'images/welcome_screen_photos/test_bg_04.jpg',
+            'images/welcome_screen_photos/test_bg_05.jpg',
+            'images/welcome_screen_photos/test_bg_06.jpg',
+            'images/welcome_screen_photos/test_bg_07.jpg',
+            'images/welcome_screen_photos/test_bg_08.jpg',
+            'images/welcome_screen_photos/test_bg_09.jpg',
+            'images/welcome_screen_photos/test_bg_10.jpg'
+          ],
+          selector_wrapper: '#first-time-background',
+          selector_animated: '.on-top',
+          selector_not_animated: '.underneath'
         };
 
         var background_switcher = new Zeta.View.Registration.BackgroundSwitcher(config);

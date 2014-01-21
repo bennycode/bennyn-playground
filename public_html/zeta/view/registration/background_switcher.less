@@ -1,4 +1,7 @@
-@-webkit-keyframes fade-out {
+@import "../prefixer.less";
+
+/*first-time-background-fade-out*/
+@-webkit-keyframes first-time-background-fade-out {
   from { 
     -webkit-opacity: 1;
   }
@@ -7,28 +10,34 @@
   }
 }
 
-.wrapper {
+@-moz-keyframes first-time-background-fade-out {
+  from { 
+    -moz-opacity: 1;
+  }
+  to { 
+    -moz-opacity: 0;
+  }
+}
+
+#first-time-background {
   width: 1080px;
   height: 1920px;
   overflow: hidden;
 
-  .box {
+  .faces {
     width: 100%;
     height: 100%;
     position: relative;
     &.scale {
       -webkit-transition: -webkit-transform 8.5s;
-      -webkit-transform: scale(1.4);
+      -moz-transition: -moz-transform 8.5s;
+      -ms-transition: -ms-transform 8.5s;
+      -o-transition: -o-transform 8.5s;
+      -transition:transform 8.5s;
+      .scale(1.4);
     }
     &.fade-out {
-      -webkit-animation-name: fade-out;
-      -webkit-animation-duration: 2.5s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-delay: 6s;
-      -webkit-animation-iteration-count: 1;
-      -webkit-animation-direction: alternate;
-      -webkit-animation-play-state: running;
-      -webkit-animation-fill-mode: forwards;
+      -webkit-animation: first-time-background-fade-out 2.5s linear 6s 1 alternate forwards running;
     }
   }
 }
