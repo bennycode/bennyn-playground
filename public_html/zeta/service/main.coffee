@@ -52,6 +52,25 @@ Zeta.Service.Main = (->
     Zeta.Service.UserService.initiate_password_reset values, on_done     
   
   ###
+    @param {string} name
+    @param {function} callback    
+  ###
+  update_name: (name, callback) ->
+    console.log "= Zeta.Service.Main.update_user_profile"
+    # Data
+    values =
+      data:
+        name: name
+        
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.UserService.update_user_profile values, on_done          
+  
+  ###
     @param {function} callback
   ### 
   get_names_for_all_conversations: (callback) ->
