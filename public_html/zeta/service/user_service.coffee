@@ -6,6 +6,16 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
 
+  create_connection: (values, callback) ->
+    config = 
+      url: Zeta.Service.URLs.create_access_token_url "/self/connections"
+      type: 'POST'
+      data: values.data
+      on_done:
+        callback
+      
+    Zeta.Utils.RequestHandler.send_json config
+
   get_own_connections: (callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/self/connections"
@@ -35,6 +45,15 @@ Zeta.Service.UserService = (->
       
     Zeta.Utils.RequestHandler.send_json config  
 
+  is_existing_user: (values, callback) ->
+    config =
+      url: Zeta.Service.URLs.create_access_token_url "/users/#{values.uid}"
+      type: 'HEAD'
+      on_done:
+        callback
+        
+    Zeta.Utils.RequestHandler.send_request config  
+  
   validate_activation_code: (values, callback) ->
     config =
       url: Zeta.Service.URLs.create_url "/activate?key=#{values.key}&code=#{values.code}"

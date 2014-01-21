@@ -30,7 +30,7 @@ Zeta.Service.Main = (->
 
   ###
     @param {string} email
-    @param {function} callback    
+    @param {function} callback
   ###
   initiate_password_reset: (email, callback) ->
     console.log "= Zeta.Service.Main.initiate_password_reset"
@@ -62,6 +62,45 @@ Zeta.Service.Main = (->
       
     # Service
     Zeta.Service.UserService.get_own_connections on_done   
+  
+  create_connection: (to_uuid, callback) ->
+    console.log "= Zeta.Service.Main.create_connection"
+    # Data
+    values =
+      data:
+        # TODO: Some parameters are missing...
+        from: Zeta.Storage.Session.get_user().id
+        to: to_uuid        
+        last_update: Date.now()
+    
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.UserService.create_connection values, on_done        
+  
+  ###
+    @param {string} uid "a46ffc68-cb0e-45c1-bff8-13c4db065aa7"
+    @param {function} callback
+  ###
+  is_existing_user: (uid, callback) ->
+    console.log "= Zeta.Service.Main.is_existing_user"
+    # Data
+    values =
+      uid: uid
+      
+    # Callback
+    on_done = (data, textStatus, jqXHR) ->
+      if jqXHR.status is 200
+        console.log "Valid user ID"
+      else
+        console.log "Invalid user ID"
+      callback?(data, textStatus, jqXHR)
+      
+    # Service
+    Zeta.Service.UserService.is_existing_user values, on_done       
   
   ###
     @param {string} name
