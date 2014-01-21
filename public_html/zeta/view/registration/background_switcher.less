@@ -12,14 +12,15 @@
 
 @-moz-keyframes first-time-background-fade-out {
   from { 
-    -moz-opacity: 1;
+    opacity: 1;
   }
   to { 
-    -moz-opacity: 0;
+    opacity: 0;
   }
 }
 
 #first-time-background {
+  /*TODO: 100% width & height*/
   width: 1080px;
   height: 1920px;
   overflow: hidden;
@@ -28,6 +29,7 @@
     width: 100%;
     height: 100%;
     position: relative;
+    /*TODO: background-size "cover" und onresize event*/
     &.scale {
       -webkit-transition: -webkit-transform 8.5s;
       -moz-transition: -moz-transform 8.5s;
@@ -37,7 +39,12 @@
       .scale(1.4);
     }
     &.fade-out {
+      /* Shorthand property of -webkit takes 8 arguments */
       -webkit-animation: first-time-background-fade-out 2.5s linear 6s 1 alternate forwards running;
+      /* Shorthand property of -moz takes only 6 arguments! */
+      -moz-animation: first-time-background-fade-out 2.5s linear 6s 1 alternate;
+      animation-play-state: running;
+      animation-fill-mode: forwards;
     }
   }
 }

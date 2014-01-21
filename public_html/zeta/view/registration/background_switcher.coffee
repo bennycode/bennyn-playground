@@ -24,7 +24,7 @@ namespace Zeta:View:Registration:
       @start_scaling = (element) ->
         element.addClass 'scale'
       @start_fade_out = (element, not_animated) ->
-        element.addClass('fade-out').one 'webkitAnimationEnd', (event) =>
+        element.addClass('fade-out').one 'animationend oAnimationEnd MSAnimationEnd mozAnimationEnd webkitAnimationEnd', (event) =>
           not_animated.css 'z-index', '2'
           element.css 'z-index', '1'
           element.removeClass 'scale'
