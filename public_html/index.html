@@ -7,8 +7,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="zeta/view/registration/background_switcher.css" />
-    <!-- External -->
+    <!-- External base -->
     <script src="js/libs/jquery-2.0.3.min.js"></script>
+    <script src="js/libs/knockout-3.0.0.js"></script>
+    <!-- External helpers -->
     <script src="js/libs/PhoneFormat.js"></script>
     <script src="js/libs/uuid.js"></script>
     <script src="js/libs/sha256.js"></script>
@@ -31,8 +33,13 @@
     <script src="zeta/service/main.js"></script>
     <!-- View -->
     <script src="zeta/view/registration/background_switcher.js"></script>
+    <!-- View models -->
+    <script src="zeta/view_model/main_view_model.js"></script>
     <!-- Main -->
-    <script src="zeta/test/main.js"></script>
+    <script src="zeta/main/instances.js"></script>
+    <script src="zeta/main/demo.js"></script>
+    <!-- CSS Frameworks -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" />
     <style>
       * { 
         margin: 0; 
@@ -54,18 +61,47 @@
         /* Takes the full dimension of the viewport */ 
         width: 100%;
         height: 100%;
-        /* General style */
-        color: white;
       }
     </style>
   </head>
   <body>
+    <!-- First time faces -->
     <div id="first-time-background">
       <div class="faces underneath"></div>
       <div class="faces on-top"></div>
     </div>
+    <!-- Proper website content -->
     <div id="website-content">
-    </div>
+
+      <div id="bottom">
+        <div id="bottom-wrapper" class="layout-wrapper">
+          <div id="bottom-grid" class="pure-g-r">
+            <div id="bottom-unit-1" class="pure-u-1">
+
+              <!-- Conversations -->
+              <div id="news-grid" class="pure-g-r">
+                <div id="news-unit-1" class="pure-u-1-3">
+                  <!-- Menu -->
+                  <div class="pure-menu pure-menu-open">
+                    <a class="pure-menu-heading">Your conversations</a>
+
+                    <ul id="conversation-list" data-bind="foreach: conversations">
+                      <li><a href="#" data-bind="text: name"></a></li>
+                    </ul>
+
+                  </div>
+                </div>
+                <div id="news-unit-2" class="pure-u-2-3">
+                  &nbsp;
+                </div>
+              </div>
+
+            </div> <!-- /bottom-unit -->
+          </div> <!-- /bottom-grid -->
+        </div> <!-- /bottom-wrapper -->
+      </div> <!-- /bottom -->
+
+    </div> <!-- /website-content -->
     <script>
       $(window).load(function() {
         var config = {

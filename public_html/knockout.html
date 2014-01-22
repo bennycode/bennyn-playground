@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/test.css" />
+    <style>
+      * { 
+        margin: 0; 
+        padding: 0; 
+        border: 0; 
+      }
+
+      html, 
+      body { 
+        width: 100%; 
+        height: 100%; 
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="conversation-list" data-bind="foreach: conversations">
+      <li data-bind="text: name"></li>
+    </ul>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/libs/knockout-3.0.0.js"></script>
+    <script src="test/main.js"></script>
+  </body>
+</html>
