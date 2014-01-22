@@ -39,7 +39,13 @@ namespace Zeta:ViewModel:
             if user?
               @conversation_messages.push "#{user.name}: #{v.data.content}"
             else
-              # TODO: Retrieve user name!
-              @conversation_messages.push v.data.content
+              get_user_callback = (data, textStatus, jqXHR) ->
+                unknown_user = new Zeta.Model.User()
+                unknown_user.init data
+                # Cache the name of the unknown user
+                Zeta.Storage.Session.get_users()[data.id] = unknown_user
+                # TODO: Search & replace id with user's name or use a model binding
+              Zeta.Service.Main.get_user_by_id from_uid, get_user_callback
+              @conversation_messages.push "#{v.from}: #{v.data.content}"
           
-        Zeta.Service.Main.get_latest_conversation_messages conversation.id, 20, callback
+        Zeta.Service.Main.get_latest_conversation_messages conversation.id, 100, callback
