@@ -230,18 +230,28 @@ Zeta.Service.Main = (->
       # Set the conversation name and conversation creator for unnamed chats
       process_creator = (data, textStatus, jqXHR) ->
         ++ajax_call
+        
+        # Get creator
         creator = new Zeta.Model.User()
         creator.init data
         
+        # Cache creator's name
+        Zeta.Storage.Session.get_users()[creator.id] = creator
+        
+        # Change conversation name
         conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
         conversation_to_update.creator = creator
-        conversation_to_update.name = "Unnamed conversation with #{creator.name}"
+        if creator.id isnt Zeta.Storage.Session.get_user().id
+          conversation_to_update.name = "Chat with #{creator.name}"
+        else
+          conversation_to_update.name = "Self-conversation"
         
         if ajax_call is ajax_call_total
           callback?()
         
       # If the conversation has no name, then take the creator's name
       # Always take our conversation partner's name, even if we instantiated the chat
+      # TODO: If there a bunch of people, then name the chat after the bunch of people!!
       creator_id = conversation.creator
       if creator_id is Zeta.Storage.Session.get_user().id and conversation.has_participants
         creator_id = conversation.members.others[0].id
@@ -305,11 +315,11 @@ Zeta.Service.Main = (->
       data:
         start: last_event_id
         end: '0.0'
-        size: -10
+        size: "-#{amount}"
       
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log JSON.stringify data
+      # console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service

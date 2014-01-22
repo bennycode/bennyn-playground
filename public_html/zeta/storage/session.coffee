@@ -5,8 +5,11 @@ Zeta.Storage.Session = (->
   user = null
   login = null
   conversations = {}
+  users = {}
   
   # Plain setters
+  current_conversation_id: ""
+  
   set_user: (value) ->
     user = value
     
@@ -28,6 +31,9 @@ Zeta.Storage.Session = (->
   
   get_user: ->
     user
+    
+  get_users: ->
+    users    
     
   get_login: ->
     login
