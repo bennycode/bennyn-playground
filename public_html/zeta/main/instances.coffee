@@ -4,4 +4,4 @@ window.Zeta.Instances =
 
 # Create view bindings
 $(document).ready ->
-  ko.applyBindings Zeta.Instances.MainViewModel, document.getElementById "conversation-list"
+  ko.applyBindings Zeta.Instances.MainViewModel, document.getElementById "conversation-list-grid"
