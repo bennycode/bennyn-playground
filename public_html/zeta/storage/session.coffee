@@ -55,8 +55,15 @@ Zeta.Storage.Session = (->
     conversations[key].creator = creator
   
   add_conversation: (key, value) ->
-    conversations[key] = value  
-    
+    conversations[key] = value    
+  
+  ###
+    @param {string} cid Conversation ID "3d927aee-c8ef-469b-b0f6-a97ddba3a282"
+    @param {string} eid Event ID: "92b.800122000a25a145"
+  ###
+  update_conversation_last_event_id: (cid, eid) ->
+    conversations[cid].last_event = eid
+  
   list_conversations: ->
     for key, value of conversations
       value.log_name()

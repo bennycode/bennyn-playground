@@ -1,3 +1,233 @@
+# Club Zeta
+
+{
+    "creator": "22db1aeb-08df-4331-9bc4-8116e1c67219",
+    "members": {
+        "self": {
+            "status": 0,
+            "last_read": "92b.800122000a25a145",
+            "muted_time": "2014-01-21T07:10:14.934Z",
+            "muted": true,
+            "status_time": "2014-01-03T10:31:17.427Z",
+            "status_ref": "0.0",
+            "id": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
+            "archived": null
+        },
+        "others": [
+            {
+                "status": 0,
+                "id": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5"
+            },
+            {
+                "status": 0,
+                "id": "0e2313ca-67bf-4385-bfce-3b30942f686c"
+            },
+            {
+                "status": 0,
+                "id": "10726425-10b3-43b9-bbe7-148a44503e05"
+            },
+            {
+                "status": 0,
+                "id": "11ad05a9-2f7a-49cb-90a0-cb724969b2e7"
+            },
+            {
+                "status": 0,
+                "id": "12a4d334-ccf2-4760-88bd-a81382b4681d"
+            },
+            {
+                "status": 0,
+                "id": "15ede065-72b3-433a-9917-252f076ed031"
+            },
+            {
+                "status": 0,
+                "id": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f"
+            },
+            {
+                "status": 0,
+                "id": "204b4536-71a3-4463-a8aa-87c03f05baeb"
+            },
+            {
+                "status": 1,
+                "id": "21c82cc6-9a72-4a7e-bd58-b335be488bc7"
+            },
+            {
+                "status": 0,
+                "id": "22db1aeb-08df-4331-9bc4-8116e1c67219"
+            },
+            {
+                "status": 1,
+                "id": "2d88e797-75d1-4b66-97a5-6adc8bf5667d"
+            },
+            {
+                "status": 0,
+                "id": "3296437d-592a-4df9-862a-c38555b3c300"
+            },
+            {
+                "status": 0,
+                "id": "32beb1c0-229d-41c6-aa69-9b5e48c16d56"
+            },
+            {
+                "status": 0,
+                "id": "42ed475f-82dd-45aa-b110-e3bf919764ca"
+            },
+            {
+                "status": 0,
+                "id": "58a4d3e8-8f58-4b13-87f3-d02c53a57361"
+            },
+            {
+                "status": 0,
+                "id": "594ca1d9-e667-4bd6-aea9-65ed61787001"
+            },
+            {
+                "status": 0,
+                "id": "5d7e931b-7ea9-4c2a-88e1-31d65ee33e4b"
+            },
+            {
+                "status": 1,
+                "id": "5f50b539-3d83-440c-93dd-563e53d709c8"
+            },
+            {
+                "status": 0,
+                "id": "63f80214-05b4-45a4-8c1e-54a800f508a4"
+            },
+            {
+                "status": 0,
+                "id": "6470c072-58d5-4646-bfab-570aa57f2dd2"
+            },
+            {
+                "status": 1,
+                "id": "6e9451e1-9774-4905-82b8-ab95788c9763"
+            },
+            {
+                "status": 0,
+                "id": "7457710b-9631-45bd-a25d-c082b03ef965"
+            },
+            {
+                "status": 0,
+                "id": "7b0d1f01-5e99-4af1-b46e-b0b0093f76d8"
+            },
+            {
+                "status": 0,
+                "id": "7ffabd7d-c32d-4a87-b1b6-9ac229ddd37d"
+            },
+            {
+                "status": 0,
+                "id": "8bf434e5-084a-453e-884d-a34dbccc1b13"
+            },
+            {
+                "status": 0,
+                "id": "8d5be6f5-8847-4776-b813-b1526a8ad458"
+            },
+            {
+                "status": 0,
+                "id": "9052dfb4-d05b-4953-bebe-88cd02ff0cb0"
+            },
+            {
+                "status": 0,
+                "id": "906e3e7f-979f-49dc-8d69-14d8461f6373"
+            },
+            {
+                "status": 0,
+                "id": "96fd5b00-0480-47ee-853a-8f356edc566d"
+            },
+            {
+                "status": 0,
+                "id": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb"
+            },
+            {
+                "status": 0,
+                "id": "995e9d0e-6669-4bce-a984-9852d2462609"
+            },
+            {
+                "status": 0,
+                "id": "9ac3bdcb-8888-4958-af8e-b451873de6ed"
+            },
+            {
+                "status": 0,
+                "id": "a46ffc68-cb0e-45c1-bff8-13c4db065aa7"
+            },
+            {
+                "status": 0,
+                "id": "a94a6e35-e94e-47c0-903b-8f88e205b15f"
+            },
+            {
+                "status": 0,
+                "id": "abe767f6-a301-4476-82f3-a69c79d92974"
+            },
+            {
+                "status": 0,
+                "id": "ac831644-0457-45f4-82e4-b4bd7d40424e"
+            },
+            {
+                "status": 0,
+                "id": "b5ac5b2c-23ab-408a-b652-70317686c58b"
+            },
+            {
+                "status": 0,
+                "id": "b6acef27-79f4-47fe-9ceb-a910321714ca"
+            },
+            {
+                "status": 0,
+                "id": "c381a62a-6073-4406-a09a-0da13afd24b5"
+            },
+            {
+                "status": 0,
+                "id": "c7727c43-510e-4301-94ec-2b72af9e96e6"
+            },
+            {
+                "status": 0,
+                "id": "c8caefc5-c6f1-421f-b971-143c707b48b8"
+            },
+            {
+                "status": 0,
+                "id": "c9f2daa2-c41e-4496-a8ed-c926af0d7004"
+            },
+            {
+                "status": 0,
+                "id": "da8423fd-7e45-478b-998a-85b810114c17"
+            },
+            {
+                "status": 0,
+                "id": "dee561f7-c2c6-4eca-8d07-2d79a8f09703"
+            },
+            {
+                "status": 0,
+                "id": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c"
+            },
+            {
+                "status": 0,
+                "id": "e821c930-e87b-42b5-a94b-857a521dd8f8"
+            },
+            {
+                "status": 0,
+                "id": "f022b2b6-7174-4eb3-a644-8a058331954c"
+            },
+            {
+                "status": 0,
+                "id": "f1d647c1-685a-4225-a8e1-81ac87a96598"
+            },
+            {
+                "status": 0,
+                "id": "fce58a4d-0502-4e52-a057-9df85536a703"
+            },
+            {
+                "status": 0,
+                "id": "fcf7b17d-6a47-413e-ab28-6c2fe2658284"
+            },
+            {
+                "status": 0,
+                "id": "ff1c93cf-7795-4b90-9a8e-262e982baa71"
+            }
+        ]
+    },
+    "name": "Club Zeta",
+    "id": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+    "type": 0,
+    "last_event_time": "2014-01-23T14:23:45.503Z",
+    "last_event": "92b.800122000a25a145",
+    "has_participants": true
+}
+
 # Direct chat
 
 {

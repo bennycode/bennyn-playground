@@ -308,6 +308,9 @@ Zeta.Service.Main = (->
   get_latest_conversation_messages: (id, amount, callback) ->
     console.log "= Zeta.Service.Main.get_latest_conversation_messages"
     
+    if not amount?
+      amount = 20
+    
     # Data
     last_event_id = Zeta.Storage.Session.get_conversation(id).last_event
     values =
@@ -319,7 +322,7 @@ Zeta.Service.Main = (->
       
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      # console.log JSON.stringify data
+      console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service
@@ -441,6 +444,7 @@ Zeta.Service.Main = (->
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
         
     # Service
     Zeta.Service.ConversationService.add_users_to_conversation values, on_done    
@@ -449,12 +453,17 @@ Zeta.Service.Main = (->
     Get the IDs of the last events for every active conversation that you have.
     This is useful to display if there have been any new messages.
   ###
-  get_last_events: ->
+  get_last_event_ids: ->
     console.log "= Zeta.Service.Main.get_last_events"
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log JSON.stringify data
+      if textStatus is "success"
+        for item in data.conversations
+          cid = item.id
+          eid = item.event
+          Zeta.Storage.Session.update_conversation_last_event_id cid, eid
+      callback?(data, textStatus, jqXHR)
       
     # Service
     Zeta.Service.ConversationService.get_last_events on_done
@@ -480,6 +489,7 @@ Zeta.Service.Main = (->
         console.log "The key/code combination exists / is valid."
       else
         console.log "The key/code combination does not exist."
+      callback?(data, textStatus, jqXHR)
       
     # Service
     Zeta.Service.UserService.validate_activation_code values, on_done   
@@ -500,6 +510,7 @@ Zeta.Service.Main = (->
         console.log "Activation was successful."
       else
         console.log "The key/code combination does not exist."
+      callback?(data, textStatus, jqXHR)
       
     # Service
     Zeta.Service.UserService.use_activation_code values, on_done      
@@ -520,6 +531,7 @@ Zeta.Service.Main = (->
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
         
     # Service
     Zeta.Service.ConversationService.remove_user_from_conversation values, on_done      
@@ -536,6 +548,7 @@ Zeta.Service.Main = (->
     # Callback
     on_done = (data, textStatus, jqXHR) ->
       console.log JSON.stringify data
+      callback?(data, textStatus, jqXHR)
       
     # Service
     Zeta.Service.ConversationService.update_conversation_properties values, on_done      

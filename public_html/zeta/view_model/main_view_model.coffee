@@ -28,7 +28,7 @@ namespace Zeta:ViewModel:
         Zeta.Service.Main.post_message_to_conversation cid, message, callback
         
       @open_conversation = (conversation, event) =>
-        @conversation_intro "<b>#{conversation.name}</b>"
+        @conversation_intro "<b>#{conversation.name}</b> (#{conversation.id})"
         Zeta.Storage.Session.current_conversation_id = conversation.id
       
         callback = (data, textStatus, jqXHR) =>
@@ -40,8 +40,7 @@ namespace Zeta:ViewModel:
               @conversation_messages.push "#{user.name}: #{v.data.content}"
             else
               get_user_callback = (data, textStatus, jqXHR) ->
-                unknown_user = new Zeta.Model.User()
-                unknown_user.init data
+                unknown_user = new Zeta.Model.User data
                 # Cache the name of the unknown user
                 Zeta.Storage.Session.get_users()[data.id] = unknown_user
                 # TODO: Search & replace id with user's name or use a model binding
