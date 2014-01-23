@@ -12,4 +12,13 @@ after_login = (data, textStatus, jqXHR) ->
     Zeta.Instances.MainViewModel.conversation_intro "Login successful. Please click on a conversation."
     Zeta.Service.Main.get_all_conversations_with_details after_fetching_conversations
 
-Zeta.Service.Main.login "benny@wearezeta.com", "", after_login
+$(window).load ->
+  $.ajax
+    async: true,
+    global: false,
+    url: "data/login.properties"
+    success: (data) ->
+      credentials = data.split ":"
+      email = credentials[0]
+      password = credentials[1]
+      Zeta.Service.Main.login email, password, after_login
