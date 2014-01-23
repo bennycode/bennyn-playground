@@ -1,0 +1,31 @@
+{
+    "creator": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
+    "members": {
+        "self": {
+            "status": 0,
+            "last_read": "1.800122000a255d9a",
+            "muted_time": null,
+            "muted": null,
+            "status_time": "2014-01-16T15:30:54.203Z",
+            "status_ref": "0.0",
+            "id": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
+            "archived": "1.800122000a255d9a"
+        },
+        "others": [
+            {
+                "status": 0,
+                "id": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5"
+            },
+            {
+                "status": 0,
+                "id": "15ede065-72b3-433a-9917-252f076ed031"
+            }
+        ]
+    },
+    "name": null,
+    "id": "a69c0d65-e62d-4dcb-af53-ad0b6a828e8b",
+    "type": 0,
+    "last_event_time": "2014-01-16T15:30:54.203Z",
+    "last_event": "1.800122000a255d9a",
+    "has_participants": true
+}

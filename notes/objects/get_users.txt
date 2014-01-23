@@ -1,0 +1,153 @@
+List with multiple users:
+
+[
+    {
+        "email": "bjorn.herbig@wearezeta.com",
+        "phone": null,
+        "accent": [
+            0.14100000262260437,
+            0.5519999861717224,
+            0.8270000219345093,
+            1
+        ],
+        "picture": [
+            {
+                "content_length": 2134,
+                "data": "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",
+                "content_type": "image/webp",
+                "id": "517e74e6-1c8d-56b6-95cd-37d6f7d87433",
+                "info": {
+                    "height": 126,
+                    "tag": "preview",
+                    "original_width": 376,
+                    "width": 132,
+                    "name": "TODO",
+                    "correlation_id": "70b9851b9-dece-2d0b-b5b40c56-9f22da1",
+                    "original_height": 357,
+                    "nonce": "a444a1fbc-9695-876e-7a97a03a-9320b22",
+                    "public": true
+                }
+            },
+            {
+                "content_length": 9502,
+                "data": "",
+                "content_type": "image/webp",
+                "id": "0e894338-67f9-584b-8121-2e64417b67c7",
+                "info": {
+                    "height": 357,
+                    "tag": "medium",
+                    "original_width": 376,
+                    "width": 376,
+                    "name": "TODO",
+                    "correlation_id": "70b9851b9-dece-2d0b-b5b40c56-9f22da1",
+                    "original_height": 357,
+                    "nonce": "773a17cd2-8ed5-b6da-35f3ab81-f7aeaf8",
+                    "public": true
+                }
+            }
+        ],
+        "name": "Björn Herbig",
+        "id": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5"
+    },
+    {
+        "email": "andreas.kompanez@wearezeta.com",
+        "phone": null,
+        "accent": [
+            1,
+            0.5879999995231628,
+            0,
+            1
+        ],
+        "picture": [
+            {
+                "content_length": 1620,
+                "data": "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",
+                "content_type": "image/webp",
+                "id": "cf91ccb7-c3a3-567b-a47c-9588e5b843ae",
+                "info": {
+                    "height": 132,
+                    "tag": "preview",
+                    "original_width": 675,
+                    "width": 110,
+                    "name": "TODO",
+                    "correlation_id": "3e807961a-c371-6dae-dfb34cca-a47b411",
+                    "original_height": 813,
+                    "nonce": "98f30aa0f-3bf2-905b-5487cdbb-99d1c79",
+                    "public": true
+                }
+            },
+            {
+                "content_length": 36350,
+                "data": "",
+                "content_type": "image/webp",
+                "id": "39942719-5ab2-5175-961c-f761c268fd15",
+                "info": {
+                    "height": 813,
+                    "tag": "medium",
+                    "original_width": 675,
+                    "width": 675,
+                    "name": "TODO",
+                    "correlation_id": "3e807961a-c371-6dae-dfb34cca-a47b411",
+                    "original_height": 813,
+                    "nonce": "68e2c4a32-693e-e317-e383f48f-60ec75a",
+                    "public": true
+                }
+            }
+        ],
+        "name": "Andre??s Kompanez",
+        "id": "15ede065-72b3-433a-9917-252f076ed031"
+    }
+]
+
+List with one user:
+
+[
+    {
+        "email": "malia.denis@wearezeta.com",
+        "phone": null,
+        "accent": [
+            0.13729999959468842,
+            0.5685999989509583,
+            0.8274499773979187,
+            1
+        ],
+        "picture": [
+            {
+                "content_length": 2810,
+                "data": "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",
+                "content_type": "image/webp",
+                "id": "9174a0f4-a4a2-5a54-8be3-2b8f5b908350",
+                "info": {
+                    "height": 144,
+                    "tag": "preview",
+                    "original_width": 864,
+                    "width": 108,
+                    "name": "TODO",
+                    "correlation_id": "7a448c753-fc49-7030-e06d6662-5cf2911",
+                    "original_height": 1152,
+                    "nonce": "878ea895c-ec1f-ce83-5a92448c-17b5826",
+                    "public": true
+                }
+            },
+            {
+                "content_length": 56862,
+                "data": "",
+                "content_type": "image/webp",
+                "id": "5856bcfd-bba2-59b1-b26f-e6a8443b51c9",
+                "info": {
+                    "height": 1152,
+                    "tag": "medium",
+                    "original_width": 2448,
+                    "width": 864,
+                    "name": "TODO",
+                    "correlation_id": "7a448c753-fc49-7030-e06d6662-5cf2911",
+                    "original_height": 3264,
+                    "nonce": "1253d3f23-5de6-2d5e-219dfda8-10a27eb",
+                    "public": true
+                }
+            }
+        ],
+        "name": "Malia",
+        "id": "e821c930-e87b-42b5-a94b-857a521dd8f8"
+    }
+]

@@ -223,40 +223,40 @@ Zeta.Service.Main = (->
     unnamed_conversations = {}
     for key, conversation of conversations
       if not conversation.name
-        unnamed_conversations[key] = conversation
-        ++ajax_call_total
+        if conversation.members.others.length > 0
+          unnamed_conversations[key] = conversation
+          ++ajax_call_total
+        else
+          conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
+          conversation_to_update.name = "Self conversation"
     
+    # Set the conversation name and conversation creator for unnamed chats
     $.each unnamed_conversations, (index, conversation) ->
-      # Set the conversation name and conversation creator for unnamed chats
-      process_creator = (data, textStatus, jqXHR) ->
+      # 2. Callback for each conversation request
+      process_creators = (data, textStatus, jqXHR) ->
         ++ajax_call
         
-        # Get creator
-        creator = new Zeta.Model.User()
-        creator.init data
+        # 3. Update chat name, ex.
+        # Chat with Björn Herbig, Andreas Kompanez, Kenny
+        chat_name = "Chat with "
         
-        # Cache creator's name
-        Zeta.Storage.Session.get_users()[creator.id] = creator
+        for item in data
+          chat_name += item.name + ", "
         
-        # Change conversation name
+        chat_name = chat_name.slice 0, -2
         conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
-        conversation_to_update.creator = creator
-        if creator.id isnt Zeta.Storage.Session.get_user().id
-          conversation_to_update.name = "Chat with #{creator.name}"
-        else
-          conversation_to_update.name = "Self-conversation"
+        conversation_to_update.name = chat_name
         
+        # 4. Execute final callback after all requests have been made
         if ajax_call is ajax_call_total
           callback?()
-        
-      # If the conversation has no name, then take the creator's name
-      # Always take our conversation partner's name, even if we instantiated the chat
-      # TODO: If there a bunch of people, then name the chat after the bunch of people!!
-      creator_id = conversation.creator
-      if creator_id is Zeta.Storage.Session.get_user().id and conversation.has_participants
-        creator_id = conversation.members.others[0].id
-        # Request the conversation partner's name
-      Zeta.Service.Main.get_user_by_id creator_id, process_creator 
+      
+      # 1. Collect the IDs for every participant and query it
+      uids_of_participants = []
+      for k, v of conversation.members.others
+        uids_of_participants.push v.id
+      
+      Zeta.Service.Main.get_users uids_of_participants, process_creators 
 
   ###
     @param {function} callback
@@ -351,6 +351,8 @@ Zeta.Service.Main = (->
   ###
   get_users: (user_ids, callback) ->
     console.log "= Zeta.Service.Main.get_users"
+    if not user_ids.length
+      return
     
     # Data
     values =
@@ -359,8 +361,13 @@ Zeta.Service.Main = (->
       
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      for user in data
-        console.log user.name
+      if textStatus is "success"
+        for item in data
+          user = new Zeta.Model.User item
+          Zeta.Storage.Session.add_user user
+      else
+        console.log "get_users: Cannot fetch user information"
+      callback?(data, textStatus, jqXHR)
 
     # Service
     Zeta.Service.UserService.get_users values, on_done
@@ -565,7 +572,7 @@ Zeta.Service.Main = (->
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log JSON.stringify data
+      #console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service
@@ -580,9 +587,7 @@ Zeta.Service.Main = (->
     # Data
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log JSON.stringify data
-      user = new Zeta.Model.User()
-      user.init data
+      user = new Zeta.Model.User data
       Zeta.Storage.Session.set_user user
       callback?(data, textStatus, jqXHR)
       

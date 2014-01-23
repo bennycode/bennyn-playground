@@ -48,6 +48,9 @@ Zeta.Storage.Session = (->
     Object.keys(conversations).length
     
   # Extra methods
+  add_user: (user) ->
+    users[user.id] = user
+  
   set_conversation_creator: (key, creator) ->
     conversations[key].creator = creator
   
