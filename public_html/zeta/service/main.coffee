@@ -25,6 +25,9 @@ Zeta.Service.Main = (->
     @param {function} callback
   ###
   get_all_conversations_with_details: (callback) ->
+    on_done = (data, textStatus, jqXHR) ->
+      callback?(data, textStatus, jqXHR)
+      
     Zeta.Service.Main.get_conversations ->
       Zeta.Service.Main.get_names_for_all_conversations callback
 
@@ -312,17 +315,16 @@ Zeta.Service.Main = (->
       amount = 20
     
     # Data
-    last_event_id = Zeta.Storage.Session.get_conversation(id).last_event
     values =
       id: id
       data:
-        start: last_event_id
+        start: Zeta.Storage.Session.get_conversation(id).last_event
         end: '0.0'
         size: "-#{amount}"
       
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      console.log JSON.stringify data
+      # console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service
@@ -655,7 +657,7 @@ Zeta.Service.Main = (->
         
         login_session = new Zeta.Model.Login data.access_token
         Zeta.Storage.Session.set_login login_session
-        Zeta.Service.Main.update_own_user callback
+        # Zeta.Service.Main.update_own_user callback
       else
         console.log "Authentication FAILED"    
       
