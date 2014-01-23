@@ -589,6 +589,7 @@ Zeta.Service.Main = (->
     on_done = (data, textStatus, jqXHR) ->
       user = new Zeta.Model.User data
       Zeta.Storage.Session.set_user user
+      Zeta.Storage.Session.add_user user
       callback?(data, textStatus, jqXHR)
       
     # Service
