@@ -455,7 +455,7 @@ Zeta.Service.Main = (->
     Get the IDs of the last events for every active conversation that you have.
     This is useful to display if there have been any new messages.
   ###
-  get_last_event_ids: ->
+  get_last_event_ids: (callback) ->
     console.log "= Zeta.Service.Main.get_last_events"
     
     # Callback

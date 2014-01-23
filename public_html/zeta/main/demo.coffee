@@ -2,14 +2,15 @@
 # 2. get_conversations
 
 after_fetching_conversations = ->
-  # Empty conversation VM
+  # Empty conversation view model
   Zeta.Instances.MainViewModel.conversations.removeAll()
-  # Fill conversation VM
+  # Fill conversation view model
   for id, conversation of Zeta.Storage.Session.get_conversations()
     Zeta.Instances.MainViewModel.conversations.push conversation
+  Zeta.Service.Main.get_last_event_ids ->
+    console.log "Demo finished..."
 
 after_login = (data, textStatus, jqXHR) ->
-  console.log "CALLBACK!"
   if textStatus is "error"
     Zeta.Instances.MainViewModel.conversation_intro "Login failed :("
   else
