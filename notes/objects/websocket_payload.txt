@@ -1,0 +1,48 @@
+{
+    "ports": [],
+    "data": {
+        "type": "",
+        "size": 594
+    },
+    "source": null,
+    "lastEventId": "",
+    "origin": "wss://armada-test.z-infra.com",
+    "cancelBubble": false,
+    "returnValue": true,
+    "srcElement": {
+        "binaryType": "blob",
+        "extensions": "",
+        "protocol": "",
+        "onerror": null,
+        "bufferedAmount": 0,
+        "readyState": 1,
+        "url": "wss://armada-test.z-infra.com/await?access_token=b8fd951c813c4bbae3dc810dd6…6.1.1390581465.a.21719f32-62ba-46f5-83c8-92f9bcab65a3.16793930692923367079",
+        "URL": "wss://armada-test.z-infra.com/await?access_token=b8fd951c813c4bbae3dc810dd6…6.1.1390581465.a.21719f32-62ba-46f5-83c8-92f9bcab65a3.16793930692923367079"
+    },
+    "defaultPrevented": false,
+    "timeStamp": 1390578698613,
+    "cancelable": false,
+    "bubbles": false,
+    "eventPhase": 2,
+    "currentTarget": {
+        "binaryType": "blob",
+        "extensions": "",
+        "protocol": "",
+        "onerror": null,
+        "bufferedAmount": 0,
+        "readyState": 1,
+        "url": "wss://armada-test.z-infra.com/await?access_token=b8fd951c813c4bbae3dc810dd6…6.1.1390581465.a.21719f32-62ba-46f5-83c8-92f9bcab65a3.16793930692923367079",
+        "URL": "wss://armada-test.z-infra.com/await?access_token=b8fd951c813c4bbae3dc810dd6…6.1.1390581465.a.21719f32-62ba-46f5-83c8-92f9bcab65a3.16793930692923367079"
+    },
+    "target": {
+        "binaryType": "blob",
+        "extensions": "",
+        "protocol": "",
+        "onerror": null,
+        "bufferedAmount": 0,
+        "readyState": 1,
+        "url": "wss://armada-test.z-infra.com/await?access_token=b8fd951c813c4bbae3dc810dd6…6.1.1390581465.a.21719f32-62ba-46f5-83c8-92f9bcab65a3.16793930692923367079",
+        "URL": "wss://armada-test.z-infra.com/await?access_token=b8fd951c813c4bbae3dc810dd6…6.1.1390581465.a.21719f32-62ba-46f5-83c8-92f9bcab65a3.16793930692923367079"
+    },
+    "type": "message"
+}

@@ -3,4 +3,5 @@ Open WebSocket connection (The Tiago-way):
 curl -v -N -H'Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==' -H'Sec-WebSocket-Version: 13' -H'Connection: Upgrade' -H'Upgrade: websocket' 'https://armada-dev.z-infra.com/await?access_token=ACCESS_TOKEN'
 
 Open WebSocket connection (The Google Chrome way):
+
 curl "https://armada-test.z-infra.com/await?access_token=ACCESS_TOKEN" -H "Pragma: no-cache" -H "Origin: http://localhost:8383" -H "Sec-WebSocket-Key: uKOGvG5UxC0llrYm7jNGGQ==" -H "User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36" -H "Upgrade: websocket" -H "Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits, x-webkit-deflate-frame" -H "Cache-Control: no-cache" -H "Connection: Upgrade" -H "Sec-WebSocket-Version: 13" --compressed
