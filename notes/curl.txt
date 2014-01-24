@@ -1,0 +1,4 @@
+Open WebSocket connection:
+
+curl -v -N -H'Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==' -H'Sec-WebSocket-Version: 13' -H'Connection: Upgrade' -H'Upgrade: websocket' 'https://armada-dev.z-infra.com/await?access_token=e45b6cc008caa73b3fae00a0026c15c02b631207.1.1380035034.a.46ce6006-f58e-4e03-a2bc-81bc8de87776.17689803019005014184'
+

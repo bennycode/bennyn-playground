@@ -13,12 +13,12 @@ Zeta.Storage.Data = (->
     # First check the memory
     user = Zeta.Storage.Session.get_user user_id
     if user? and not force_update
-      console.log "Found user in browser cache:"
-      console.log "#{JSON.stringify user}"
+#      console.log "Found user in browser cache:"
+#      console.log "#{JSON.stringify user}"
       callback?(user)
       return user
     else
-      console.log "Requesting user info from backend:"
+#      console.log "Requesting user info from backend:"
       Zeta.Service.Main.get_user_by_id user_id, callback
       return user_id
 #

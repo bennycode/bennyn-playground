@@ -33,7 +33,6 @@ namespace Zeta:ViewModel:
       
         callback = (data, textStatus, jqXHR) =>
           @conversation_messages.removeAll()
-          console.log data.events.length
           
           for event in data.events
             if event.type is Zeta.Model.CONVERSATION_TYPE.message

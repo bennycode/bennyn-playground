@@ -4,11 +4,14 @@ Zeta.Service.URLs = (->
 
   # Private
   property =
-    host: 'https://armada-test.z-infra.com'
+    host: 'armada-test.z-infra.com'
   
   # Public
+  get_host: ->
+    property.host
+  
   create_url: (path) ->
-    "#{property.host}#{path}"   
+    "https://#{property.host}#{path}"   
   
   create_access_token_url: (path) ->
     url = @create_url path
