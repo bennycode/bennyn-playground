@@ -119,7 +119,7 @@ Zeta.Service.ConversationService = (->
     values.data.access_token = Zeta.Storage.Session.get_access_token()
   
     config = 
-      url: Zeta.Service.URLs.create_url "/conversations/#{values.id}/messages"
+      url: Zeta.Service.URLs.create_url "/conversations/#{values.id}/events"
       data: values.data
       type: 'GET'
       on_done:

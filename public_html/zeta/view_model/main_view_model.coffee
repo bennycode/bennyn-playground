@@ -33,18 +33,19 @@ namespace Zeta:ViewModel:
       
         callback = (data, textStatus, jqXHR) =>
           @conversation_messages.removeAll()
-          for k, v of data.messages
-            from_uid = v.from
-            user = Zeta.Storage.Session.get_users()[from_uid]
-            if user?
-              @conversation_messages.push "#{user.name}: #{v.data.content}"
-            else
-              get_user_callback = (data, textStatus, jqXHR) ->
-                unknown_user = new Zeta.Model.User data
-                # Cache the name of the unknown user
-                Zeta.Storage.Session.get_users()[data.id] = unknown_user
-                # TODO: Search & replace id with user's name or use a model binding
-              Zeta.Service.Main.get_user_by_id from_uid, get_user_callback
-              @conversation_messages.push "#{v.from}: #{v.data.content}"
+          console.log data.events.length
           
-        Zeta.Service.Main.get_latest_conversation_messages conversation.id, 100, callback
+          for event in data.events
+            if event.type is Zeta.Model.CONVERSATION_TYPE.message
+              # Trigger: Fetch user information
+              user = Zeta.Storage.Data.async_get_user_by_id event.from
+              if user.name?
+                @conversation_messages.push "#{user.name}: #{event.data.content}"
+              else
+                @conversation_messages.push "#{event.from}: #{event.data.content}"
+              
+        params =
+          cid: conversation.id
+          size: -20
+          
+        Zeta.Service.Main.get_latest_conversation_messages params, callback

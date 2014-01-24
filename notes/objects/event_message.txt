@@ -1,0 +1,16 @@
+{
+    "conversation": "6f606b51-31c1-4682-a427-ea4ffb4eca88",
+    "time": "2014-01-24T12:48:43.426Z",
+    "data": {
+        "debug": {
+            "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+            "01.requestQueued": "2014-01-24 12:48:43.307",
+            "02.requestSent": "2014-01-24 12:48:43.308"
+        },
+        "content": "just one of many moments dimitri has on file",
+        "nonce": "77da3c12f-03cc-a429-2e52c3a1-619a8ce"
+    },
+    "from": "e821c930-e87b-42b5-a94b-857a521dd8f8",
+    "id": "8b7.800122000a25a8ab",
+    "type": "conversation.message-add"
+}

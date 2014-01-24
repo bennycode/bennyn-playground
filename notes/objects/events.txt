@@ -1,0 +1,1637 @@
+{
+    "events": [
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:53:45.311Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:53:45.231",
+                    "02.requestSent": "2014-01-23 08:53:45.231"
+                },
+                "content": "hakons is clearly fake … he is a fake kind of guy",
+                "nonce": "8c96d773c-a593-4d47-731abde9-161a41c"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "8f6.800122000a259f3b",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:54:26.773Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:54:26.134",
+                    "02.requestSent": "2014-01-23 08:54:26.134"
+                },
+                "content": "being lazy and just rearranging the previous screens numbers… try harder next time :P",
+                "nonce": "113b71b07-9dbe-3e43-2c9094d9-db80960"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "8f7.800122000a259f3e",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:54:26.835Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:54:26.624",
+                    "02.requestSent": "2014-01-23 08:54:26.625"
+                },
+                "content": "hehe… ;) ",
+                "nonce": "4878a68a0-d410-d128-03d1ffbb-28db1d8"
+            },
+            "from": "22db1aeb-08df-4331-9bc4-8116e1c67219",
+            "id": "8f8.800122000a259f3f",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:54:40.651Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:54:39.313",
+                    "02.requestSent": "2014-01-23 08:54:39.314"
+                },
+                "content": "Yeah, I don’t see 935 in global top scores",
+                "nonce": "61f3bd175-e5b5-bbd4-a4b95e42-b4c473a"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "8f9.800122000a259f40",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:54:51.049Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:54:49.832",
+                    "02.requestSent": "2014-01-23 08:54:49.833"
+                },
+                "content": "And the kerning of the font is off",
+                "nonce": "808968c73-0675-78cc-825043fb-1fcecd2"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "8fa.800122000a259f41",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:55:16.986Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:55:15.651",
+                    "02.requestSent": "2014-01-23 08:55:15.651"
+                },
+                "content": "Space between 9 and 3… let’s just say you would not be accepted to work at a type design studio",
+                "nonce": "76a39dbd8-48f8-32f6-92f5b96f-707e758"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "8fb.800122000a259f42",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:57:16.078Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:57:15.509",
+                    "02.requestSent": "2014-01-23 08:57:15.509"
+                },
+                "content": "sleepy zetans … meeting upstairs!",
+                "nonce": "9bd13babb-0373-96a2-c9eb447c-525f205"
+            },
+            "from": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5",
+            "id": "8fc.800122000a259f4b",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:57:16.279Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:57:16.295",
+                    "02.requestSent": "2014-01-23 08:57:16.296"
+                },
+                "content": "",
+                "nonce": "7c99f12ce-8524-b5a8-111e04c2-a54236e"
+            },
+            "from": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5",
+            "id": "8fd.800122000a259f4c",
+            "type": "conversation.knock"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:57:16.405Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:57:16.417",
+                    "02.requestSent": "2014-01-23 08:57:16.418"
+                },
+                "content": "",
+                "nonce": "073baadfe-4e9e-20eb-02a885c4-7829bdd",
+                "ref": "7c99f12ce-8524-b5a8-111e04c2-a54236e"
+            },
+            "from": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5",
+            "id": "8fe.800122000a259f4d",
+            "type": "conversation.hot-knock"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:57:20.987Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "AND,mod:Nexus 5,4.4.2,git:v0.5.24-43-g856afed1-dirty,72dc7db1-dirty,v0.5.25(134)",
+                    "01.requestQueued": "2014-01-23 08:57:20.986",
+                    "02.requestSent": "2014-01-23 08:57:20.992"
+                },
+                "content": "Hehe... I did it on purpose to annoy you Priidu...",
+                "nonce": "2ce2b832a-5942-9b34-3d86412a-b5a6222"
+            },
+            "from": "22db1aeb-08df-4331-9bc4-8116e1c67219",
+            "id": "8ff.800122000a259f4e",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:57:55.819Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:57:54.483",
+                    "02.requestSent": "2014-01-23 08:57:54.484"
+                },
+                "content": "Decreases your chance to become a Design team member with each time, man",
+                "nonce": "cad8a93d1-cc6d-1a53-674e05c4-c91c7e2"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "900.800122000a259f4f",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T08:59:40.822Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 08:59:40.202",
+                    "02.requestSent": "2014-01-23 08:59:40.204"
+                },
+                "content": "@Priidu, regarding your question about the car we will take part in the Rally with: probably one of these http://media.voiture-miniature.com/images_miniatures/166634.jpg",
+                "nonce": "ccf3aa60d-c485-4c74-b71a4768-21c5567"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "901.800122000a259f52",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T09:01:02.085Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 09:01:01.774",
+                    "02.requestSent": "2014-01-23 09:01:01.775"
+                },
+                "content": "But that’s a model car",
+                "nonce": "3c534629b-b64a-f03d-b1b1e858-6a9fbaf"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "902.800122000a259f53",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T09:01:09.086Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 09:01:09.019",
+                    "02.requestSent": "2014-01-23 09:01:09.020"
+                },
+                "content": "that’s a panda",
+                "nonce": "5a78292f6-d3b4-b53a-a7457bc1-d9508be"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "903.800122000a259f54",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T09:01:15.359Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 09:01:15.216",
+                    "02.requestSent": "2014-01-23 09:01:15.217"
+                },
+                "content": "1:43",
+                "nonce": "a5877b575-4aa9-f0cd-0324decc-52df203"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "904.800122000a259f55",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T09:01:15.789Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 09:01:15.707",
+                    "02.requestSent": "2014-01-23 09:01:15.708"
+                },
+                "content": "Fiat Panda",
+                "nonce": "2620d0f3e-53f5-6c37-18301b02-67ebee0"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "905.800122000a259f56",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T09:01:25.351Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 09:01:25.274",
+                    "02.requestSent": "2014-01-23 09:01:25.275"
+                },
+                "content": "ofc not THAT one",
+                "nonce": "060f40041-d599-3f48-78ea93bc-223b296"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "906.800122000a259f57",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:06:04.700Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:06:03.570",
+                    "02.requestSent": "2014-01-23 11:06:03.571"
+                },
+                "content": "http://www.youtube.com/watch?v=6gPJo25sb80",
+                "nonce": "11dc390c7-92be-a961-b52be366-42cede9"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "907.800122000a25a029",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:06:12.838Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:06:12.218",
+                    "02.requestSent": "2014-01-23 11:06:12.219"
+                },
+                "content": "tommaso en route with extra travel equipment",
+                "nonce": "35e3fc077-0b63-a7d3-4c2aae0e-c57b154"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "908.800122000a25a02a",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:13:52.927Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:13:52.708",
+                    "02.requestSent": "2014-01-23 11:13:52.709"
+                },
+                "content": "http://www.roadpost.com/Iridium-AxcessPoint-P817C334.aspx?UserID=131464999&SessionID=zOMcK{{YAlA1Cff5RiLt just saying",
+                "nonce": "4ad90d371-69fe-c8e6-ae95966d-ca95983"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "909.800122000a25a040",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:14:25.880Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:14:25.668",
+                    "02.requestSent": "2014-01-23 11:14:25.669"
+                },
+                "content": "The horse in the back seat is a good idea",
+                "nonce": "b3c763ffa-b2e4-facd-a8d7306f-c90c750"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "90a.800122000a25a045",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:34:27.948Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:34:27.738",
+                    "02.requestSent": "2014-01-23 11:34:27.738"
+                },
+                "content": "@tommaso you should try to obtain http://en.wikipedia.org/wiki/Zaporozhets#ZAZ-965",
+                "nonce": "57f578ecb-3dbb-a6e0-7830d1f3-4f31021"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "90b.800122000a25a07c",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:36:51.611Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:36:51.621",
+                    "02.requestSent": "2014-01-23 11:36:51.621"
+                },
+                "content": "The horse is a great idea…in case yo uget a flat tire:)",
+                "nonce": "75c508611-ab96-b172-404500e9-7f32e06"
+            },
+            "from": "e821c930-e87b-42b5-a94b-857a521dd8f8",
+            "id": "90c.800122000a25a07e",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:37:27.584Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:37:27.373",
+                    "02.requestSent": "2014-01-23 11:37:27.374"
+                },
+                "content": "http://www.milweb.net/classifieds.php?type=1",
+                "nonce": "36761541f-54cb-fa57-6b9f0729-08783e5"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "90d.800122000a25a080",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T11:37:32.364Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 11:37:32.285",
+                    "02.requestSent": "2014-01-23 11:37:32.286"
+                },
+                "content": "seems like there is sale going on",
+                "nonce": "a162ce300-6abe-9208-0b2a0cd6-500351c"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "90e.800122000a25a081",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T13:11:38.526Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 13:11:37.826",
+                    "02.requestSent": "2014-01-23 13:11:37.827"
+                },
+                "content": "https://twitter.com/bbcbreaking/status/426331997083275264",
+                "nonce": "e3d7ec890-d75b-a68b-1bfdbb89-b2a56cd"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "90f.800122000a25a0ce",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T13:11:47.957Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 13:11:47.861",
+                    "02.requestSent": "2014-01-23 13:11:47.862"
+                },
+                "content": "Sneffy, you’re a Belieber, right?",
+                "nonce": "2cb8c7d16-d581-2539-9c183ca7-260f8db"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "910.800122000a25a0cf",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T13:20:27.743Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 13:20:27.010",
+                    "02.requestSent": "2014-01-23 13:20:27.011"
+                },
+                "content": "well you know that selena has lupus",
+                "nonce": "64549149e-9242-d0c8-fe141645-1bcd04e"
+            },
+            "from": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f",
+            "id": "911.800122000a25a0df",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T13:20:30.507Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 13:20:29.914",
+                    "02.requestSent": "2014-01-23 13:20:29.914"
+                },
+                "content": "she is my soul sister",
+                "nonce": "464f97084-99ea-5495-26a1b3f3-3068c58"
+            },
+            "from": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f",
+            "id": "912.800122000a25a0e0",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T13:58:43.648Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 13:58:43.466",
+                    "02.requestSent": "2014-01-23 13:58:43.468"
+                },
+                "content": "does she really? ",
+                "nonce": "9142912e1-3618-e5d1-d94baff6-c0eca70"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "913.800122000a25a11a",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T13:58:47.848Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 13:58:47.721",
+                    "02.requestSent": "2014-01-23 13:58:47.722"
+                },
+                "content": "when diagnosed?",
+                "nonce": "31695b974-3df4-23b7-5b15fbb8-2318ef7"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "914.800122000a25a11b",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T13:59:17.118Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 13:59:16.501",
+                    "02.requestSent": "2014-01-23 13:59:16.503"
+                },
+                "content": "(I’d just heard about the lung thingy)",
+                "nonce": "9941ff527-394c-2a19-5715ba83-e89d72d"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "915.800122000a25a11c",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:02:08.019Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:02:06.940",
+                    "02.requestSent": "2014-01-23 14:02:06.946"
+                },
+                "content": "who’s selena?",
+                "nonce": "43ab3713e-2ae7-fd03-55e2a129-3aa6855"
+            },
+            "from": "8bf434e5-084a-453e-884d-a34dbccc1b13",
+            "id": "916.800122000a25a11e",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:02:26.230Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:02:26.014",
+                    "02.requestSent": "2014-01-23 14:02:26.015"
+                },
+                "content": "oh noes",
+                "nonce": "d12d74c22-cfd3-98c5-5f8da95a-6db593a"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "917.800122000a25a11f",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:02:28.161Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:02:27.942",
+                    "02.requestSent": "2014-01-23 14:02:27.943"
+                },
+                "content": "here goes",
+                "nonce": "dda863e24-085f-1f23-26af5150-59848a2"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "918.800122000a25a120",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:02:28.634Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:02:28.339",
+                    "02.requestSent": "2014-01-23 14:02:28.340"
+                },
+                "content": "ohhhh",
+                "nonce": "649dfa42b-3d8b-4753-ee5ba0c0-88c0dbe"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "919.800122000a25a121",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:02:41.144Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:02:40.837",
+                    "02.requestSent": "2014-01-23 14:02:40.838"
+                },
+                "content": "bieber’s squeeze",
+                "nonce": "1455443c8-5406-9320-98998a8e-51a5412"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "91a.800122000a25a122",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:03:05.220Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:03:04.867",
+                    "02.requestSent": "2014-01-23 14:03:04.868"
+                },
+                "content": "i was thinking “Serena” :(",
+                "nonce": "9483ffbae-9df5-0390-df25e86c-6c2651c"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "91b.800122000a25a124",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:03:12.447Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:03:12.282",
+                    "02.requestSent": "2014-01-23 14:03:12.284"
+                },
+                "content": "duh…..",
+                "nonce": "a48d5c69d-ec4e-e3cb-7c463f5c-e3b6704"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "91c.800122000a25a125",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:19:17.723Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:19:17.025",
+                    "02.requestSent": "2014-01-23 14:19:17.028"
+                },
+                "content": "http://www.youtube.com/watch?v=JYAq-7sOzXQ",
+                "nonce": "f1ddfbaa5-6b87-8e36-5b48e9cc-4a4b981"
+            },
+            "from": "12a4d334-ccf2-4760-88bd-a81382b4681d",
+            "id": "91d.800122000a25a134",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:19:24.444Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:19:24.313",
+                    "02.requestSent": "2014-01-23 14:19:24.314"
+                },
+                "content": "funny",
+                "nonce": "23dfa8d2f-ea3f-c650-0897e68d-0247e3a"
+            },
+            "from": "12a4d334-ccf2-4760-88bd-a81382b4681d",
+            "id": "91e.800122000a25a135",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:20:52.900Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 14:20:52.303",
+                    "02.requestSent": "2014-01-23 14:20:52.306"
+                },
+                "content": "Serena Williams?",
+                "nonce": "8625440e8-f10b-6af8-3aa3abab-b4e9505"
+            },
+            "from": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f",
+            "id": "91f.800122000a25a137",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:21:15.648Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:21:15.044",
+                    "02.requestSent": "2014-01-23 14:21:15.045"
+                },
+                "content": "jup - ",
+                "nonce": "42523376d-f645-de65-199a7e53-5d4b54f"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "920.800122000a25a138",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:21:16.25Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 14:21:15.736",
+                    "02.requestSent": "2014-01-23 14:21:15.740"
+                },
+                "content": "She actually has sjorgens syndrome which is autoimmune as well ",
+                "nonce": "eac8e2833-b6e9-9abf-73cba0e0-b6f4b80"
+            },
+            "from": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f",
+            "id": "921.800122000a25a139",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:21:33.507Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:21:32.902",
+                    "02.requestSent": "2014-01-23 14:21:32.903"
+                },
+                "content": "ah",
+                "nonce": "8cf9d64fa-0204-c5cb-63aab08a-c32fab5"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "922.800122000a25a13a",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:21:36.986Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 14:21:36.453",
+                    "02.requestSent": "2014-01-23 14:21:36.458"
+                },
+                "content": "Bye guys. Just bailed the office to the airport. Sorry I didn't get to say bye to everyone. ",
+                "nonce": "788dabfd9-08c0-08d4-ea4d2f5d-0d82fcb"
+            },
+            "from": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f",
+            "id": "923.800122000a25a13b",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:21:42.556Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 14:21:42.370",
+                    "02.requestSent": "2014-01-23 14:21:42.372"
+                },
+                "content": "But will be back in fen ",
+                "nonce": "0d8ed8d16-981d-7e71-1c0a9abd-7a32b89"
+            },
+            "from": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f",
+            "id": "924.800122000a25a13c",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:21:48.207Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 14:21:47.637",
+                    "02.requestSent": "2014-01-23 14:21:47.639"
+                },
+                "content": "Or feb",
+                "nonce": "f46824ef1-5275-a6b5-6e308045-fbae34f"
+            },
+            "from": "1fdc5f33-53ee-4f4a-9845-8f4622c90e6f",
+            "id": "925.800122000a25a13d",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:22:01.839Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:22:01.223",
+                    "02.requestSent": "2014-01-23 14:22:01.224"
+                },
+                "content": ":D ** waves **",
+                "nonce": "75b6e5a27-74a8-958b-52df6295-d3decca"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "926.800122000a25a13e",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:22:21.828Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:22:21.169",
+                    "02.requestSent": "2014-01-23 14:22:21.170"
+                },
+                "content": "hope it’s warmer in london",
+                "nonce": "b4f21c7fe-7c76-40e9-8a21a096-3f8000b"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "927.800122000a25a140",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:22:30.645Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone6,1,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 14:22:30.259",
+                    "02.requestSent": "2014-01-23 14:22:30.264"
+                },
+                "content": "",
+                "nonce": "8203ef13b-f424-c3c8-29b815f4-749a5dd"
+            },
+            "from": "58a4d3e8-8f58-4b13-87f3-d02c53a57361",
+            "id": "928.800122000a25a141",
+            "type": "conversation.knock"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:23:04.950Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone6,1,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 14:23:04.867",
+                    "02.requestSent": "2014-01-23 14:23:04.868"
+                },
+                "content": "Hi",
+                "nonce": "3c3deb570-dd61-a2a6-16d84a34-4e1598f"
+            },
+            "from": "58a4d3e8-8f58-4b13-87f3-d02c53a57361",
+            "id": "929.800122000a25a142",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:23:35.203Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:23:34.674",
+                    "02.requestSent": "2014-01-23 14:23:34.675"
+                },
+                "content": "aloha!",
+                "nonce": "b464c8d53-8478-f4e6-acd44ad5-f572f6d"
+            },
+            "from": "96fd5b00-0480-47ee-853a-8f356edc566d",
+            "id": "92a.800122000a25a144",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T14:23:45.503Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 14:23:45.289",
+                    "02.requestSent": "2014-01-23 14:23:45.289"
+                },
+                "content": "have a great flight!",
+                "nonce": "d1e719faa-befe-2620-dd3fb063-e73b127"
+            },
+            "from": "12a4d334-ccf2-4760-88bd-a81382b4681d",
+            "id": "92b.800122000a25a145",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:07:53.476Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone6,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 15:07:53.375",
+                    "02.requestSent": "2014-01-23 15:07:53.379"
+                },
+                "content": "Test",
+                "nonce": "d60be9ce3-6416-46d9-d4418acd-a02c935"
+            },
+            "from": "c7727c43-510e-4301-94ec-2b72af9e96e6",
+            "id": "92c.800122000a25a181",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:08:03.607Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-7-g8593146b,,v0.3 (1481)(0.3.1481)",
+                    "01.requestQueued": "2014-01-23 15:08:03.361",
+                    "02.requestSent": "2014-01-23 15:08:03.362"
+                },
+                "content": "ing",
+                "nonce": "cbbf95b96-8637-a6cf-3a8df525-c2afb26"
+            },
+            "from": "dee561f7-c2c6-4eca-8d07-2d79a8f09703",
+            "id": "92d.800122000a25a183",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:21:12.532Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-7-g8593146b,,v0.3 (1481)(0.3.1481)",
+                    "01.requestQueued": "2014-01-23 15:21:02.325",
+                    "02.requestSent": "2014-01-23 15:21:02.326"
+                },
+                "content": "can someone please ring me? I want to test the ringer loop function.",
+                "nonce": "41855893a-792e-e33d-76b5d233-2cba79f"
+            },
+            "from": "dee561f7-c2c6-4eca-8d07-2d79a8f09703",
+            "id": "92e.800122000a25a1a6",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:21:38.104Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 15:21:38.011",
+                    "02.requestSent": "2014-01-23 15:21:38.012"
+                },
+                "content": "calling now",
+                "nonce": "73de94438-c22f-b8c1-7ef0ea2b-e820d27"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "92f.800122000a25a1a7",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:22:11.203Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-7-g8593146b,,v0.3 (1481)(0.3.1481)",
+                    "01.requestQueued": "2014-01-23 15:22:10.375",
+                    "02.requestSent": "2014-01-23 15:22:10.375"
+                },
+                "content": "nope",
+                "nonce": "a1eaa74d0-45ab-3ade-49bb7cf4-9944b25"
+            },
+            "from": "dee561f7-c2c6-4eca-8d07-2d79a8f09703",
+            "id": "930.800122000a25a1a9",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:22:17.454Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-7-g8593146b,,v0.3 (1481)(0.3.1481)",
+                    "01.requestQueued": "2014-01-23 15:22:17.335",
+                    "02.requestSent": "2014-01-23 15:22:17.336"
+                },
+                "content": "let me restart my app BRB",
+                "nonce": "dc06e3efd-6a6c-4dab-38551cff-cb84b33"
+            },
+            "from": "dee561f7-c2c6-4eca-8d07-2d79a8f09703",
+            "id": "931.800122000a25a1aa",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:22:18.795Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 15:22:18.533",
+                    "02.requestSent": "2014-01-23 15:22:18.533"
+                },
+                "content": "ringing on my end ;)",
+                "nonce": "6470d1767-8d17-9098-1341168a-14acc25"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "932.800122000a25a1ab",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:22:29.979Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 15:22:29.885",
+                    "02.requestSent": "2014-01-23 15:22:29.885"
+                },
+                "content": "now don’t know how to hang up",
+                "nonce": "2686de31e-cc03-44bd-1f7fb0f2-50a7143"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "933.800122000a25a1ac",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:36:41.163Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-7-g8593146b,,v0.3 (1481)(0.3.1481)",
+                    "01.requestQueued": "2014-01-23 15:36:40.198",
+                    "02.requestSent": "2014-01-23 15:36:40.199"
+                },
+                "content": "Will someone else please test OSX to OSX ringer loop? Behaviour I experienced was ring loop on caller side but not on receiving.\n",
+                "nonce": "8f3215eea-e25c-c492-9c042f33-072dbfd"
+            },
+            "from": "dee561f7-c2c6-4eca-8d07-2d79a8f09703",
+            "id": "934.800122000a25a1c1",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:37:50.454Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 15:37:47.455",
+                    "02.requestSent": "2014-01-23 15:37:47.456"
+                },
+                "content": "tested last night",
+                "nonce": "c1bdf74b8-3b6e-abd6-ce7259fa-131c80b"
+            },
+            "from": "58a4d3e8-8f58-4b13-87f3-d02c53a57361",
+            "id": "935.800122000a25a1c6",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:37:53.854Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 15:37:51.001",
+                    "02.requestSent": "2014-01-23 15:37:51.001"
+                },
+                "content": "and it worked",
+                "nonce": "a8297bc7d-6cb9-b3fd-c1c91c10-aab09ae"
+            },
+            "from": "58a4d3e8-8f58-4b13-87f3-d02c53a57361",
+            "id": "936.800122000a25a1c7",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:38:06.683Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 15:38:03.686",
+                    "02.requestSent": "2014-01-23 15:38:03.686"
+                },
+                "content": "feel free to call me",
+                "nonce": "368fba87d-afad-aac9-f7df2ccf-983313f"
+            },
+            "from": "58a4d3e8-8f58-4b13-87f3-d02c53a57361",
+            "id": "937.800122000a25a1ca",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:38:09.132Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 15:38:06.279",
+                    "02.requestSent": "2014-01-23 15:38:06.280"
+                },
+                "content": "anyone",
+                "nonce": "30932a3b0-dd26-f0df-062fc4ec-967e6c5"
+            },
+            "from": "58a4d3e8-8f58-4b13-87f3-d02c53a57361",
+            "id": "938.800122000a25a1cb",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T15:38:11.088Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-7-g8593146b,,v0.3 (1481)(0.3.1481)",
+                    "01.requestQueued": "2014-01-23 15:38:03.736",
+                    "02.requestSent": "2014-01-23 15:38:03.737"
+                },
+                "content": "on receiving side as well?",
+                "nonce": "15b1a985c-1112-2ede-10dd8d9f-d77b24e"
+            },
+            "from": "dee561f7-c2c6-4eca-8d07-2d79a8f09703",
+            "id": "939.800122000a25a1cc",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T17:08:55.141Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,3,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 17:08:54.496",
+                    "02.requestSent": "2014-01-23 17:08:54.498"
+                },
+                "content": "http://techcrunch.com/2014/01/22/glyphs-personal-theater-goggles-beat-250k-kickstarter-goal-in-four-hours/?utm_campaign=fb&ncid=fb",
+                "nonce": "8424de1ed-91dd-2223-4fb8b471-73727ff"
+            },
+            "from": "0e2313ca-67bf-4385-bfce-3b30942f686c",
+            "id": "93a.800122000a25a287",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T17:09:07.940Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,3,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 17:09:07.545",
+                    "02.requestSent": "2014-01-23 17:09:07.547"
+                },
+                "content": "The future",
+                "nonce": "97e335176-eb2e-b988-520cd880-61684bd"
+            },
+            "from": "0e2313ca-67bf-4385-bfce-3b30942f686c",
+            "id": "93b.800122000a25a288",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T17:09:22.624Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,3,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-23 17:09:21.329",
+                    "02.requestSent": "2014-01-23 17:09:21.331"
+                },
+                "content": "It's here!",
+                "nonce": "2ef5a88fd-491f-4eae-4764394a-9d2c842"
+            },
+            "from": "0e2313ca-67bf-4385-bfce-3b30942f686c",
+            "id": "93c.800122000a25a289",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T17:43:38.332Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 17:43:39.055",
+                    "02.requestSent": "2014-01-23 17:43:39.056"
+                },
+                "content": "someone please call me",
+                "nonce": "14568a50c-6263-d896-2240383d-4ea8100"
+            },
+            "from": "58a4d3e8-8f58-4b13-87f3-d02c53a57361",
+            "id": "93d.800122000a25a2c1",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-23T17:44:13.647Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-23 17:44:13.568",
+                    "02.requestSent": "2014-01-23 17:44:13.569"
+                },
+                "content": "I called",
+                "nonce": "6bf161f3b-927a-3f6b-e2223937-08e6955"
+            },
+            "from": "594ca1d9-e667-4bd6-aea9-65ed61787001",
+            "id": "93e.800122000a25a2c4",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:22:02.140Z",
+            "data": {
+                "content_length": 3244,
+                "data": "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",
+                "content_type": "image/webp",
+                "id": "629df127-215c-5a2a-97d2-c47b89613ee5",
+                "info": {
+                    "height": 108,
+                    "tag": "preview",
+                    "original_width": 1152,
+                    "width": 144,
+                    "name": null,
+                    "correlation_id": "887f50b25-cfb6-9228-f7e873b1-24300b6",
+                    "original_height": 864,
+                    "nonce": "10c733190-b6c7-16cc-0d518422-4c842ab",
+                    "public": false
+                }
+            },
+            "from": "42ed475f-82dd-45aa-b110-e3bf919764ca",
+            "id": "93f.800122000a25a41a",
+            "type": "conversation.asset-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:22:04.084Z",
+            "data": {
+                "content_length": 98636,
+                "data": null,
+                "content_type": "image/webp",
+                "id": "9e26b3c0-80cf-5527-886c-9bbc76c89a98",
+                "info": {
+                    "height": 864,
+                    "tag": "medium",
+                    "original_width": 3264,
+                    "width": 1152,
+                    "name": null,
+                    "correlation_id": "887f50b25-cfb6-9228-f7e873b1-24300b6",
+                    "original_height": 2448,
+                    "nonce": "854bb717c-2fa5-d7bf-0bea5c5c-50b9038",
+                    "public": false
+                }
+            },
+            "from": "42ed475f-82dd-45aa-b110-e3bf919764ca",
+            "id": "940.800122000a25a41b",
+            "type": "conversation.asset-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:22:31.566Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone6,1,7.0.3,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-24 00:22:30.618",
+                    "02.requestSent": "2014-01-24 00:22:30.626"
+                },
+                "content": "Good to be back in CA :-)",
+                "nonce": "1cb4b8d4e-9f40-9628-437c9533-59f6037"
+            },
+            "from": "42ed475f-82dd-45aa-b110-e3bf919764ca",
+            "id": "941.800122000a25a41c",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:22:54.871Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-8-gc9c94e3f,,v0.3 (1484)(0.3.1484)",
+                    "01.requestQueued": "2014-01-24 00:22:54.879",
+                    "02.requestSent": "2014-01-24 00:22:54.879"
+                },
+                "content": "You wish You had opportunity to grab proper curry wurst now … ;-)",
+                "nonce": "dc8a2c8e7-77ee-6c1c-e5062cb6-a82c2c3"
+            },
+            "from": "c7727c43-510e-4301-94ec-2b72af9e96e6",
+            "id": "942.800122000a25a41d",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:24:28.114Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone6,1,7.0.3,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-24 00:24:26.475",
+                    "02.requestSent": "2014-01-24 00:24:26.477"
+                },
+                "content": "True point...no currywurst on the breakfast menu in Frankfurt either.",
+                "nonce": "bd0cef00a-8f63-840d-51cd1583-56d5138"
+            },
+            "from": "42ed475f-82dd-45aa-b110-e3bf919764ca",
+            "id": "943.800122000a25a41e",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:24:43.980Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-8-gc9c94e3f,,v0.3 (1484)(0.3.1484)",
+                    "01.requestQueued": "2014-01-24 00:24:43.946",
+                    "02.requestSent": "2014-01-24 00:24:43.946"
+                },
+                "content": "Shame! :-)",
+                "nonce": "ff9188f17-69fd-08a2-29b584e3-e17dcd1"
+            },
+            "from": "c7727c43-510e-4301-94ec-2b72af9e96e6",
+            "id": "944.800122000a25a41f",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:52:16.423Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-8-gc9c94e3f,,v0.3 (1484)(0.3.1484)",
+                    "01.requestQueued": "2014-01-24 00:52:16.248",
+                    "02.requestSent": "2014-01-24 00:52:16.248"
+                },
+                "content": "BTW this is the reason why Google bought GIPS and open sourced webRTC http://www.bbc.co.uk/news/technology-25859360 ;-)",
+                "nonce": "31f7e27f9-5655-caa1-05157728-bbed759"
+            },
+            "from": "c7727c43-510e-4301-94ec-2b72af9e96e6",
+            "id": "945.800122000a25a426",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T00:52:34.694Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.22-8-gc9c94e3f,,v0.3 (1484)(0.3.1484)",
+                    "01.requestQueued": "2014-01-24 00:52:34.545",
+                    "02.requestSent": "2014-01-24 00:52:34.546"
+                },
+                "content": "we could turn it into a nice biz opportunity :-)",
+                "nonce": "bd50108ac-4d7b-ed62-dd41a745-5154e70"
+            },
+            "from": "c7727c43-510e-4301-94ec-2b72af9e96e6",
+            "id": "946.800122000a25a427",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T04:24:40.289Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,3,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-24 04:24:39.099",
+                    "02.requestSent": "2014-01-24 04:24:39.104"
+                },
+                "content": "",
+                "nonce": "5c8893d9c-ff7a-5887-3a74bf88-d8b6f51"
+            },
+            "from": "0e2313ca-67bf-4385-bfce-3b30942f686c",
+            "id": "947.800122000a25a447",
+            "type": "conversation.knock"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T06:35:17.372Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-24 06:35:17.276",
+                    "02.requestSent": "2014-01-24 06:35:17.277"
+                },
+                "content": "Nice julian",
+                "nonce": "207d56d15-f386-394e-87003d9f-9329704"
+            },
+            "from": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5",
+            "id": "948.800122000a25a457",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T06:44:08.023Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 06:44:07.810",
+                    "02.requestSent": "2014-01-24 06:44:07.811"
+                },
+                "content": "For my dear hipster friends: http://www.youtube.com/watch?v=en5z-Q4po4M",
+                "nonce": "002c54272-2114-aabe-f424b1e6-2ab581e"
+            },
+            "from": "9ac3bdcb-8888-4958-af8e-b451873de6ed",
+            "id": "949.800122000a25a458",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T07:00:45.647Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone5,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-24 06:45:16.509",
+                    "02.requestSent": "2014-01-24 07:00:54.071"
+                },
+                "content": "You have hipster friends?",
+                "nonce": "143186683-ce50-4d8e-e124512a-9c305c4"
+            },
+            "from": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5",
+            "id": "94a.800122000a25a45f",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:48:53.453Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:48:53.532",
+                    "02.requestSent": "2014-01-24 08:48:53.533"
+                },
+                "content": "If anyone needs to send Hakon anything today, he is requesting all materials via facsimile.",
+                "nonce": "e844cfde3-d208-046f-e44d8104-24ec373"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "94b.800122000a25a4b9",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:49:59.345Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:49:59.118",
+                    "02.requestSent": "2014-01-24 08:49:59.119"
+                },
+                "content": "do we even have one?",
+                "nonce": "a9bb0555b-7c91-586a-96b3cf27-3f52bb1"
+            },
+            "from": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5",
+            "id": "94c.800122000a25a4bd",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:50:35.263Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:50:33.711",
+                    "02.requestSent": "2014-01-24 08:50:33.713"
+                },
+                "content": "And why is that? Did he have a bad sandwich with Marke at Streetfood yesterday as well?",
+                "nonce": "c8983a6f1-bf9f-d18d-854438f9-e25e52f"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "94d.800122000a25a4bf",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:51:05.184Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone6,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-24 08:51:04.708",
+                    "02.requestSent": "2014-01-24 08:51:04.712"
+                },
+                "content": "I’m impressed by Håkon and Tiago being alive and kicking already",
+                "nonce": "649534fa4-a70b-8d69-dbc4190a-7d68126"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "94e.800122000a25a4c0",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:51:20.234Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:51:20.023",
+                    "02.requestSent": "2014-01-24 08:51:20.023"
+                },
+                "content": "define “alive and kicking”",
+                "nonce": "fff45bedb-2bff-5509-25314d61-55ecb0e"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "94f.800122000a25a4c3",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:51:23.599Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:51:23.534",
+                    "02.requestSent": "2014-01-24 08:51:23.535"
+                },
+                "content": ";)",
+                "nonce": "c3115edaf-a740-625c-5ef9d5da-926f1f5"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "950.800122000a25a4c4",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:51:40.767Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:51:39.222",
+                    "02.requestSent": "2014-01-24 08:51:39.222"
+                },
+                "content": "Wait. There was billiards again last night?",
+                "nonce": "e88eb4a85-83cc-85ab-43d35c4f-6f4c07f"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "951.800122000a25a4c6",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:51:47.799Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:51:47.742",
+                    "02.requestSent": "2014-01-24 08:51:47.743"
+                },
+                "content": "touche ",
+                "nonce": "fee181289-03a7-e7e1-7d10114e-833f675"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "952.800122000a25a4c8",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:52:13.641Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:52:13.584",
+                    "02.requestSent": "2014-01-24 08:52:13.585"
+                },
+                "content": "we were solving world problems",
+                "nonce": "562b8a7ee-42ba-dd8d-1a9ad9ab-b99e636"
+            },
+            "from": "22db1aeb-08df-4331-9bc4-8116e1c67219",
+            "id": "953.800122000a25a4c9",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:52:17.835Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "IOS,mod:iPhone6,2,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+                    "01.requestQueued": "2014-01-24 08:52:17.299",
+                    "02.requestSent": "2014-01-24 08:52:17.303"
+                },
+                "content": "Wasn't as bad as Tue but we were just out a bit late.",
+                "nonce": "e331dede0-a9ba-f173-b94e3eed-7ceb696"
+            },
+            "from": "e4b58bd2-e716-4e7b-8e8c-1555adecdb4c",
+            "id": "954.800122000a25a4ca",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:54:29.809Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:54:28.280",
+                    "02.requestSent": "2014-01-24 08:54:28.281"
+                },
+                "content": "HÅKON B\nwe were solving world problems\n\n– great! so we have new builds?",
+                "nonce": "539a4228f-c257-9ec5-80a9086c-8caeb91"
+            },
+            "from": "98dd2ff5-f86d-4bc6-ab66-bd0974b7aacb",
+            "id": "955.800122000a25a4cd",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T08:57:03.703Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 08:56:17.470",
+                    "02.requestSent": "2014-01-24 08:57:03.494"
+                },
+                "content": "is hasn’t materialised into a build yet, but will soon",
+                "nonce": "08480ba19-e9b2-7fcf-08bfffe1-9c5f16f"
+            },
+            "from": "22db1aeb-08df-4331-9bc4-8116e1c67219",
+            "id": "956.800122000a25a4d2",
+            "type": "conversation.message-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T09:16:54.576Z",
+            "data": {
+                "content_length": 3010,
+                "data": "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",
+                "content_type": "image/webp",
+                "id": "ab230af6-cea6-5687-ad23-a8ce77dcc18d",
+                "info": {
+                    "height": 128,
+                    "tag": "preview",
+                    "original_width": 600,
+                    "width": 128,
+                    "name": null,
+                    "correlation_id": "4943ea285-ce49-5f62-85ca0cce-d345d2a",
+                    "original_height": 600,
+                    "nonce": "1fd3029f8-13fd-3123-9de080e0-baa28e5",
+                    "public": false
+                }
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "957.800122000a25a4ee",
+            "type": "conversation.asset-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T09:16:54.739Z",
+            "data": {
+                "content_length": 28344,
+                "data": null,
+                "content_type": "image/webp",
+                "id": "c89016d4-a196-505f-b8c0-0810cf6a1827",
+                "info": {
+                    "height": 600,
+                    "tag": "medium",
+                    "original_width": 600,
+                    "width": 600,
+                    "name": null,
+                    "correlation_id": "4943ea285-ce49-5f62-85ca0cce-d345d2a",
+                    "original_height": 600,
+                    "nonce": "5f4080243-40b0-6448-c687cda6-0012d79",
+                    "public": false
+                }
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "958.800122000a25a4ef",
+            "type": "conversation.asset-add"
+        },
+        {
+            "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+            "time": "2014-01-24T09:17:08.663Z",
+            "data": {
+                "debug": {
+                    "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+                    "01.requestQueued": "2014-01-24 09:17:08.154",
+                    "02.requestSent": "2014-01-24 09:17:08.155"
+                },
+                "content": "@Priidu @sneffy - happy Friday!",
+                "nonce": "4b5343a41-32c4-f867-32588a91-b6180a9"
+            },
+            "from": "8d5be6f5-8847-4776-b813-b1526a8ad458",
+            "id": "959.800122000a25a4f0",
+            "type": "conversation.message-add"
+        }
+    ]
+}

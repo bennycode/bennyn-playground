@@ -29,9 +29,12 @@ Zeta.Storage.Session = (->
     else
       login.access_token
   
-  get_user: ->
+  get_own_user: ->
     user
-    
+  
+  get_user: (uid) ->
+    users[uid]
+  
   get_users: ->
     users    
     
@@ -49,7 +52,7 @@ Zeta.Storage.Session = (->
     
   # Extra methods
   add_user: (user) ->
-    users[user.id] = user
+    users[user.id] = user 
   
   set_conversation_creator: (key, creator) ->
     conversations[key].creator = creator

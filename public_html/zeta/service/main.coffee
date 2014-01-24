@@ -303,24 +303,31 @@ Zeta.Service.Main = (->
     
   ###
     Gets a set of conversation messages.
-    
-    @param {string} id Conversation ID "f9f764a4-5592-4a4f-88c3-a55c083df855"
-    @param {number} amount Amount of messages that you want to get.
     @param {function} callback
   ###          
-  get_latest_conversation_messages: (id, amount, callback) ->
+  get_latest_conversation_messages: (params, callback) ->
     console.log "= Zeta.Service.Main.get_latest_conversation_messages"
+    if typeof params isnt 'object'
+      return
     
-    if not amount?
-      amount = 20
+    start_infos = Zeta.Storage.Session.get_conversation(params.cid).last_event.split "."
+    
+    start_event_id_as_number = parseInt start_infos[0], 16
+    end_event_id_as_number = start_event_id_as_number + params.size
+    
+    if end_event_id_as_number < 0
+      end_event_id_as_number = 0
+    
+    start_event_id_as_hex = start_infos[0]
+    end_event_id_as_hex = end_event_id_as_number.toString 16
     
     # Data
     values =
-      id: id
+      id: params.cid
       data:
-        start: Zeta.Storage.Session.get_conversation(id).last_event
-        end: '0.0'
-        size: "-#{amount}"
+        start: start_event_id_as_hex + ".0"
+        end: end_event_id_as_hex + ".0"
+        size: params.size
       
     # Callback
     on_done = (data, textStatus, jqXHR) ->
@@ -587,8 +594,10 @@ Zeta.Service.Main = (->
     
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      #console.log JSON.stringify data
-      callback?(data, textStatus, jqXHR)
+      if textStatus is "success"
+        user = new Zeta.Model.User data
+        Zeta.Storage.Session.add_user user
+      callback?(user)
       
     # Service
     Zeta.Service.UserService.get_user_by_id data, on_done

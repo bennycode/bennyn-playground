@@ -23,8 +23,10 @@
     <script src="zeta/model/login.js"></script>
     <script src="zeta/model/user_properties.js"></script>
     <script src="zeta/model/user.js"></script>
+    <script src="zeta/model/conversation_type.js"></script>
     <script src="zeta/model/conversation.js"></script>
     <!-- Zeta.Storage -->
+    <script src="zeta/storage/data.js"></script>
     <script src="zeta/storage/session.js"></script>
     <!-- Zeta.Service -->
     <script src="zeta/service/urls.js"></script>
@@ -69,6 +71,10 @@
         /*maroon*/
         background: rgb(202, 60, 60);
       }
+      
+      #conversation-list-menu {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body>
@@ -89,7 +95,7 @@
               <div id="conversation-list-grid" class="pure-g-r">
                 <div id="conversation-list-unit-1" class="pure-u-1-3">
                   <!-- Menu -->
-                  <div class="pure-menu pure-menu-open">
+                  <div id="conversation-list-menu" class="pure-menu pure-menu-open">
                     <a class="pure-menu-heading">Your conversations</a>
 
                     <ul id="conversation-list" data-bind="foreach: conversations">

@@ -1,0 +1,17 @@
+{
+    "conversation": "3d927aee-c8ef-469b-b0f6-a97ddba3a282",
+    "time": "2014-01-23T08:57:16.405Z",
+    "data": {
+        "debug": {
+            "00.BUILD": "MAC,git:v0.5.24-9-g9557ed33,,v0.3 (1512)(0.3.1512)",
+            "01.requestQueued": "2014-01-23 08:57:16.417",
+            "02.requestSent": "2014-01-23 08:57:16.418"
+        },
+        "content": "",
+        "nonce": "073baadfe-4e9e-20eb-02a885c4-7829bdd",
+        "ref": "7c99f12ce-8524-b5a8-111e04c2-a54236e"
+    },
+    "from": "0bb84213-8cc2-4bb1-9e0b-b8dd522396d5",
+    "id": "8fe.800122000a259f4d",
+    "type": "conversation.hot-knock"
+}
