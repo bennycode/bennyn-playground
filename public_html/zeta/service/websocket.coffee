@@ -2,6 +2,10 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.WebSocket = (->
 
+  blob_reader = new FileReader()
+  blob_reader.onload = ->
+    console.log blob_reader.result
+
   ###
     @see http://cjihrig.com/blog/how-to-use-websockets/
     @see http://stackoverflow.com/questions/11089732/display-image-from-blob-using-javascript-and-websockets
@@ -21,12 +25,7 @@ Zeta.Service.WebSocket = (->
       
     socket.onmessage = (event) ->
       if event.data instanceof Blob
-        # TODO: Instantiate FileReader only once
-        reader = new FileReader()
-        reader.onload = ->
-          console.log reader.result
-          # TODO: Put reader.result in an event queue 
-        reader.readAsText event.data
+        blob_reader.readAsText event.data
       
 #
 )()
