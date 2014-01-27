@@ -22,6 +22,10 @@ after_login = (data, textStatus, jqXHR) ->
       Zeta.Service.Main.get_names_for_all_conversations after_fetching_conversations
 
 $(window).load ->
+  # Init controllers
+  conversation_controller = new Zeta.Controller.ConversationController()
+
+  # Login
   $.ajax
     async: true,
     url: "data/login.properties"

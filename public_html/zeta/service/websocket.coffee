@@ -2,16 +2,13 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.WebSocket = (->
 
+  # http://amplifyjs.com/api/pubsub/
   blob_reader = new FileReader()
   blob_reader.onload = ->
     message = JSON.parse blob_reader.result
     events = message.payload
     for event in events
-      switch event.type
-        when Zeta.Model.EventTypes.Conversation.NEW_MESSAGE
-          console.log "Publish message event"
-        else
-          console.log JSON.stringify event
+      amplify.publish event.type, event
 
   ###
     @see http://cjihrig.com/blog/how-to-use-websockets/
