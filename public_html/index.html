@@ -8,12 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="zeta/view/registration/background_switcher.css" />
     <!-- External base -->
-    <script src="js/libs/jquery-2.0.3.min.js"></script>
+    <script src="js/libs/jquery/2.1.0/jquery-2.1.0.min.js"></script>
+    <script src="js/libs/amplify/1.1.2/amplify.core.min.js"></script>
     <script src="js/libs/knockout-3.0.0.js"></script>
     <!-- External helpers -->
-    <script src="js/libs/PhoneFormat.js"></script>
-    <script src="js/libs/uuid.js"></script>
-    <script src="js/libs/sha256.js"></script>
+    <script src="js/libs/misc/PhoneFormat.js"></script>
+    <script src="js/libs/misc/uuid.js"></script>
+    <script src="js/libs/misc/sha256.js"></script>
     <!-- Zeta.Utils -->
     <script src="zeta/utils/misc.js"></script>
     <script src="zeta/utils/namespace.js"></script>
@@ -23,7 +24,7 @@
     <script src="zeta/model/login.js"></script>
     <script src="zeta/model/user_properties.js"></script>
     <script src="zeta/model/user.js"></script>
-    <script src="zeta/model/conversation_type.js"></script>
+    <script src="zeta/model/event_types.js"></script>
     <script src="zeta/model/conversation.js"></script>
     <!-- Zeta.Storage -->
     <script src="zeta/storage/data.js"></script>
@@ -42,7 +43,7 @@
     <script src="zeta/main/instances.js"></script>
     <script src="zeta/main/demo.js"></script>
     <!-- CSS Frameworks -->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" />
+    <link rel="stylesheet" href="css/libs/pure/3.0.0/pure-min.css" />
     <style>
       html, 
       body { 
@@ -72,7 +73,7 @@
         /*maroon*/
         background: rgb(202, 60, 60);
       }
-      
+
       #conversation-list-menu {
         overflow: hidden;
       }

@@ -35,7 +35,7 @@ namespace Zeta:ViewModel:
           @conversation_messages.removeAll()
           
           for event in data.events
-            if event.type is Zeta.Model.CONVERSATION_TYPE.message
+            if event.type is Zeta.Model.EventTypes.Conversation.NEW_MESSAGE
               # Trigger: Fetch user information
               user = Zeta.Storage.Data.async_get_user_by_id event.from
               if user.name?

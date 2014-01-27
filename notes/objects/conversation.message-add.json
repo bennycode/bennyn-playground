@@ -1,0 +1,16 @@
+{
+    "conversation": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
+    "time": "2014-01-27T14:41:34.513Z",
+    "data": {
+        "debug": {
+            "00.BUILD": "IOS,mod:iPad2,5,7.0.4,git:ZClientAndroid-v0.5.21-33-g38262111,,v0.8.12(1494)",
+            "01.requestQueued": "2014-01-27 14:41:34.233",
+            "02.requestSent": "2014-01-27 14:41:34.237"
+        },
+        "content": "J",
+        "nonce": "10674ec49-6efd-84df-8761caa1-e28ace4"
+    },
+    "from": "21719f32-62ba-46f5-83c8-92f9bcab65a3",
+    "id": "42.800122000a25af01",
+    "type": "conversation.message-add"
+}

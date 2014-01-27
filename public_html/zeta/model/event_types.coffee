@@ -1,7 +1,8 @@
 Zeta = {} unless Zeta?
 Zeta.Model = {} unless Zeta.Model?
-Zeta.Model.CONVERSATION_TYPE = 
-  message: "conversation.message-add"
-  knock: "conversation.knock"
-  image: "conversation.asset-add"
-  hot_knock: "conversation.hot-knock"  
+Zeta.Model.EventTypes = 
+  Conversation:
+    HOT_KNOCK: "conversation.hot-knock"  
+    KNOCK: "conversation.knock"
+    IMAGE: "conversation.asset-add"
+    NEW_MESSAGE: "conversation.message-add"

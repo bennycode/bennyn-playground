@@ -4,7 +4,14 @@ Zeta.Service.WebSocket = (->
 
   blob_reader = new FileReader()
   blob_reader.onload = ->
-    console.log blob_reader.result
+    message = JSON.parse blob_reader.result
+    events = message.payload
+    for event in events
+      switch event.type
+        when Zeta.Model.EventTypes.Conversation.NEW_MESSAGE
+          console.log "Publish message event"
+        else
+          console.log JSON.stringify event
 
   ###
     @see http://cjihrig.com/blog/how-to-use-websockets/

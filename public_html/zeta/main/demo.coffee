@@ -1,5 +1,9 @@
 # 1. login
 # 2. get_conversations
+# 3. get latest events
+
+after_fetching_last_events = ->
+  Zeta.Service.WebSocket.open_websocket()
 
 after_fetching_conversations = ->
   # Empty conversation view model
@@ -7,8 +11,7 @@ after_fetching_conversations = ->
   # Fill conversation view model
   for id, conversation of Zeta.Storage.Session.get_conversations()
     Zeta.Instances.MainViewModel.conversations.push conversation
-  Zeta.Service.Main.get_last_event_ids ->
-    console.log "Demo finished..."
+  Zeta.Service.Main.get_last_event_ids after_fetching_last_events
 
 after_login = (data, textStatus, jqXHR) ->
   if textStatus is "error"
