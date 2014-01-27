@@ -670,7 +670,7 @@ Zeta.Service.Main = (->
       else
         console.log "Authentication FAILED"    
       
-      callback?(data, textStatus, jqXHR)      
+      Zeta.Service.Main.update_own_user callback
     
     # Service
     Zeta.Service.UserService.login data, on_done
