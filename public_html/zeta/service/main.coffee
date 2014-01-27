@@ -303,11 +303,17 @@ Zeta.Service.Main = (->
     
   ###
     Gets a set of conversation messages.
+    TODO: It does not get the LATEST message. 
+    
+    Example: In a conversation with 49 messages it stops at message 48.
+    We have to check if this is a backend problem or a frontend problem.
+    
     @param {function} callback
   ###          
   get_latest_conversation_messages: (params, callback) ->
     console.log "= Zeta.Service.Main.get_latest_conversation_messages"
     if typeof params isnt 'object'
+      console.log "Please provide an object"
       return
     
     start_infos = Zeta.Storage.Session.get_conversation(params.cid).last_event.split "."
@@ -331,7 +337,7 @@ Zeta.Service.Main = (->
       
     # Callback
     on_done = (data, textStatus, jqXHR) ->
-      # console.log JSON.stringify data
+      console.log JSON.stringify data
       callback?(data, textStatus, jqXHR)
       
     # Service

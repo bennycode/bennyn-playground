@@ -23,7 +23,9 @@ namespace Zeta:ViewModel:
         cid = Zeta.Storage.Session.current_conversation_id
         message = @conversation_input_text()
         callback = (data, textStatus, jqXHR) =>          
-          @conversation_messages.push data.data.content
+          console.log "Message sent to conversation"
+          # Clear input field
+          $('#conversation-input-text').val ''
             
         Zeta.Service.Main.post_message_to_conversation cid, message, callback
         
@@ -48,3 +50,11 @@ namespace Zeta:ViewModel:
           size: -20
           
         Zeta.Service.Main.get_latest_conversation_messages params, callback
+        
+    show_new_message: (conversation, event) =>
+      if conversation.id is Zeta.Storage.Session.current_conversation_id
+        user = Zeta.Storage.Data.async_get_user_by_id event.from
+        if user.name?
+          @conversation_messages.push "#{user.name}: #{event.data.content}"
+        else
+          @conversation_messages.push "#{event.from}: #{event.data.content}"
