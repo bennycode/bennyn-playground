@@ -11,4 +11,6 @@ Zeta.Controller.ConversationController = (->
   init: ->
     amplify.subscribe Zeta.Model.EventTypes.Conversation.NEW_MESSAGE, on_new_message
 #
-)().init()
+)()
+
+Zeta.Controller.ConversationController.init()
