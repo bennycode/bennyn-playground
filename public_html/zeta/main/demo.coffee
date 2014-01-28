@@ -5,16 +5,16 @@ $(document).ready ->
 
 # Start app
 $(window).load ->
-###
-# Callbacks for Zeta sprint demo ;)
-#
-# 1. login
-# 2. get_conversations
-# 3. get latest events
-###
+  ###
+  # Callbacks for Zeta sprint demo ;)
+  #
+  # 1. login
+  # 2. get_conversations
+  # 3. get latest events
+  ###
   after_fetching_last_events = ->
     Zeta.Service.WebSocket.open_websocket()
-
+    
   after_fetching_conversations = ->
     # Empty conversation view model
     Zeta.Instances.MainViewModel.conversations.removeAll()
@@ -22,7 +22,7 @@ $(window).load ->
     for id, conversation of Zeta.Storage.Session.get_conversations()
       Zeta.Instances.MainViewModel.conversations.push conversation
     Zeta.Service.Main.get_last_event_ids after_fetching_last_events
-
+    
   after_login = (data, textStatus, jqXHR) ->
     if textStatus is "error"
       Zeta.Instances.MainViewModel.conversation_intro "Login failed :("
