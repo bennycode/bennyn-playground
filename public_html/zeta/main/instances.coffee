@@ -1,7 +1,6 @@
 # Init view models
 window.Zeta.Instances = 
   MainViewModel: new Zeta.ViewModel.MainViewModel()
-  ConversationList: new Zeta.ViewModel.ConversationList()
 
 # Create view bindings
 $(document).ready ->
