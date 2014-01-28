@@ -66,8 +66,13 @@
         height: 100%;
       }
 
-      #conversation-input-text {
+      .pure-control-group {
         margin: 5px;
+      }
+      
+      #conversation-header,
+      #conversation-content {
+        padding-left: 10px;
       }
 
       .pure-button {
@@ -112,26 +117,35 @@
                   </div>
                 </div>
                 <div id="conversation-list-unit-2" class="pure-u-2-3">
-                  <div class="conversation-header">
+                  <div id="conversation-header">
                     <p data-bind="html: conversation_intro"></p>
                   </div>
-                  <div data-bind="foreach: conversation_messages">
+                  <div id="conversation-content" data-bind="foreach: conversation_messages">
                     <p data-bind="html: $data"></p>
                   </div>
                   <div id="conversation-controls" class="pure-control-group">
                     <form class="pure-form" autocomplete="off">
-                      <input id="conversation-input-text" type="text" placeholder="Start typing..."
-                             data-bind="value: conversation_input_text"
-                             />
-                      <button class="pure-button pure-button-primary"
-                              data-bind="click: send_message_to_conversation"
-                              >Send</button>
-                      <button class="pure-button pure-button-error"
-                              data-bind="click: send_knock"
-                              >Knock</button>
-                      <button class="pure-button pure-button-error"
-                              data-bind="click: send_hot_knock"
-                              >Hot Knock</button>
+
+                      <div class="pure-control-group">
+                        <textarea id="conversation-input-text"  
+                                  data-bind="value: conversation_input_text"
+                                  cols="50"
+                                  rows="5"
+                                  >Start typing...</textarea>
+                      </div>
+
+                      <div class="pure-control-group">
+                        <button class="pure-button pure-button-primary"
+                                data-bind="click: send_message_to_conversation"
+                                >Send</button>
+
+                        <button class="pure-button pure-button-error"
+                                data-bind="click: send_knock"
+                                >Knock</button>
+                        <button class="pure-button pure-button-error"
+                                data-bind="click: send_hot_knock"
+                                >Hot Knock</button>
+                      </div>
                     </form>
                   </div>
                 </div>

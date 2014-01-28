@@ -50,7 +50,8 @@ namespace Zeta:ViewModel:
           size: -20
           
         Zeta.Service.Main.get_latest_conversation_messages params, callback
-        
+    
+    # Public
     show_new_message: (conversation, event) =>
       if conversation.id is Zeta.Storage.Session.current_conversation_id
         user = Zeta.Storage.Data.async_get_user_by_id event.from
