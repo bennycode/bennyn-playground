@@ -12,7 +12,7 @@ Zeta.Controller.ConversationController = (->
     
     # TODO: event / data parsing should be handled by the main service to
     # split view and model access
-    Zeta.Service.Main.get_latest_conversation_messages params, (data, textStatus, jqXHR) ->
+    after_fetching_latest_events = (data, textStatus, jqXHR) ->
       Zeta.ViewModel.ConversationContent.conversation_messages.removeAll()
       for event in data.events
         if event.type is Zeta.Model.EventTypes.Conversation.NEW_MESSAGE
@@ -21,6 +21,12 @@ Zeta.Controller.ConversationController = (->
             Zeta.ViewModel.ConversationContent.conversation_messages.unshift "#{user.name}: #{event.data.content}"
           else
             Zeta.ViewModel.ConversationContent.conversation_messages.unshift "#{event.from}: #{event.data.content}"
+    
+    after_fetching_latest_event_ids = (data, textStatus, jqXHR) ->
+      Zeta.Service.Main.get_latest_conversation_messages params, after_fetching_latest_events
+      
+    Zeta.Service.Main.get_last_event_ids after_fetching_latest_event_ids
+    
     # Update view
     Zeta.ViewModel.ConversationContent.conversation_intro "<b>#{conversation.name}</b> (#{conversation.id})"
     

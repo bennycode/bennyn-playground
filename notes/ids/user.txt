@@ -4,21 +4,11 @@ ANDROID Benny:
 IPAD Benny:
 b6cf900c-0b1e-4356-ae25-d6ce8c36034a
 
-Panayiotis Lipiridis (Lipis):
-ff1c93cf-7795-4b90-9a8e-262e982baa71
+FIREFOX Benny:
+d46cceaa-95e1-437b-b867-acb355bd512e
 
-Kenny Kremerman:
-a46ffc68-cb0e-45c1-bff8-13c4db065aa7
+CHROME Benny:
+cbc314d5-a84f-4ee7-bf56-373705cbffa5
 
-Björn Herbig:
-0bb84213-8cc2-4bb1-9e0b-b8dd522396d5
-
-Andreas Kompanez:
-15ede065-72b3-433a-9917-252f076ed031
-
-Tiago Loureiro:
-b5ac5b2c-23ab-408a-b652-70317686c58b
-
-Benny Neugebauer:
-21719f32-62ba-46f5-83c8-92f9bcab65a3
-
+IE Benny:
+82d95511-fe75-4e38-9a13-0c14bfb66d14
