@@ -316,23 +316,12 @@ Zeta.Service.Main = (->
       console.log "Please provide an object"
       return
     
-    start_infos = Zeta.Storage.Session.get_conversation(params.cid).last_event.split "."
-    
-    start_event_id_as_number = parseInt start_infos[0], 16
-    end_event_id_as_number = start_event_id_as_number + params.size
-    
-    if end_event_id_as_number < 0
-      end_event_id_as_number = 0
-    
-    start_event_id_as_hex = start_infos[0]
-    end_event_id_as_hex = end_event_id_as_number.toString 16
-    
     # Data
     values =
       id: params.cid
       data:
-        start: start_event_id_as_hex + ".0"
-        end: end_event_id_as_hex + ".0"
+        start: Zeta.Storage.Session.get_conversation(params.cid).last_event
+        end: "0.0"
         size: params.size
       
     # Callback
