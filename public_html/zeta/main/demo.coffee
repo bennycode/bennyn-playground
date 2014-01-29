@@ -1,7 +1,10 @@
 # Init
 $(document).ready ->
   # Init view model bindings
-  console.log "READY"
+  window.Zeta.Instances = 
+    MainViewModel: new Zeta.ViewModel.MainViewModel()
+    
+  ko.applyBindings window.Zeta.Instances.MainViewModel, document.getElementById "conversation-list-grid"
 
 # Start app
 $(window).load ->
