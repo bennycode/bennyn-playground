@@ -1,0 +1,12 @@
+{
+    "conversation": "57da3833-f831-49d3-93bc-953e136d1666",
+    "time": "2014-01-29T09:34:19.352Z",
+    "data": {
+        "user_ids": [
+            "57da3833-f831-49d3-93bc-953e136d1666"
+        ]
+    },
+    "from": "57da3833-f831-49d3-93bc-953e136d1666",
+    "id": "1.800122000a22b1ee",
+    "type": "conversation.member-join"
+}
