@@ -36,25 +36,6 @@ Zeta.ViewModel.ConversationContent = (->
         Zeta.ViewModel.ConversationContent.conversation_messages.push "#{event.from}: #{event.data.content}"
   # TODO: "open_conversation" does the same as "show_new_message"
   open_conversation: (conversation, event) =>
-    # TODO: TRIGGER A CONVERSATION UPDATE
-    # TODO: GET MESSAGES FROM THE STORAGE AND NOT FROM THE SERVICE
-    @set_intro_text "<b>#{conversation.name}</b> (#{conversation.id})"
-    # TODO: Storage access in view model... Should be done in controller
-    Zeta.Storage.Session.current_conversation_id = conversation.id
-    params =
-      cid: conversation.id
-      size: -20
-    # TODO: Service call from view model... Should be done in controller
-    Zeta.Service.Main.get_latest_conversation_messages params, (data, textStatus, jqXHR) ->
-      # TODO: Call to own function without @... We have to find a better approach here
-      Zeta.ViewModel.ConversationContent.conversation_messages.removeAll()
-      for event in data.events
-        if event.type is Zeta.Model.EventTypes.Conversation.NEW_MESSAGE
-          # Trigger: Fetch user information
-          user = Zeta.Storage.Data.async_get_user_by_id event.from
-          if user.name?
-            Zeta.ViewModel.ConversationContent.conversation_messages.unshift "#{user.name}: #{event.data.content}"
-          else
-            Zeta.ViewModel.ConversationContent.conversation_messages.unshift "#{event.from}: #{event.data.content}"
+    amplify.publish Zeta.Model.EventTypes.View.OPEN_CONVERSATION, conversation
 #
 )()
