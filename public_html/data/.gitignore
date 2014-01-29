@@ -1,1 +1,4 @@
 /login.properties
+/login_chrome.properties
+/login_firefox.properties
+/login_internet_explorer.properties

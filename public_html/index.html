@@ -37,12 +37,11 @@
     <!-- View -->
     <script src="zeta/view/registration/background_switcher.js"></script>
     <!-- View models -->
-    <script src="zeta/view_model/main_view_model.js"></script>
     <script src="zeta/view_model/conversation_list.js"></script>
+    <script src="zeta/view_model/conversation_content.js"></script>
     <!-- Controller -->
     <script src="zeta/controller/conversation_controller.js"></script>
     <!-- Main -->
-    <script src="zeta/main/instances.js"></script>
     <script src="zeta/main/demo.js"></script>
     <!-- CSS Frameworks -->
     <link rel="stylesheet" href="css/libs/pure/3.0.0/pure-min.css" />
@@ -69,7 +68,7 @@
       .pure-control-group {
         margin: 5px;
       }
-      
+
       #conversation-header,
       #conversation-content {
         padding-left: 10px;
@@ -131,7 +130,7 @@
                                   data-bind="value: conversation_input_text"
                                   cols="50"
                                   rows="5"
-                                  >Start typing...</textarea>
+                                  ></textarea>
                       </div>
 
                       <div class="pure-control-group">
