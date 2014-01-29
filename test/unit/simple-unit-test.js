@@ -1,5 +1,7 @@
-describe("Hello world", function() {
-  it("says hello", function() {
-    expect("Hello world!").toEqual("Hello world!");
+describe("Simple Test setup test", function() {
+
+  it("loads jQuery", function() {
+    expect(jQuery.fn.jquery).toEqual("2.1.0");
   });
+
 });

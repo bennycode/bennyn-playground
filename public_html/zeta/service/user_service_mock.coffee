@@ -5,156 +5,37 @@
 Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.UserService = (->
-
-  create_connection: (values, callback) ->
-    config = 
-      url: Zeta.Service.URLs.create_access_token_url "/self/connections"
-      type: 'POST'
-      data: values.data
-      on_done:
-        callback
-      
-    Zeta.Utils.RequestHandler.send_json config
-
-  get_own_connections: (callback) ->
-    config = 
-      url: Zeta.Service.URLs.create_access_token_url "/self/connections"
-      type: 'GET'
-      on_done:
-        callback
-      
-    Zeta.Utils.RequestHandler.send_request config
-
-  update_user_profile: (values, callback) ->
-    config =
-      url: Zeta.Service.URLs.create_access_token_url "/self"
-      type: 'PUT'
-      data: values.data
-      on_done:
-        callback      
-      
-    Zeta.Utils.RequestHandler.send_json config 
-
-  initiate_password_reset: (values, callback) ->
-    config =
-      url: Zeta.Service.URLs.create_url "/password-reset"
-      type: 'POST'
-      data: values.data
-      on_done:
-        callback      
-      
-    Zeta.Utils.RequestHandler.send_json config  
-
-  is_existing_user: (values, callback) ->
-    config =
-      url: Zeta.Service.URLs.create_access_token_url "/users/#{values.uid}"
-      type: 'HEAD'
-      on_done:
-        callback
-        
-    Zeta.Utils.RequestHandler.send_request config  
-  
-  validate_activation_code: (values, callback) ->
-    config =
-      url: Zeta.Service.URLs.create_url "/activate?key=#{values.key}&code=#{values.code}"
-      type: 'HEAD'
-      data: values.data
-      on_done:
-        callback
-        
-    Zeta.Utils.RequestHandler.send_request config  
+  #
+  login: (values, callback) ->
+    data =
+      "expires_in": 3600,
+      "access_token": "491c44e0c90417aa0f60caa58497ec9c70c9699f10c2162069ef75df74695ec5.1.1391013086.a.cbc314d5-a84f-4ee7-bf56-373705cbffa5.17491614023395015869",
+      "token_type": "Bearer"
     
-  use_activation_code: (values, callback) ->
-    config =
-      url: Zeta.Service.URLs.create_url "/activate"
-      type: 'GET'
-      data: values.data
-      on_done:
-        callback
-        
-    Zeta.Utils.RequestHandler.send_request config    
-
-  get_users: (values, callback) ->
-    values.data = {} unless values.data  
-    values.data.access_token = Zeta.Storage.Session.get_access_token()
+    textStatus = "success"
     
-    config =
-      url: Zeta.Service.URLs.create_url "/users"
-      type: 'GET'
-      data: values.data
-      on_done:
-        callback
-        
-    Zeta.Utils.RequestHandler.send_request config
+    jqXHR =
+      status: 200
 
-  ###
-    @param {object} data Data is an object that contains:
-    {id} id User ID, Example: "496d0d21-0b05-49b5-8087-de94f3465b7b" 
-    @param {function} callback
-  ###
-  get_user_by_id: (data, callback) ->
-    config = 
-      url: Zeta.Service.URLs.create_access_token_url "/users/#{data.id}"
-      type: 'GET'
-      on_done:
-        callback  
+    callback data, textStatus, jqXHR
 
-    Zeta.Utils.RequestHandler.send_request config
-
-  ###
-    @param {function} callback
-  ###
+  #
   get_own_user: (callback) ->
-    config = 
-      url: Zeta.Service.URLs.create_access_token_url "/self"
-      type: 'GET'
-      on_done:
-        callback
-      
-    Zeta.Utils.RequestHandler.send_request config
+    data =
+      email: "jon+doe@wearezeta.com"
+      phone: null
+      accent: [0.14100000262260437, 0.5519999861717224, 0.8270000219345093, 1]
+      accent_id: 0
+      picture: []
+      name: "Jon Doe"
+      id: "cbc314d5-a84f-4ee7-bf56-373705cbffa5"
 
-  ###
-    @param {object} data Data is an object that contains:
-    {string} phone_number Phone number in E.164 format: "+491722290229" 
-    @param {function} callback
-  ###
-  change_own_phone_number: (data, callback) ->
-    console.log "= Zeta.Service.UserService.change_own_phone_number"
-
-    config =
-      url: Zeta.Service.URLs.create_access_token_url "/self/phone"
-      type: 'PUT'
-      data: 
-        phone: data.phone_number
-      on_done:
-        callback
-        
-    Zeta.Utils.RequestHandler.send_json config
-
-  ###
-    @param {object} data Data is an object that contains:
-    {string} login Example: "bennyn+test2@wearezeta.com"
-    {string} password Example: "123456"
-    @param {function} callback
-  ###
-  login: (data, callback) ->
-    console.log "= Zeta.Service.UserService.login"
-  
-    payload = 
-      password: data.password
+    textStatus = "success"
     
-    if data.login.indexOf("@") is -1
-      payload.login = data.login
-    else
-      payload.email = data.login
-      
-    config =
-      url: Zeta.Service.URLs.create_url "/login"
-      type: 'POST'
-      data: payload
-      on_done:
-        callback      
-      
-    Zeta.Utils.RequestHandler.send_json config
+    jqXHR =
+      status: 200
+
+    callback data, textStatus, jqXHR
+
 #
 )()
