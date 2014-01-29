@@ -35,9 +35,18 @@ $(window).load ->
         Zeta.Service.Main.get_names_for_all_conversations after_fetching_conversations
 
   # Login
+  login_file = "data/login.properties"
+  
+  if navigator.appVersion.indexOf('Trident/') > -1
+    login_file = "data/login_internet_explorer.properties"
+  else if navigator.appVersion.indexOf('Chrome/') > -1
+    login_file = "data/login_chrome.properties"
+  else
+    login_file = "data/login_firefox.properties"
+
   $.ajax
     async: true,
-    url: "data/login.properties"
+    url: login_file
   .done (data) ->
     credentials = data.split ":"
     email = credentials[0]
