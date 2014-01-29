@@ -25,7 +25,7 @@ Zeta.ViewModel.ConversationContent = (->
   send_hot_knock: (conversation, event) =>
     callback = (data, textStatus, jqXHR) =>
       alert "HEY!"
-    Zeta.Service.Main.send_hot_knock Zeta.Storage.Session.current_conversation_id, callback     
+    Zeta.Service.Main.send_hot_knock Zeta.Storage.Session.current_conversation_id, callback       
   show_new_message: (conversation, event) =>
     if conversation.id is Zeta.Storage.Session.current_conversation_id
       # TODO: Throw away "Zeta.Storage.Data"
@@ -34,24 +34,8 @@ Zeta.ViewModel.ConversationContent = (->
         Zeta.ViewModel.ConversationContent.conversation_messages.push "#{user.name}: #{event.data.content}"
       else
         Zeta.ViewModel.ConversationContent.conversation_messages.push "#{event.from}: #{event.data.content}"
+  # TODO: "open_conversation" does the same as "show_new_message"
   open_conversation: (conversation, event) =>
-    @set_intro_text "<b>#{conversation.name}</b> (#{conversation.id})"
-    # TODO: Storage access in view model... Should be done in controller
-    Zeta.Storage.Session.current_conversation_id = conversation.id
-    params =
-      cid: conversation.id
-      size: -20
-    # TODO: Service call from view model... Should be done in controller
-    Zeta.Service.Main.get_latest_conversation_messages params, (data, textStatus, jqXHR) ->
-      # TODO: Call to own function without @... We have to find a better approach here
-      Zeta.ViewModel.ConversationContent.conversation_messages.removeAll()
-      for event in data.events
-        if event.type is Zeta.Model.EventTypes.Conversation.NEW_MESSAGE
-          # Trigger: Fetch user information
-          user = Zeta.Storage.Data.async_get_user_by_id event.from
-          if user.name?
-            Zeta.ViewModel.ConversationContent.conversation_messages.push "#{user.name}: #{event.data.content}"
-          else
-            Zeta.ViewModel.ConversationContent.conversation_messages.push "#{event.from}: #{event.data.content}"
+    amplify.publish Zeta.Model.EventTypes.View.OPEN_CONVERSATION, conversation
 #
 )()
