@@ -22,7 +22,7 @@ Zeta.Service.UserService = (->
   #
   get_own_user: (callback) ->
     data =
-      email: "jon+doe@wearezeta.com"
+      email: "unit-test@wearezeta.com"
       phone: null
       accent: [0.14100000262260437, 0.5519999861717224, 0.8270000219345093, 1]
       accent_id: 0

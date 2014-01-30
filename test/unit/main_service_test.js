@@ -1,8 +1,11 @@
 describe("Zeta.Service.Main", function() {
 
   it("can login a user", function() {
-    Zeta.Service.Main.login("me@domain.com", "123456");
-    expect(jQuery.fn.jquery).toEqual("2.1.0");
+    var email = "unit-test@wearezeta.com";
+    var password = "123456";
+
+    Zeta.Service.Main.login(email, password);
+    expect(Zeta.Storage.Session.get_own_user().email).toEqual(email);
   });
 
 });
