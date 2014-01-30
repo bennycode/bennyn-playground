@@ -1,0 +1,147 @@
+Cargo Hold (Asset Service)
+The cargo hold is a service responsible for the upload and download of assets. Assets are images, videos or any types of files that are posted and viewed in the context of a conversation.
+
+HTTP API
+
+Authentication
+
+The asset service is accessed through rigging which handles user authentication. As such, all requests mentioned here must include appropriate credentials/tokens as required by rigging.
+
+Authorization
+
+A user is authorized to upload public/private assets for any conversation that he/she is currently a member of.
+
+A user is authorized to download any public assets.
+
+A user is authorized to download any private assets within conversations that he/she is currently a member of or where the asset was posted before the user left the conversation.
+
+Uploading Assets
+
+To upload an asset, send a POST request to the /assets endpoint. Besides the necessary credentials to pass through rigging, the request must include the following headers: Content-Type, Content-Length and Content-Disposition.
+
+Note: The currently allowed maximum size of an asset is 5MB. See #14.
+Content-Disposition
+
+The value for the Content-Disposition header must follow the following syntax:
+
+ZAsset ::= "zasset" {";" ZAssetArg}
+ZAssetArg ::= ZAssetArgName "=" value
+ZAssetArgName ::= "conv_id" | "md5" | "name" | "width" | "height" |
+                  "original_width" | "original_height" | "inline" |
+                  "public" | "correlation_id" | "tag" | "nonce"
+Example:
+
+Content-Disposition: zasset;conv_id=709e4e1b-5199-4f78-8f88-b1056cc58f4b;md5=sQqNsWTgdUEFt6mb5y4/5Q==
+The acceptable values for an argument depend on its type.
+
+The following arguments are required:
+
+conv_id - UUID - The ID of the conversation the asset is for.
+md5 - MD5 - The base64-encoded MD5 of the asset data in the request body.
+The following arguments are optional:
+
+name - String - Base64-encoding of a UTF8-encoded byte string.
+width - Integer
+height - Integer
+original_width - Integer
+original_height - Integer
+inline - Boolean - Default "false"
+Normally, once an asset is uploaded, other members of the conversation receive a message that contains only the ID of the asset (besides other asset metadata). The inline parameter specifies that the asset should be embedded directly into the message, encoded as Base64. This is only allowed for assets with a maximum size of 30 KB.
+public - Boolean - Default "false"
+Whether the asset should be public, i.e. accessible to users which are not a member of the conversation the asset was posted to.
+correlation_id - String - ASCII characters only
+An value supplied by the client for the purpose of correlating multiple assets. The value is opaque to the server.
+tag - String - ASCII characters only
+A value supplied by the client for the purpose of attaching additional meaning to an asset, possibly in combination with a correlation_id, e.g. to correlate multiple assets carrying the same information in different sizes, qualities or formats. The value is opaque to the server.
+nonce - String - ASCII characters only A opaque value supplied by the client, e.g. for avoiding duplicate asset uploads due to network issues after the client checked that an asset message with that nonce did not yet appear in the conversation.
+Upload Request Example
+
+POST /assets
+Content-Type: image/jpeg
+Content-Length: 12345
+Content-Disposition: zasset;conv_id=709e4e1b-5199-4f78-8f88-b1056cc58f4b;md5=sQqNsWTgdUEFt6mb5y4/5Q==;width=123;height=123
+
+<binary data>
+Upload Response
+
+The response contains the message that was added to the conversation and will thus be received by all members. The data field of the returned JSON object contains the asset data. An example:
+
+{ # The event
+    "id": "3.8001f58ce70679a6",
+    "type": 1, # 1 = AssetAdded
+    "from": "adea0006-e4c8-41b5-9e56-a0a941bca7a0", # user ID
+    "conversation": "709e4e1b-5199-4f78-8f88-b1056cc58f4b" # conversation ID
+    "time": "2013-09-03 08:32:56+0000",
+    "data": { # The Asset (metadata)
+        "id": "0a2b9ce0-1e7a-573c-a227-bdcf9f09d329", # asset ID
+        "content_type": "image/jpeg",
+        "content_length": 1234,
+        "data": "...", # if the asset is inline, the base64 encoded data is here
+        "info": {
+            "name": "foo.jpg",
+            "width": 123,
+            "height": 123,
+            "original_width": 1234,
+            "original_height": 1234,
+            "correlation_id": "abc123",
+            "tag": "preview",
+            "nonce": "xyz-123"
+        }
+    }
+}
+Upload Errors
+
+The most common error responses when uploading are as follows:
+
+400 Bad Request - Invalid input was provided.
+413 Request Entity Too Large - The asset exceeds the currently allowed maximum size. Also applies to inline assets that are too large to inline.
+403 Forbidden - The request is not sufficiently authorized (e.g. the user identified in the request is not a member of the conversation the asset is posted to).
+409 Conflict - In case an asset with identical binary data and identical metadata (all parameters of the Content-Disposition header) already exists.
+Downloading Assets
+
+To download an asset (or more precisely, to receive a download link for an asset), send a GET request to the /assets/{id}?conv_id={convId} endpoint, including an asset ID and conversation ID, specifying the asset to retrieve and the conversational context, respectively.
+
+A successful response will be a 302 redirect with a 'Location' header. The targeted URL is a CloudFront URL that can be used to download the asset from a CloudFront edge location. For security reasons, the URL is signed and valid only for a short time frame.
+
+Download Request Example
+
+> GET assets/02be406e-32bf-53f3-833b-5b0de3a7b9a5?conv_id=f2e0702c-df1c-4b09-bad3-179201b7ddfb HTTP/1.1
+> ...
+
+< HTTP/1.1 302 FOUND
+< Location: https://abdn1jiyxyzja.cloudfront.net/02be406e-32bf-53f3-833b-5b0de3a7b9a5?Expires=1379506422&Signature=Xy1lTwIguALIvgDb9IQvi7M-0nWuSQgpMUMuCLVLGpQB4eeibOYxpPFDOWB4-iHihQy1CYbhDzGENY9ishTAJYQKLuJYQmQbFG9thn7S2rsp6A01xo2g3Jb5QlTM-GRN45FlCYEOxnXxdzyt~VuoR1-uAi1sR3-o7Jxf00zeSLmhb8~ok3n4uRCvbZ0Rv9je8~K5sxhaBkIPX4A5zG~DIRHRJ-Nigs-NAexNP01ljaVNv5U6AeqVvvgvOx9pxKsD5JyYp1izhYIT2vXL0ay-sLCjdX0QpJKaJoPtvSbfA92HcTA1v9SJXpgQPYhuOi4wgNHCYL3EyhCjUX~6tioCrw__&Key-Pair-Id=APPOJNHT4IP4WQ2CDLZQ
+< Content-Length: 0
+By following the returned link, the asset can be downloaded. Such a request/response might look like this:
+
+> GET /2c8f26dd-1532-56da-a37a-3249b0c5815d?Expires=1379431083&Signature=LWL01VdG5yDP9hTD0c5dk~UPyu993y6Yr6O7N732x0c2gj2dzfTui8tbVpvVAqZzSasdi3ELIoMXGgU6XZ9iSUStDAia2cZZIgZMjAAjdOr-DzjFds-reoEMmjuuTLrLqZ1hG2QO-2QmUvKCOsFlRAe7c9NduRWkTTtkCEw89tcCu1RI1IYzI4Aa2BKGkf1N9s4~ZO6o6gQVMU6Qw6P7HE4iEoN3YlN~MLOu6Zbbf7VBzQoix5Zkbso6jBtJsMdtXUXrxC3e4rDqXJK-5EwMMURdUUhebDR5MAsMi9KB56CD~uwE6Xto5bt0tstMdazq3D-RIE7VtVSsojdduiaDDg__&Key-Pair-Id=APKAJNHT4IP4WQ4CDUYQ HTTP/1.1
+> User-Agent: curl/7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8x zlib/1.2.5
+> Host: xbdn3ijyabcjm.cloudfront.net
+> Accept: */*
+
+< HTTP/1.1 200 OK
+< Content-Type: image/jpeg
+< Content-Length: 1234
+< Connection: keep-alive
+< Date: Tue, 17 Sep 2013 15:17:38 GMT
+< x-amz-meta-zasset: zasset;conv_id=709e4e1b-5199-4f78-8f88-b1056cc58f4b;md5=sQqNsWTgdUEFt6mb5y4/5Q==;width=123;height=123
+< x-amz-meta-event: 3.8001f58ce70679a6
+< Last-Modified: Tue, 17 Sep 2013 15:17:04 GMT
+< ETag: "b10a8db164e0754105b7a99be72e3fe5"
+< Accept-Ranges: bytes
+< Server: AmazonS3
+< Age: 9
+< Via: 1.0 90f58e12db428210bf083bd4ee216ecf.cloudfront.net (CloudFront)
+< X-Cache: Hit from cloudfront
+< X-Amz-Cf-Id: Xmo-gZJJvgg9aANQbqT4Bxi9njsOwq3nB--aOjIHs5G0QlFGvUPfZA==
+<
+< ... data ...
+Download Errors
+
+The most common error responses when requesting a download are as follows:
+
+400 Bad Request - Invalid input was provided.
+404 Not Found - An asset with the specified ID does not exist.
+403 Forbidden - The request is not sufficiently authorized (e.g. the user identified in the request is not a member of the conversation and the asset requested is not public).
+Reporting Issues
+
+Please report any issues to the backend issue tracker.
