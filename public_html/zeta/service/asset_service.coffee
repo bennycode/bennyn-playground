@@ -2,7 +2,9 @@ Zeta = {} unless Zeta?
 Zeta.Service = {} unless Zeta.Service?
 Zeta.Service.AssetService = (->
 
-  upload_image_jpeg: (values, callback) ->
+  upload_asset: (values, callback) ->
+    console.log "Uploading asset type: #{values.contentType}"
+  
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/assets"
       contentType: values.contentType
