@@ -9,6 +9,8 @@ Zeta.Service.WebSocket = (->
     events = message.payload
     for event in events
       amplify.publish event.type, event
+      console.log "WEBSOCKET INCOMING:"
+      console.log JSON.stringify event
 
   ###
     @see http://cjihrig.com/blog/how-to-use-websockets/

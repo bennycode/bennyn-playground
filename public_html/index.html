@@ -11,10 +11,10 @@
     <script src="js/libs/amplify/1.1.2/amplify.core.min.js"></script>
     <script src="js/libs/knockout-3.0.0.js"></script>
     <!-- External helpers -->
-    <script src="js/libs/cryptojs/3.1.2/md5.js"></script>
     <script src="js/libs/misc/PhoneFormat.js"></script>
     <script src="js/libs/misc/uuid.js"></script>
     <script src="js/libs/misc/sha256.js"></script>
+    <script src="js/libs/misc/md5.js"></script>
     <!-- Zeta.Utils -->
     <script src="zeta/utils/misc.js"></script>
     <script src="zeta/utils/namespace.js"></script>
@@ -160,6 +160,7 @@
 
                       <div class="pure-control-group">
                         <div id="holder"></div>
+                        <div id="image_preview"></div>
                       </div>
                     </form>
                   </div>
@@ -178,12 +179,10 @@
         var holder = document.getElementById('holder');
 
         holder.ondragover = function() {
-          this.className = 'hover';
           return false;
         };
 
         holder.ondragend = function() {
-          this.className = '';
           return false;
         };
 
@@ -191,22 +190,42 @@
          * http://blog.teamtreehouse.com/reading-files-using-the-html5-filereader-api
          * http://html5demos.com/file-api
          * 
-         * @param {type} e
+         * @param {type} event
          * @returns {undefined}
          */
-        holder.ondrop = function(e) {
-          e.preventDefault();
-          var file = e.dataTransfer.files[0];
+        holder.ondrop = function(event) {
+          event.preventDefault();
+
+          var file = event.dataTransfer.files[0];
+
           var reader = new FileReader();
+          // Read binary data
           reader.onload = function(event) {
-            var length = event.total;
             var binary = event.target.result;
-            var md5 = Zeta.Utils.Misc.encode_base64(Zeta.Utils.Misc.encode_md5((binary)));
-            console.log(md5);
-            console.log(length);
-            Zeta.Service.AssetService.test(length, md5, binary);
+            // Read URL string to parse image properties
+            var dataURLReader = new FileReader();
+            dataURLReader.onload = function(event) {
+              // Parse image properties
+              var image = new Image();
+              image.src = event.target.result;
+              image.onload = function() {
+                // Setup payload
+                var values = {
+                  cid: Zeta.Storage.Session.current_conversation_id,
+                  binary: binary,
+                  hash: Zeta.Utils.Misc.encode_base64_md5(binary),
+                  width: this.width,
+                  height: this.height
+                };
+                // Use asset service to upload the payload
+                var callback = function(data, textStatus, jqXHR) {
+                  console.log(JSON.stringify(data));
+                };
+                Zeta.Service.AssetService.upload_image_jpeg(values, callback);
+              };
+            };
+            dataURLReader.readAsDataURL(file);
           };
-          console.log(file);
           reader.readAsBinaryString(file);
         };
 

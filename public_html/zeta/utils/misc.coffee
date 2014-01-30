@@ -16,14 +16,19 @@ Zeta.Utils.Misc = (->
   create_random_uuid: ->
     UUID.genV4().hexString
   
-  encode_md5: (content) ->
-    CryptoJS.MD5(content).toString()
+  ###    
+    An MD5 value is always 22 (useful) characters long in Base64 notation.
+    To bring the total up to 24 characters (3 Byte) we fill it up with 2 more
+    characters (==).
+  ###
+  encode_base64_md5: (content) ->
+    "#{b64_md5 content}=="
   
   encode_sha256: (text) ->
     sha_object = new jsSHA text, "TEXT"
     sha_object.getHash "SHA-256", "HEX"
     
   encode_base64: (text) ->
-    window.btoa text    
+    window.btoa text
 #
 )()
