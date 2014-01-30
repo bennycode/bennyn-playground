@@ -206,16 +206,20 @@
             var dataURLReader = new FileReader();
             dataURLReader.onload = function(event) {
               // Parse image properties
+              var dataURL = event.target.result;
+              var contentType = dataURL.split(",")[0].split(":")[1].split(";")[0];
+
               var image = new Image();
-              image.src = event.target.result;
+              image.src = dataURL;
               image.onload = function() {
                 // Setup payload
                 var values = {
-                  cid: Zeta.Storage.Session.current_conversation_id,
                   binary: binary,
+                  cid: Zeta.Storage.Session.current_conversation_id,
+                  contentType: contentType,
                   hash: Zeta.Utils.Misc.encode_base64_md5(binary),
-                  width: this.width,
-                  height: this.height
+                  height: this.height,
+                  width: this.width
                 };
                 // Use asset service to upload the payload
                 var callback = function(data, textStatus, jqXHR) {

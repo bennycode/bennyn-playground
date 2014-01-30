@@ -5,6 +5,7 @@ Zeta.Service.AssetService = (->
   upload_image_jpeg: (values, callback) ->
     config = 
       url: Zeta.Service.URLs.create_access_token_url "/assets"
+      contentType: values.contentType
       headers:
         "Content-Disposition": "zasset;conv_id=#{values.cid};md5=#{values.hash};width=#{values.width};height=#{values.height}"
       type: 'POST'
