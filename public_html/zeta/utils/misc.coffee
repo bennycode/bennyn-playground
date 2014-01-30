@@ -15,7 +15,10 @@ Zeta.Utils.Misc = (->
   ###
   create_random_uuid: ->
     UUID.genV4().hexString
-    
+  
+  encode_md5: (content) ->
+    CryptoJS.MD5(content).toString()
+  
   encode_sha256: (text) ->
     sha_object = new jsSHA text, "TEXT"
     sha_object.getHash "SHA-256", "HEX"
