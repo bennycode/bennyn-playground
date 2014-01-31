@@ -13,6 +13,12 @@ Zeta.Service.AssetService = (->
     Zeta.Utils.RequestHandler.send_request config
   
 
+  ###
+    1. Generate and send "inline" preview picture
+    2. Send "real" picture
+    3. "correlation_id" should be the same for "inline" and "real" picture
+    4. Tag should be different for these two images ("preview" & "medium")
+  ###
   upload_asset: (values, callback) ->
     console.log "Uploading asset type: #{values.contentType}"
   
