@@ -16,6 +16,14 @@ Zeta.Utils.Misc = (->
   create_random_uuid: ->
     UUID.genV4().hexString
   
+  get_binary_string_from_unsigned_array: (unsigned_array) ->
+    binary_string = ""
+    i = 0
+    while i < unsigned_array.byteLength
+      binary_string += String.fromCharCode(unsigned_array[i])
+      i++
+    binary_string
+  
   get_binary_string_from_array_buffer: (buffer) ->
     binary_string = ""
     bytes = new Uint8Array(buffer)
