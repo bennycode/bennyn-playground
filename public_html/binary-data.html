@@ -37,13 +37,13 @@
       <tr>
         <td>Filename to Save As:</td>
         <td><input id="inputFileNameToSaveAs" /></td>
-        <td><button onclick="saveTextAsFile()">Save file</button></td>
+        <td><button onclick="saveImage()">Save file</button></td>
       </tr>
 
       <tr>
         <td>Select a File to Load:</td>
         <td><input type="file" id="fileToLoad" /></td>
-        <td><button onclick="loadImage()">Load file</button><td>
+        <td><button onclick="loadImage()">Load file</button></td>
       </tr>
 
       <tr>
@@ -53,12 +53,22 @@
 
     </table>
 
-    <script type='text/javascript'>
+    <script>
+
       var contentType = '';
 
-      function saveTextAsFile() {
-        var textToWrite = document.getElementById("inputTextToSave").value;
-        var textFileAsBlob = new Blob([textToWrite], {type: contentType});
+      window.saveImage = function() {
+        var dataToWrite = document.getElementById("inputTextToSave").value;
+
+        var splittedData = dataToWrite.split(",");
+        var u16 = new Uint16Array(splittedData.length);
+
+        for (var i = 0; i < splittedData.length; i++) {
+          u16[i] = splittedData[i];
+        }
+
+        var fileAsBlob = new Blob([u16], {type: contentType});
+
         var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
 
         var downloadLink = document.createElement("a");
@@ -67,31 +77,38 @@
         if (window.webkitURL !== null) {
           // Chrome allows the link to be clicked
           // without actually adding it to the DOM.
-          downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+          downloadLink.href = window.webkitURL.createObjectURL(fileAsBlob);
         }
         else {
           // Firefox requires the link to be added to the DOM
           // before it can be clicked.
-          downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+          downloadLink.href = window.URL.createObjectURL(fileAsBlob);
           downloadLink.onclick = destroyClickedElement;
           downloadLink.style.display = "none";
           document.body.appendChild(downloadLink);
         }
 
         downloadLink.click();
-      }
+      };
 
       function destroyClickedElement(event) {
         document.body.removeChild(event.target);
       }
 
-      function loadImage() {
+      window.loadImage = function() {
         var file = document.getElementById("fileToLoad").files[0];
 
         var reader = new FileReader();
         reader.onload = function(event) {
           var data = event.target.result;
-          document.getElementById("inputTextToSave").value = data;
+          var data16 = new Uint16Array(data);
+
+          var decimalValues = [];
+          for (var i = 0; i < data16.length; i++) {
+            decimalValues.push(data16[i]);
+          }
+
+          document.getElementById("inputTextToSave").value = decimalValues;
 
           var imagePreview = document.getElementById("imagePreview");
           imagePreview.innerHTML = '';
@@ -115,8 +132,9 @@
 
 
         };
-        reader.readAsBinaryString(file);
-      }
+        //reader.readAsBinaryString(file);
+        reader.readAsArrayBuffer(file);
+      };
 
     </script>
 
