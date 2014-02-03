@@ -24,6 +24,18 @@ Zeta.Utils.Misc = (->
   encode_base64_md5: (content) ->
     "#{b64_md5 content}=="
   
+  encode_base64_md5_array_buffer: (buffer) ->
+    binary_string = ""
+    bytes = new Uint8Array(buffer)
+    length = bytes.byteLength
+    i = 0
+    
+    while i < length
+      binary_string += String.fromCharCode(bytes[i])
+      i++
+      
+    @.encode_base64_md5(binary_string)
+  
   encode_sha256: (text) ->
     sha_object = new jsSHA text, "TEXT"
     sha_object.getHash "SHA-256", "HEX"
