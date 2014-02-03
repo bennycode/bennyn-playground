@@ -233,33 +233,36 @@ Zeta.Service.Main = (->
           conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
           conversation_to_update.name = "Self conversation"
     
-    # Set the conversation name and conversation creator for unnamed chats
-    $.each unnamed_conversations, (index, conversation) ->
-      # 2. Callback for each conversation request
-      process_creators = (data, textStatus, jqXHR) ->
-        ++ajax_call
-        
-        # 3. Update chat name, ex.
-        # Chat with Björn Herbig, Andreas Kompanez, Kenny
-        chat_name = "Chat with "
-        
-        for item in data
-          chat_name += item.name + ", "
-        
-        chat_name = chat_name.slice 0, -2
-        conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
-        conversation_to_update.name = chat_name
-        
-        # 4. Execute final callback after all requests have been made
-        if ajax_call is ajax_call_total
-          callback?()
-      
-      # 1. Collect the IDs for every participant and query it
-      uids_of_participants = []
-      for k, v of conversation.members.others
-        uids_of_participants.push v.id
-      
-      Zeta.Service.Main.get_users uids_of_participants, process_creators 
+    if ajax_call_total is 0
+      callback?()
+    else
+      # Set the conversation name and conversation creator for unnamed chats
+      $.each unnamed_conversations, (index, conversation) ->
+        # 2. Callback for each conversation request
+        process_creators = (data, textStatus, jqXHR) ->
+          ++ajax_call
+
+          # 3. Update chat name, ex.
+          # Chat with Björn Herbig, Andreas Kompanez, Kenny
+          chat_name = "Chat with "
+
+          for item in data
+            chat_name += item.name + ", "
+
+          chat_name = chat_name.slice 0, -2
+          conversation_to_update = Zeta.Storage.Session.get_conversation conversation.id
+          conversation_to_update.name = chat_name
+
+          # 4. Execute final callback after all requests have been made
+          if ajax_call is ajax_call_total
+            callback?()
+
+        # 1. Collect the IDs for every participant and query it
+        uids_of_participants = []
+        for k, v of conversation.members.others
+          uids_of_participants.push v.id
+
+        Zeta.Service.Main.get_users uids_of_participants, process_creators 
 
   ###
     @param {function} callback
