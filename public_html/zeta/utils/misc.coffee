@@ -16,6 +16,17 @@ Zeta.Utils.Misc = (->
   create_random_uuid: ->
     UUID.genV4().hexString
   
+  get_binary_string_from_array_buffer: (buffer) ->
+    binary_string = ""
+    bytes = new Uint8Array(buffer)
+    i = 0
+    
+    while i < bytes.byteLength
+      binary_string += String.fromCharCode(bytes[i])
+      i++
+
+    binary_string
+
   ###    
     An MD5 value is always 22 (useful) characters long in Base64 notation.
     To bring the total up to 24 characters (3 Byte) we fill it up with 2 more
@@ -25,15 +36,7 @@ Zeta.Utils.Misc = (->
     "#{b64_md5 content}=="
   
   encode_base64_md5_array_buffer: (buffer) ->
-    binary_string = ""
-    bytes = new Uint8Array(buffer)
-    length = bytes.byteLength
-    i = 0
-    
-    while i < length
-      binary_string += String.fromCharCode(bytes[i])
-      i++
-      
+    binary_string = @.get_binary_string_from_array_buffer(buffer)
     @.encode_base64_md5(binary_string)
   
   encode_sha256: (text) ->
