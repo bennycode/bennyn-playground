@@ -208,9 +208,11 @@
             dataURLReader.onload = function(event) {
               // Parse image properties
               var dataURL = event.target.result;
-              var contentType = dataURL.split(",")[0].split(":")[1].split(";")[0];
+              var contentType = Zeta.Utils.Misc.get_content_type_from_data_url(dataURL);
               var binaryString = Zeta.Utils.Misc.get_binary_string_from_array_buffer(data);
               var hash = Zeta.Utils.Misc.encode_base64_md5(binaryString);
+              var fileAsBlob = new Blob([new Uint8Array(data)], {type: contentType});
+              console.log(fileAsBlob);
 
               var image = new Image();
               image.src = dataURL;

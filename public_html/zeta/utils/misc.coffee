@@ -27,6 +27,9 @@ Zeta.Utils.Misc = (->
 
     binary_string
 
+  get_content_type_from_data_url: (data_url) ->
+    data_url.split(",")[0].split(":")[1].split(";")[0]
+
   ###    
     An MD5 value is always 22 (useful) characters long in Base64 notation.
     To bring the total up to 24 characters (3 Byte) we fill it up with 2 more
