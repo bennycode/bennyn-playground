@@ -61,7 +61,7 @@
         var dataToWrite = document.getElementById("inputTextToSave").value;
 
         var splittedData = dataToWrite.split(",");
-        var u16 = new Uint16Array(splittedData.length);
+        var u16 = new Uint8Array(splittedData.length);
 
         for (var i = 0; i < splittedData.length; i++) {
           u16[i] = splittedData[i];
@@ -101,7 +101,7 @@
         var reader = new FileReader();
         reader.onload = function(event) {
           var data = event.target.result;
-          var data16 = new Uint16Array(data);
+          var data16 = new Uint8Array(data);
 
           var decimalValues = [];
           for (var i = 0; i < data16.length; i++) {

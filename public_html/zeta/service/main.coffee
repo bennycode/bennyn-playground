@@ -213,6 +213,7 @@ Zeta.Service.Main = (->
     Zeta.Service.UserService.update_user_profile values, on_done    
   
   ###
+    Note: Rename every conversation except type "0" conversations!
     @param {function} callback
   ### 
   get_names_for_all_conversations: (callback) ->

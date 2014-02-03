@@ -174,6 +174,21 @@
 
     </div> <!-- /website-content -->
     <script>
+      window.binary = '';
+      window.hash = '';
+      window.contentType = '';
+
+      function _arrayBufferToBase64(buffer) {
+        window.binary = '';
+        var bytes = new Uint8Array(buffer);
+        var len = bytes.byteLength;
+        for (var i = 0; i < len; i++) {
+          window.binary += String.fromCharCode(bytes[i]);
+        }
+
+        window.hash = Zeta.Utils.Misc.encode_base64_md5(window.binary);
+      }
+
       $(window).load(function() {
         /* Drag'n'Drop */
         var holder = document.getElementById('holder');
@@ -201,23 +216,29 @@
           var reader = new FileReader();
           // Read binary data
           reader.onload = function(event) {
-            var binary = event.target.result;
+            var data = event.target.result;
+            var data16 = new Uint16Array(data);
+
             // Read URL string to parse image properties
             var dataURLReader = new FileReader();
             dataURLReader.onload = function(event) {
               // Parse image properties
               var dataURL = event.target.result;
               var contentType = dataURL.split(",")[0].split(":")[1].split(";")[0];
+              _arrayBufferToBase64(data);
+              
+//              alert(window.binary);
+//              alert(window.hash);
 
               var image = new Image();
               image.src = dataURL;
               image.onload = function() {
                 // Setup payload
                 var values = {
-                  binary: binary,
+                  binary: window.binary,
                   cid: Zeta.Storage.Session.current_conversation_id,
                   contentType: contentType,
-                  hash: Zeta.Utils.Misc.encode_base64_md5(binary),
+                  hash: window.hash,
                   height: this.height,
                   width: this.width
                 };
@@ -230,7 +251,7 @@
             };
             dataURLReader.readAsDataURL(file);
           };
-          reader.readAsBinaryString(file);
+          reader.readAsArrayBuffer(file);
         };
 
         var config = {
