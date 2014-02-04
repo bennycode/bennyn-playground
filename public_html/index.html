@@ -18,6 +18,7 @@
     <!-- https://github.com/satazor/SparkMD5/blob/master/spark-md5.js -->
     <script src="js/libs/misc/spark-md5.js"></script>
     <!-- Zeta.Utils -->
+    <script src="zeta/utils/polyfills.js"></script>
     <script src="zeta/utils/misc.js"></script>
     <script src="zeta/utils/namespace.js"></script>
     <script src="zeta/utils/shorthand.js"></script>
@@ -176,24 +177,6 @@
 
     </div> <!-- /website-content -->
     <script>
-      if (!Array.prototype.map) {
-        Array.prototype.map = function(f) {
-          var result = [];
-          for (var i = 0; i < this.length; ++i) {
-            result[i] = f(this[i], i);
-          }
-          return result;
-        };
-      }
-
-      String.prototype.b16decode = function() {
-        return this.match(/../g).map(
-                function(x) {
-                  return String.fromCharCode(parseInt(x, 16));
-                }
-        ).join('');
-      };
-
       $(window).load(function() {
         /* Drag'n'Drop */
         var holder = document.getElementById('holder');
