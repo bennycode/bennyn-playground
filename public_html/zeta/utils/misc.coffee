@@ -33,5 +33,43 @@ Zeta.Utils.Misc = (->
     md5_hash = SparkMD5.ArrayBuffer.hash(array_buffer_view.buffer)
     md5_hash_hex = md5_hash.b16decode()
     @.encode_base64(md5_hash_hex)    
+
+  create_thumbnail_base64: (image, size, format) ->
+    canvas = document.createElement 'canvas'
+    canvas.width  = image.width  * size / Math.max(image.width, image.height)
+    canvas.height = image.height * size / Math.max(image.width, image.height)
+    ctx = canvas.getContext '2d'
+    ctx.drawImage image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height
+    canvas.toDataURL format
+
+  create_thumbnail_array_buffer_view: (image, size, format) ->
+    data_url = @create_thumbnail_base64 image, size, format
+    data = window.atob(data_url.split(",")[1])
+    length = data.length
+    buffer = new ArrayBuffer(length)
+    uInt8Array = new Uint8Array(buffer)
+    i = 0
+
+    while i < length
+      uInt8Array[i] = data.charCodeAt(i)
+      ++i
+    
+    uInt8Array
+
+  create_thumbnail_blob: (image, size, format) ->
+    data_url = @create_thumbnail_base64 image, size, format
+    data = window.atob(data_url.split(",")[1])
+    length = data.length
+    buffer = new ArrayBuffer(length)
+    uInt8Array = new Uint8Array(buffer)
+    i = 0
+
+    while i < length
+      uInt8Array[i] = data.charCodeAt(i)
+      ++i
+
+    new Blob([buffer],
+      type: format
+    )
 #
 )()
