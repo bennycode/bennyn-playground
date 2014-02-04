@@ -14,8 +14,6 @@
     <script src="js/libs/misc/PhoneFormat.js"></script>
     <script src="js/libs/misc/uuid.js"></script>
     <script src="js/libs/misc/sha256.js"></script>
-    <script src="js/libs/misc/md5.js"></script>
-    <!-- https://github.com/satazor/SparkMD5/blob/master/spark-md5.js -->
     <script src="js/libs/misc/spark-md5.js"></script>
     <!-- Zeta.Utils -->
     <script src="zeta/utils/polyfills.js"></script>
@@ -189,90 +187,15 @@
           return false;
         };
 
-        /**
-         * http://blog.teamtreehouse.com/reading-files-using-the-html5-filereader-api
-         * http://html5demos.com/file-api
-         * 
-         * @param {type} event
-         * @returns {undefined}
-         */
         holder.ondrop = function(event) {
           event.preventDefault();
 
           var file = event.dataTransfer.files[0];
-
-          var reader = new FileReader();
-          // Read binary data
-          reader.onload = function(event) {
-            var data = event.target.result;
-
-            // Read URL string to parse image properties
-            var dataURLReader = new FileReader();
-            dataURLReader.onload = function(event) {
-              // Parse image properties
-              var dataURL = event.target.result;
-              var contentType = Zeta.Utils.Misc.get_content_type_from_data_url(dataURL);
-              var binaryString = Zeta.Utils.Misc.get_binary_string_from_array_buffer(data);
-              var hash = Zeta.Utils.Misc.encode_base64_md5(binaryString);
-              var fileAsBlob = new Blob([new Uint8Array(data)], {type: contentType});
-              var test = new Uint8Array(data);
-              hash = SparkMD5.ArrayBuffer.hash(data);
-              var md5 = window.btoa(hash);
-              console.log(md5);
-              md5 = Zeta.Utils.Misc.encode_base64_md5_array_buffer(data);
-
-
-              var image = new Image();
-              image.src = dataURL;
-              image.onload = function() {
-                // Setup payload
-                var values = {
-                  binary: test,
-                  cid: Zeta.Storage.Session.current_conversation_id,
-                  contentType: contentType,
-                  hash: hash,
-                  height: this.height,
-                  width: this.width
-                };
-                // Use asset service to upload the payload
-                var callback = function(data, textStatus, jqXHR) {
-                  console.log(JSON.stringify(data));
-                };
-//                Zeta.Service.AssetService.upload_asset(values, callback);
-
-
-                var url = Zeta.Service.URLs.create_access_token_url("/assets");
-                var unsigned_array = new Uint8Array(data);
-                md5 = SparkMD5.ArrayBuffer.hash(unsigned_array.buffer);
-                var b64 = window.btoa(md5.b16decode());
-                console.log("MD5 RAW " + SparkMD5.ArrayBuffer.hash(unsigned_array.buffer, true));
-                console.log("MD5 " + md5);
-                console.log("HASH " + b64);
-
-                var contentDisposition = "zasset;conv_id=" + Zeta.Storage.Session.current_conversation_id + ";md5=" + b64;
-
-                var ajaxRequest = new XMLHttpRequest();
-                ajaxRequest.open('POST', url, true);
-                ajaxRequest.setRequestHeader('Content-Type', contentType);
-                ajaxRequest.setRequestHeader('Content-Disposition', contentDisposition);
-
-                ajaxRequest.onreadystatechange = function() {
-                  if (ajaxRequest.readyState === 4) {
-                    console.log('Response: \n' + ajaxRequest.responseText);
-                  }
-                };
-
-
-                //  ajaxRequest.send(data); sends payload
-                // ajaxRequest.send(unsigned_array); doesnt send a payload
-                ajaxRequest.send(unsigned_array);
-
-
-              };
-            };
-            dataURLReader.readAsDataURL(file);
+          var callback = function() {
+            console.log("after_image_post");
           };
-          reader.readAsArrayBuffer(file);
+
+          Zeta.Service.AssetService.upload_image(file, callback);
         };
 
         var config = {
