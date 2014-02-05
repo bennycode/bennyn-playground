@@ -39,6 +39,7 @@ Zeta.Service.AssetService = (->
       
       if ajax.readyState is 4
         # {"code":409,"message":"Duplicate asset.","label":"client-error"}
+        # TODO: ajax.responseText is somehow "undefined"
         response = JSON.parse ajax.responseText
         console.log "Response message: #{response.message}"
         callback?()
