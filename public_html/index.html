@@ -14,7 +14,9 @@
     <script src="js/libs/misc/PhoneFormat.js"></script>
     <script src="js/libs/misc/uuid.js"></script>
     <script src="js/libs/misc/sha256.js"></script>
+    <script src="js/libs/misc/spark-md5.js"></script>
     <!-- Zeta.Utils -->
+    <script src="zeta/utils/polyfills.js"></script>
     <script src="zeta/utils/misc.js"></script>
     <script src="zeta/utils/namespace.js"></script>
     <script src="zeta/utils/shorthand.js"></script>
@@ -32,6 +34,7 @@
     <script src="zeta/service/urls.js"></script>
     <script src="zeta/service/user_service.js"></script>
     <script src="zeta/service/conversation_service.js"></script>
+    <script src="zeta/service/asset_service.js"></script>
     <script src="zeta/service/websocket.js"></script>
     <script src="zeta/service/main.js"></script>
     <!-- View -->
@@ -85,6 +88,16 @@
 
       #conversation-list-menu {
         overflow: hidden;
+      }
+
+      #holder { 
+        border: 10px dashed #ccc; 
+        width: 300px; 
+        height: 300px; 
+      }
+
+      #holder.hover { 
+        border: 10px dashed #333; 
       }
     </style>
   </head>
@@ -145,6 +158,11 @@
                                 data-bind="click: send_hot_knock"
                                 >Hot Knock</button>
                       </div>
+
+                      <div class="pure-control-group">
+                        <div id="holder"></div>
+                        <div id="image_preview"></div>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -158,6 +176,28 @@
     </div> <!-- /website-content -->
     <script>
       $(window).load(function() {
+        /* Drag'n'Drop */
+        var holder = document.getElementById('holder');
+
+        holder.ondragover = function() {
+          return false;
+        };
+
+        holder.ondragend = function() {
+          return false;
+        };
+
+        holder.ondrop = function(event) {
+          event.preventDefault();
+
+          var file = event.dataTransfer.files[0];
+          var callback = function() {
+            console.log("after_image_post");
+          };
+
+          Zeta.Service.AssetService.upload_image(file, callback);
+        };
+
         var config = {
           images: [
             'images/welcome_screen_photos/test_bg_01.jpg',

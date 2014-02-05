@@ -9,6 +9,8 @@ Zeta.Utils.RequestHandler = (->
       crossDomain: true
       data: config.data
       dataType: config.dataType
+      headers: config.headers
+      processData: config.processData
       type: config.type
       url: config.url
     .done(config.on_success)

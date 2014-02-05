@@ -17,7 +17,10 @@ Zeta.Service.URLs = (->
     url = @create_url path
     
     if Zeta.Storage.Session.get_access_token()?
-      url += "?access_token=#{Zeta.Storage.Session.get_access_token()}"
+      if url.indexOf("?") is -1
+        url += "?access_token=#{Zeta.Storage.Session.get_access_token()}"
+      else
+        url += "&access_token=#{Zeta.Storage.Session.get_access_token()}"
       
     url
 #
